@@ -1,21 +1,27 @@
 /**
  * Created by TengShinan on 31/8/17.
  */
-var doc = new jsPDF();
 
+var doc = new jsPDF();
+var entryPageOne = {
+    firstTable: [],
+    secondTable: [],
+    thirdTable: []
+};
 /*
-* Generate the PDF file and save it.
-* */
+ * Generate the PDF file and save it.
+ * */
 function generatePDF() {
-    pageOne();
+    console.log('滕施男太帅了！');
+    drawPageOne();
     // Save the PDF file
     doc.save('a4.pdf');
 }
 
 /*
-* Set the style of the title (largest one),
-* Call this function every time to starting writing a title
-* */
+ * Set the style of the title (largest one),
+ * Call this function every time to starting writing a title
+ * */
 function setHeadTitleStyle() {
     doc.setFontSize(20);
     doc.setFontType("bold");
@@ -44,12 +50,13 @@ function setLinesStyle() {
     doc.setDrawColor(228, 228, 228);
 }
 
-function pageOne() {
-    var firstTableY = 35;
-    var firstColY = 45;
-    var firstColArr = ['Name:', 'Telephone:', 'Address of property:', 'Suburb:', 'Date of assessment:', 
+function drawPageOne() {
+    var firstTableBorderY = 35;
+    var firstTableContentY1 = 45;
+    var firstTableContentY2 = 45;
+    var firstColArr = ['Name:', 'Telephone:', 'Address of property:', 'Suburb:', 'Date of assessment:',
         'Existing use of property:', 'Weather conditions:', 'Verbal summary of:'];
-    
+
     // Title
     setHeadTitleStyle();
     doc.text(15, 20, 'Property Assessment Report');
@@ -60,21 +67,47 @@ function pageOne() {
         'accessible areas of the property \nat the time of the assessment, including the subject residence and associated ' +
         'areas where the property is a unit or apartment.');
 
-    // Draw first table's horizontal lines
+    // Draw table's horizontal lines
     setLinesStyle();
     for (var i = 0; i < 10; i++) {
-        doc.line(15, firstTableY, 195, firstTableY);
-        firstTableY += 6;
+        doc.line(15, firstTableBorderY, 195, firstTableBorderY);
+        firstTableBorderY += 6;
     }
 
-    // Title of the table
+    // Draw vertical lines
+    doc.line(60, 41, 60, 89);
+    doc.line(110, 47, 110, 89);
+
+    // Subtitle of the table
     setTableTitleStyle();
     doc.text(17, 39, 'CUSTOMER DETAILS');
 
     // Content in the table (first column)
     setTableContentStyle();
     for (var i = 0; i < 8; i++) {
-        doc.text(17, firstColY, firstColArr[i]);
-        firstColY += 6;
+        doc.text(17, firstTableContentY1, firstColArr[i]);
+        firstTableContentY1 += 6;
     }
+
+    // Fill user's input
+    setExplanationStyle();
+    getContentPageOne();
+    for (var i = 0; i < 8; i++) {
+        doc.text(65, firstTableContentY2, entryPageOne.firstTable[i]);
+        firstTableContentY2 += 6;
+    }
+    //doc.text(65, 57, entryPageOne.firstTable);
+}
+
+function getContentPageOne() {
+    // The first table
+    for (var i = 0; i < 12; i++) {
+        if (document.getElementById("" + i).value == "") {
+            alert("Empty input is not accept!");
+            break;
+        } else {
+            entryPageOne.firstTable[i] = document.getElementById("" + i).value;
+        }
+    }
+    console.log(entryPageOne.firstTable);
 }

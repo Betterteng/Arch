@@ -48,15 +48,15 @@
         <div class="row">
             <div class="col-sm">
                 <label>Name</label><br>
-                <input class="form-control" type="text">
+                <input id="0" class="form-control" type="text">
             </div>
             <div class="col-sm">
                 <label>Phone</label><br>
-                <input class="form-control" type="text">
+                <input id="1" class="form-control" type="text">
             </div>
             <div class="col-sm">
                 <label>Booking No.</label><br>
-                <input class="form-control" type="text">
+                <input id="8" class="form-control" type="text">
             </div>
         </div>
     </form>
@@ -65,21 +65,21 @@
         <div class="row form-group">
             <div class="col-sm-8">
                 <label>Address</label><br>
-                <input class="form-control" type="text">
+                <input id="2" class="form-control" type="text">
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
                 <label>Suburb</label><br>
-                <input class="form-control" type="text">
+                <input id="3" class="form-control" type="text">
             </div>
             <div class="col-sm">
                 <label>State</label><br>
-                <input class="form-control" type="text">
+                <input id="9" class="form-control" type="text">
             </div>
             <div class="col-sm">
                 <label>Postcode</label><br>
-                <input class="form-control" type="text">
+                <input id="11" class="form-control" type="text">
             </div>
         </div>
     </form>
@@ -88,21 +88,27 @@
         <div class="row form-group">
             <div class="col-sm">
                 <label>Date of Assessment</label><br>
-                <textarea class="form-control"></textarea>
+                <textarea id="4" class="form-control"></textarea>
             </div>
             <div class="col-sm">
-                <label>Verbal Summary to</label><br>
-                <textarea class="form-control"></textarea>
+                <label>Time of Assessment</label><br>
+                <textarea id="10" class="form-control"></textarea>
             </div>
         </div>
-        <div class="row">
+        <div class="row form-group">
             <div class="col-sm">
                 <label>Existing Use of Property</label><br>
-                <textarea class="form-control"></textarea>
+                <textarea id="5" class="form-control"></textarea>
             </div>
             <div class="col-sm">
                 <label>Weather Conditions</label><br>
-                <textarea class="form-control"></textarea>
+                <textarea id="6" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label>Verbal Summary to</label><br>
+                <textarea id="7" class="form-control"></textarea>
             </div>
         </div>
     </form>
@@ -471,6 +477,7 @@
 
 <div class="container" style="text-align:center">
     <br>
+    <button onclick="">Save</button>
     <button onclick="generatePDF()">Generate PDF</button>
     <br><br><br><br>
 </div>
