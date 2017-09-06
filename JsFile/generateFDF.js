@@ -18,6 +18,8 @@ function generatePDF() {
     drawPageTwo();
     doc.addPage();
     drawPageThree();
+    doc.addPage();
+    drawPageFour();
 
     // Save the PDF file
     doc.save('a4.pdf');
@@ -223,8 +225,8 @@ function drawPageTwo() {
     doc.text(15, 205, '• Identification of toxic mould, or asbestos related products; \n' +
         '• Condition or operation of swimming pools, spas or their surroundings, rainwater or grey water tanks or treatment and \n' +
         '  similar facilities; \n' +
-        '• Condition, adequacy or compliance of electrical, gas and plumbing systems including roof plumbing, underground pipes or \n' +
-        '  drainage systems; \n' +
+        '• Condition, adequacy or compliance of electrical, gas and plumbing systems including roof plumbing, underground pipes \n' +
+        '  or drainage systems; \n' +
         '• Operation adequacy or compliance of security and communications systems, smoke detectors, building services, building \n' +
         '  automation, electrically operated doors including garage doors, plant, equipment, mechanical, gas or electrical appliances \n' +
         '  and fittings; \n' +
@@ -248,12 +250,13 @@ function drawPageThree() {
     // Title
     setHeadTitleStyle();
     doc.text(15, 20, 'Defect Definitions');
+    doc.text(15, 115, 'Assessment Access');
 
     // Subtitles
     setTableTitleStyle();
     doc.text(15, 25, 'Minor Defect/ Maintenance Item');
     doc.text(15, 40, 'Major Defect');
-    doc.text(15, 70, 'Serious Structural Defect');
+    doc.text(15, 65, 'Serious Structural Defect');
 
     // Explanation
     setExplanationStyle();
@@ -264,4 +267,63 @@ function drawPageThree() {
         '   • loss of utility whereby the defect is such that the whole of the relevant part of the property can no longer serve its \n' +
         '     intended function; or,\n' +
         '   • further substantial deterioration of the property.');
+    doc.text(15, 70, 'A major defect in any internal or external primary load bearing component of the building which seriously affects the \n' +
+        'structural integrity of the building requiring rectification to be carried out without undue delay to avoid:\n' +
+        '   • unsafe conditions, posing a threat to life or serious injury; or,\n' +
+        '   • loss of utility, whereby the defect is such that the whole of the relevant part of the building can no longer serve its \n' +
+        '     intended function; or,\n' +
+        '   • further substantial deterioration of the property.\n' +
+        'In the case of cracking, a serious structural defect denotes severe cracking as defined by Category 4, Appendix C – \nAustralian ' +
+        'Standard AS 2870-2011.');
+    doc.text(15, 120, 'The architect can only assess the reasonably accessible parts of the property.  It is your responsibility to ensure that any \n' +
+        'inaccessible parts of the property that can be made reasonably accessible for an assessment are made so, prior to the \n' +
+        'assessment.  If parts of the property have been noted as being inaccessible during the assessment, it is important that you \n' +
+        'contact the architect and arrange for a second assessment when access to restricted areas has been made available. \n' +
+        'Inaccessible areas cannot be assessed.\n\n' +
+        'Reasonably and Safely Accessible – Accessible areas which can be accessed by a 3.6 metre ladder or those which have \nat ' +
+        'least 600mm unimpeded vertical and horizontal clearance without the removal of any fixed or unfixed furniture, fittings, \n' +
+        'stored items, cladding or lining materials, plants or soil.\n\n' +
+        'Archicentre Australia architects are unable to access areas where there is a risk of adverse disturbance or damage to the \n' +
+        'property, including the garden area.  The architect will determine the extent of accessible areas at the time of the \n' +
+        'assessment.\n\n' +
+        'Workplace Health and Safety access conditions apply subject to relevant State and Territory regulations. Archicentre \n' +
+        'Australia authorised architects are unable to inspect areas higher than 3 metres above ground level unless secure ladder \n' +
+        'access is available and fall prevention devices or barriers are present.\n\n' +
+        'Reasonable Access may not be possible due to physical obstructions or conditions that may be hazardous or unsafe to the \n' +
+        'architect.\n\n' +
+        'Access restrictions will be noted where appropriate.');
+}
+
+/**
+ * PAGE 4
+ * */
+function drawPageFour() {
+
+    var firstTableBorderY = 45;
+    var firstTableLeftContentArr = ['Apparent condition of the building with respect to its age:', 'Are there any Major Defects evident?',
+        'Are there any Serious Structural Defects evident?'];
+
+    // Title
+    setHeadTitleStyle();
+    doc.text(15, 20, 'Your Property Assessment Summary');
+
+    // Explanation
+    setExplanationStyle();
+    doc.text(15, 25, 'This Property Assessment summary provides you with a “snapshot” of the items the architect considers of greatest \n' +
+        'significance for you when considering this property. Please refer to the Definitions and the complete Report for detailed \n' +
+        'information regarding visible defects and recommended actions. Please note that this summary is not the complete \n' +
+        'Report and that in the event of an apparent discrepancy the complete Report overrides the Summary information.');
+
+    // Subtitles
+    setTableTitleStyle();
+    doc.text(15, 49, 'Summary of the Condition of the Property');
+    doc.text(15, 61, 'Major Defects');
+    doc.text(15, 73, 'Serious Structural Defects');
+
+    // Draw lines
+    setLinesStyle();
+    for (var i = 0; i < 7; i++) {
+        doc.line(15, firstTableBorderY, 195, firstTableBorderY);
+        firstTableBorderY += 6;
+    }
 }
