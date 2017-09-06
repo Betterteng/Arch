@@ -10,17 +10,24 @@ var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
  * Generate the PDF file and save it.
  * */
 function generatePDF() {
+
     console.log('滕施男太帅了！');
 
     drawPageOne();
     doc.addPage();
     drawPageTwo();
+    doc.addPage();
+    drawPageThree();
 
     // Save the PDF file
     doc.save('a4.pdf');
 }
 
+/**
+ * PAGE 1
+ * */
 function drawPageOne() {
+
     var firstTableBorderY = 35;
     var firstTableContentY1 = 45;
     var secondTableBorderY = 100;
@@ -110,6 +117,7 @@ function drawPageOne() {
 }
 
 function fillUserInputPageOne() {
+
     var firstTableContentY2 = 45;
     var secondTableContentY2 = 110;
     var thirdTableContentY2 = 158;
@@ -163,6 +171,9 @@ function fillUserInputPageOne() {
     console.log(entryPageOne.thirdTable);
 }
 
+/**
+ * PAGE 2
+ * */
 function drawPageTwo() {
 
     // Title
@@ -193,16 +204,50 @@ function drawPageTwo() {
         'trust that you will not be recommended treatments that you do not need. \n\n' +
         'The assessment assumes that the existing use of the property will continue and the Report is prepared on that basis. As \n' +
         'such, the assessment will not assess the fitness of the property for any other intended purpose.  We advise you to verify \n' +
-        'any proposed change in use with the relevant authorities.');
+        'any proposed change in use with the relevant authorities. \n\n' +
+        'If you are intending to purchase the property, and in consideration of the limitations of a visual assessment, as well as \n' +
+        'budgeting for the anticipated cost of the recommended repairs and maintenance, Archicentre Australia recommends \n' +
+        'budgeting a further 5% of the value of the property, to provide a "safety net" against unexpected costs that may arise \n' +
+        'over the first five years of ownership and that this be taken into account when establishing a purchase price. The amount \n' +
+        'of this safety net is a rough guide for properties generally and not specific to your property. \n\n' +
+        'Where the property is a unit or apartment, associated areas may include common areas pertinent and immediately \nadjacent ' +
+        'to the subject residence, for which major defects only will be noted.');
+    doc.text(15, 170, '• Identification of observed building defects upon a visual assessment of the reasonably accessible parts ' +
+        'of the property; \n' +
+        '• Assessment of defects for significance relative to the expected condition of a well maintained property of similar age and \n' +
+        '  construction type; \n' +
+        '• Recommended actions for identified defects; \n' +
+        '• Recommended professionals and/or trades who may be appropriate to undertake further investigation or carry out the \n' +
+        '  recommended action; \n' +
+        '• General and specific additional advice on maintenance matters that your architect has deemed appropriate.');
+    doc.text(15, 205, '• Identification of toxic mould, or asbestos related products; \n' +
+        '• Condition or operation of swimming pools, spas or their surroundings, rainwater or grey water tanks or treatment and \n' +
+        '  similar facilities; \n' +
+        '• Condition, adequacy or compliance of electrical, gas and plumbing systems including roof plumbing, underground pipes or \n' +
+        '  drainage systems; \n' +
+        '• Operation adequacy or compliance of security and communications systems, smoke detectors, building services, building \n' +
+        '  automation, electrically operated doors including garage doors, plant, equipment, mechanical, gas or electrical appliances \n' +
+        '  and fittings; \n' +
+        '• Footings below ground, soil conditions, site factors and hazards; \n' +
+        '• Compliance with legal, planning, regulatory including Building Code of Australia, sustainability or environmental matters \n' +
+        '  including but not limited to the adequacy or safety of insulation, waterproof membranes and/or other installations, \n' +
+        '  Bushfire Attack Level assessments; \n' +
+        '• Timber, metal or other framing sizes and adequacy.');
 
     /**
-     *  Fill user's input - if you want to only draw the skeletons such as table borders,
-     *  comment these methods below.
+     * Subtitles of the tables
      * */
-    fillUserInputPageTwo();
+    setTableTitleStyle();
+    doc.text(15, 165, 'What is included in this Report');
+    doc.text(15, 200, 'What is not included in this Report');
 }
 
-function fillUserInputPageTwo() {
+/**
+ * PAGE 3
+ * */
+function drawPageThree() {
 
-
+    // Title
+    setHeadTitleStyle();
+    doc.text(15, 20, 'Property Assessment Report');
 }
