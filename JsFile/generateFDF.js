@@ -234,9 +234,7 @@ function drawPageTwo() {
         '  Bushfire Attack Level assessments; \n' +
         '• Timber, metal or other framing sizes and adequacy.');
 
-    /**
-     * Subtitles of the tables
-     * */
+    // Subtitles
     setTableTitleStyle();
     doc.text(15, 165, 'What is included in this Report');
     doc.text(15, 200, 'What is not included in this Report');
@@ -249,5 +247,21 @@ function drawPageThree() {
 
     // Title
     setHeadTitleStyle();
-    doc.text(15, 20, 'Property Assessment Report');
+    doc.text(15, 20, 'Defect Definitions');
+
+    // Subtitles
+    setTableTitleStyle();
+    doc.text(15, 25, 'Minor Defect/ Maintenance Item');
+    doc.text(15, 40, 'Major Defect');
+    doc.text(15, 70, 'Serious Structural Defect');
+
+    // Explanation
+    setExplanationStyle();
+    doc.text(15, 30, 'Any items of repair which are common to well maintained properties of similar age or type of construction and as described \n' +
+        'in the Property Maintenance Guide, including decorative features and finishes.');
+    doc.text(15, 45, 'A defect of sufficient magnitude where rectification has to be carried out without undue delay to avoid: \n' +
+        '   • unsafe conditions, posing a threat to life or serious injury; or, \n' +
+        '   • loss of utility whereby the defect is such that the whole of the relevant part of the property can no longer serve its \n' +
+        '     intended function; or,\n' +
+        '   • further substantial deterioration of the property.');
 }
