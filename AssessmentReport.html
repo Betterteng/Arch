@@ -225,17 +225,17 @@
         <div class="form-group col-sm-6">
             <label>Apparent condition of the building with respect to its age:</label>
             <select id="conditionOfBuilding" name="conditionOfBuilding">
-                <option value="au">Well maintained</option>
-                <option value="ca">Reasonably maintained</option>
-                <option value="usa">Poorly maintained</option>
-                <option value="usa">Other</option>
+                <option value="Well maintained">Well maintained</option>
+                <option value="Reasonably maintained">Reasonably maintained</option>
+                <option value="Poorly maintained">Poorly maintained</option>
+                <option value="Other">Other</option>
             </select>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-sm-6">
             <label>Other Condition:</label>
-            <input class="form-control" type="text">
+            <input id="conditionOfBuildingText" class="form-control" type="text">
         </div>
     </div>
 </div>
@@ -247,17 +247,17 @@
         <div class="form-group col-sm-6">
             <label>Are there any Major Defects evident?</label>
             <select id="majorDefects" name="majorDefects">
-                <option value="au">Well maintained</option>
-                <option value="ca">Reasonably maintained</option>
-                <option value="usa">Poorly maintained</option>
-                <option value="usa">Other</option>
+                <option value="Well maintained">Well maintained</option>
+                <option value="Reasonably maintained">Reasonably maintained</option>
+                <option value="Poorly maintained">Poorly maintained</option>
+                <option value="Other">Other</option>
             </select>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-sm-6">
             <label>Other major defects:</label>
-            <input class="form-control" type="text">
+            <input id="majorDefectsText" class="form-control" type="text">
         </div>
     </div>
 </div>
@@ -269,22 +269,22 @@
         <div class="form-group col-sm-6">
             <label>Are there any Serious Structural Defects evident?</label>
             <select id="seriousStructuralDefects" name="seriousStructuralDefects">
-                <option value="au">Well maintained</option>
-                <option value="ca">Reasonably maintained</option>
-                <option value="usa">Poorly maintained</option>
-                <option value="usa">Other</option>
+                <option value="Well maintained">Well maintained</option>
+                <option value="Reasonably maintained">Reasonably maintained</option>
+                <option value="Poorly maintained">Poorly maintained</option>
+                <option value="Other">Other</option>
             </select>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-sm-6">
             <label>Other serious structural defects:</label>
-            <input class="form-control" type="text">
+            <input id="seriousStructuralDefectsText" class="form-control" type="text">
         </div>
     </div>
 </div>
 
-<div class="container">
+<div id="evidentDefectSummary" class="container">
     <hr>
     <h3 class="sectionSubHead">Evident Defect Summary</h3>
     <div class="row">
@@ -473,6 +473,10 @@
             </select>
         </div>
     </div>
+</div>
+
+<div class="container">
+    
 </div>
 
 <div class="container" style="text-align:center">

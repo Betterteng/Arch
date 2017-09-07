@@ -300,12 +300,16 @@ function drawPageThree() {
 function drawPageFour() {
 
     var firstTableBorderY = 45;
-    var firstTableLeftContentArr = ['Apparent condition of the building with respect to its age:', 'Are there any Major Defects evident?',
-        'Are there any Serious Structural Defects evident?'];
+    var secondTableBorderY = 100;
+    var rulesArr = [' \u2713 - No visible significant defect', ' X - Maintenance item or Minor Defect', 'XX - Major defect',
+        ' U - Unknown / Inaccessible / Not tested', 'NA - Not applicable, no such item'];
+    var firstTableLeftContentArr = ['Damp', 'Framing', 'Stumps / Piers', 'Cracking', 'Water Supply', 'Timber Rot',
+        'Electrics', 'Roof', 'Suspected Illegal Building'];
 
     // Title
     setHeadTitleStyle();
     doc.text(15, 20, 'Your Property Assessment Summary');
+    doc.text(15, 95, 'Evident Defect Summary');
 
     // Explanation
     setExplanationStyle();
@@ -313,17 +317,89 @@ function drawPageFour() {
         'significance for you when considering this property. Please refer to the Definitions and the complete Report for detailed \n' +
         'information regarding visible defects and recommended actions. Please note that this summary is not the complete \n' +
         'Report and that in the event of an apparent discrepancy the complete Report overrides the Summary information.');
+    doc.text(17, 55, 'Apparent condition of the building with respect to its age:');
+    doc.text(17, 67, 'Are there any Major Defects evident?');
+    doc.text(17, 79, 'Are there any Serious Structural Defects evident?');
 
     // Subtitles
     setTableTitleStyle();
-    doc.text(15, 49, 'Summary of the Condition of the Property');
-    doc.text(15, 61, 'Major Defects');
-    doc.text(15, 73, 'Serious Structural Defects');
-
+    doc.text(17, 49, 'Summary of the Condition of the Property');
+    doc.text(17, 61, 'Major Defects');
+    doc.text(17, 73, 'Serious Structural Defects');
+    doc.text(17, 164, 'Assessment Summary');
+    
     // Draw lines
+    // Horizontal
     setLinesStyle();
     for (var i = 0; i < 7; i++) {
         doc.line(15, firstTableBorderY, 195, firstTableBorderY);
         firstTableBorderY += 6;
     }
+    for (var i = 0; i < (rulesArr.length + 1); i++) {
+        doc.line(100, secondTableBorderY, 195, secondTableBorderY);
+        secondTableBorderY += 6;
+    }
+    secondTableBorderY = 100;
+    for (var i = 0; i < (firstTableLeftContentArr.length + 1); i++) {
+        doc.line(15, secondTableBorderY, 95, secondTableBorderY);
+        secondTableBorderY += 6;
+    }
+
+    // Put content in the second table on the left
+    secondTableBorderY = 104;
+    setTableContentStyle();
+    for (var i = 0; i < firstTableLeftContentArr.length; i++) {
+        doc.text(17, secondTableBorderY, firstTableLeftContentArr[i]);
+        secondTableBorderY += 6;
+    }
+    setExplanationStyle();
+    secondTableBorderY = 104;
+    for (var i = 0; i < rulesArr.length; i++) {
+        doc.text(102, secondTableBorderY, rulesArr[i]);
+        secondTableBorderY += 6;
+    }
+
+    console.log(document.getElementById('evidentDefectSummary').getElementsByTagName('select')[8].value);
+    /**
+     *  Fill user's input - if you want to only draw the skeletons such as table borders,
+     *  comment these methods below.
+     * */
+    fillUserInputPageFour();
+}
+
+function fillUserInputPageFour() {
+
+    var eviDefSumArr = [];
+    var positionY = 104;
+    var positionY2 = 0;
+
+    setTableContentStyle();
+    // Summary of the condition of the property
+    if (document.getElementById('conditionOfBuilding').value != 'Other') {
+        doc.text(100, 55, document.getElementById('conditionOfBuilding').value);
+    } else {
+        doc.text(100, 55, document.getElementById('conditionOfBuildingText').value);
+    }
+    // Major defects
+    if (document.getElementById('majorDefects').value != 'Other') {
+        doc.text(74, 67, document.getElementById('majorDefects').value);
+    } else {
+        doc.text(74, 67, document.getElementById('majorDefectsText').value);
+    }
+    // Serious structural defects
+    if (document.getElementById('seriousStructuralDefects').value != 'Other') {
+        doc.text(91, 79, document.getElementById('seriousStructuralDefects').value);
+    } else {
+        doc.text(91, 79, document.getElementById('seriousStructuralDefectsText').value);
+    }
+
+    // Evident defect summary (Extract data + put it in the table)
+    setExplanationStyle();
+    for (var i = 0; i < 9; i++) {
+        eviDefSumArr[i] = document.getElementById('evidentDefectSummary').getElementsByTagName('select')[i].value;
+        doc.text(70, positionY, eviDefSumArr[i]);
+        positionY += 6;
+    }
+
+    console.log(eviDefSumArr);
 }
