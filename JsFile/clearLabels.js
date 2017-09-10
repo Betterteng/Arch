@@ -17,3 +17,11 @@ function clearPropertyExteriorLabel1() {
 function clearPropertyExteriorLabel2() {
     document.getElementById('propertyExteriorLbl2').innerHTML = '';
 }
+
+function clearPropertyInteriorLabel1() {
+    document.getElementById('propertyInteriorLbl1').innerHTML = '';
+}
+
+function clearPropertyInteriorLabel2() {
+    document.getElementById('propertyInteriorLbl2').innerHTML = '';
+}
