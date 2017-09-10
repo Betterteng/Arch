@@ -740,7 +740,7 @@
         <div class="col-sm">
             <div class="form-group">
                 <label class="sectionSubHead">Professional & Trade Recommendations:</label><br>
-                <select style="width:100%">
+                <select id="siteGardenSlc1" style="width:100%">
                     <optgroup label="Architects">
                         <option value="AR">AR</option>
                     </optgroup>
@@ -826,10 +826,11 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-9">
-                    <label>Choices here...</label>
+                    <label id="siteGardenLbl1">Choices will be displayed here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
-                    <button>Clear</button>
+                    <button onclick="addSiteGardenLabel1()">Add</button>
+                    <button onclick="clearSiteGardenLabel1()">Clear</button>
                 </div>
             </div>
         </div>
@@ -842,7 +843,7 @@
         <div class="col-sm">
             <div class="form-group">
                 <label class="sectionSubHead">Professional & Trade Recommendations:</label><br>
-                <select style="width:100%">
+                <select id="siteGardenSlc2" style="width:100%">
                     <optgroup label="Architects">
                         <option value="AR">AR</option>
                     </optgroup>
@@ -928,10 +929,11 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-9">
-                    <label>Choices here...</label>
+                    <label id="siteGardenLbl2">Choices will be displayed here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
-                    <button>Clear</button>
+                    <button onclick="addSiteGardenLabel2()">Add</button>
+                    <button onclick="clearSiteGardenLabel2()">Clear</button>
                 </div>
             </div>
         </div>
@@ -992,7 +994,7 @@
         <div class="col-sm">
             <div class="form-group">
                 <label class="sectionSubHead">Professional & Trade Recommendations:</label><br>
-                <select style="width:100%">
+                <select id="propertyExteriorSlc1" style="width:100%">
                     <optgroup label="Architects">
                         <option value="AR">AR</option>
                     </optgroup>
@@ -1078,10 +1080,11 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-9">
-                    <label>Choices here...</label>
+                    <label id="propertyExteriorLbl1">Choices will be displayed here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
-                    <button>Clear</button>
+                    <button onclick="addPropertyExteriorLabel1()">Add</button>
+                    <button onclick="clearPropertyExteriorLabel1()">Clear</button>
                 </div>
             </div>
         </div>
@@ -1094,7 +1097,7 @@
         <div class="col-sm">
             <div class="form-group">
                 <label class="sectionSubHead">Professional & Trade Recommendations:</label><br>
-                <select style="width:100%">
+                <select id="propertyExteriorSlc2" style="width:100%">
                     <optgroup label="Architects">
                         <option value="AR">AR</option>
                     </optgroup>
@@ -1180,10 +1183,11 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-9">
-                    <label>Choices here...</label>
+                    <label id="propertyExteriorLbl2">Choices will be displayed here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
-                    <button>Clear</button>
+                    <button onclick="addPropertyExteriorLabel2()">Add</button>
+                    <button onclick="clearPropertyExteriorLabel2()">Clear</button>
                 </div>
             </div>
         </div>
@@ -1342,6 +1346,7 @@
                     <label>Choices here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
+                    <button>Add</button>
                     <button>Clear</button>
                 </div>
             </div>
@@ -1444,6 +1449,7 @@
                     <label>Choices here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
+                    <button>Add</button>
                     <button>Clear</button>
                 </div>
             </div>
@@ -1594,6 +1600,7 @@
                     <label>Choices here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
+                    <button>Add</button>
                     <button>Clear</button>
                 </div>
             </div>
@@ -1696,6 +1703,7 @@
                     <label>Choices here...</label>
                 </div>
                 <div class="col-sm-3" style="text-align: right">
+                    <button>Add</button>
                     <button>Clear</button>
                 </div>
             </div>
@@ -1732,6 +1740,8 @@
 </div>
 
 <script type="text/javascript" src="./node_modules/jspdf/dist/jspdf.min.js"></script>
+<script src="./JsFile/addLabels.js"></script>
+<script src="./JsFile/clearLabels.js"></script>
 <script src="./JsFile/generateFDF.js"></script>
 <script src="./JsFile/pdfStyle.js"></script>
 </body>
