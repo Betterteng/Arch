@@ -25,3 +25,11 @@ function clearPropertyInteriorLabel1() {
 function clearPropertyInteriorLabel2() {
     document.getElementById('propertyInteriorLbl2').innerHTML = '';
 }
+
+function clearWetAreasLabel1() {
+    document.getElementById('wetAreasLbl1').innerHTML = '';
+}
+
+function clearWetAreasLabel2() {
+    document.getElementById('wetAreasLbl2').innerHTML = '';
+}
