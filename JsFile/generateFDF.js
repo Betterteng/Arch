@@ -412,6 +412,9 @@ function fillUserInputPageFour() {
 
 function drawPageFive() {
 
+    var firstTablePositionY = 35;
+    var firstTableTitleArr1 = ['AR', 'BC', 'BR', 'CC', 'CJ', 'CM', 'DH', ]
+
     // Title
     setHeadTitleStyle();
     doc.text(15, 20, 'Property Assessment Notes');
@@ -420,4 +423,11 @@ function drawPageFive() {
     setTableTitleStyle();
     doc.text(15, 25, 'Professional and Trade Guide');
 
+    // Explanation
+    setExplanationStyle();
+    doc.text(15, 30, 'Your architect may refer you to the  following professional or tradespeople:');
+
+    // Horizontal lines
+    setLinesStyle();
+    doc.line(15, firstTablePositionY, 195, firstTablePositionY);
 }
