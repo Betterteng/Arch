@@ -13,23 +13,25 @@ function generatePDF() {
 
     console.log('滕施男太帅了！');
 
-    drawPageOne();
-    doc.addPage();
-    drawPageTwo();
-    doc.addPage();
-    drawPageThree();
-    doc.addPage();
-    drawPageFour();
-    doc.addPage();
-    drawPageFive();
-    doc.addPage();
-    drawPagePropertyExterior();
-    doc.addPage();
-    drawPageLivingArea();
-    doc.addPage();
-    drawPageBedroomArea();
-    doc.addPage();
-    drawPageWetArea();
+    // drawPageOne();
+    // doc.addPage();
+    // drawPageTwo();
+    // doc.addPage();
+    // drawPageThree();
+    // doc.addPage();
+    // drawPageFour();
+    // doc.addPage();
+    // drawPageFive();
+    // doc.addPage();
+    // drawPagePropertyExterior();
+    // doc.addPage();
+    // drawPageLivingArea();
+    // doc.addPage();
+    // drawPageBedroomArea();
+    // doc.addPage();
+    // drawPageWetArea();
+    // doc.addPage();
+    drawPageAttachments();
 
     // Save the PDF file
     doc.save('a4.pdf');
@@ -592,18 +594,51 @@ function drawPageWetArea() {
 /**
  * PAGE Attachments
  * */
-
 function drawPageAttachments() {
 
     const startPointX = 15;
     const endPointX = 195;
     const startPointY = 20;
-    const keysGap = 4;
+    const lineGap = 6;
+    const contentArr = ['Property Management Guide', 'Health & Safety Warning', 'Termites & Borers', 'Cracking in Masonry',
+        'Roofing & Guttering', 'Re-stumping', 'Treatment of Dampness', 'Home Safety Checklist', 'Cost Guide'];
+
+    var startPointY2 = startPointY + 23;
+    var firstTablePointX;
 
     // Title
     setHeadTitleStyle();
     doc.text(startPointX, startPointY, 'Attachments');
 
     // Explanation
+    setExplanationStyle();
+    doc.text(startPointX, startPointY + 5, 'The following selected attachments are an important part of this Report. These can be downloaded from the Archicentre \n' +
+        'Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by referring to the \n' +
+        'Report cover email for downloading instructions. If you have difficulty downloading the following ticked attachments, \n please contact Archicentre Australia on 1300 13 45 13 immediately.');
 
+    // Horizontal lines
+    setLinesStyle();
+    for (var i = 0; i < 5; i++) {
+        doc.line(startPointX, startPointY2, endPointX, startPointY2);
+        startPointY2 += lineGap;
+    }
+    // Vertical lines
+    startPointY2 = startPointY + 23;
+    doc.line(startPointX, startPointY2, startPointX, startPointY2 + lineGap * 4);
+    doc.line(endPointX, startPointY2, endPointX, startPointY2 + lineGap * 4);
+
+    // Titles in the table
+    setTableTitleStyle();
+    firstTablePointX = startPointX + 2;
+    for (var i = 0; i < 3; i++) {
+        doc.text(firstTablePointX, startPointY2 + 4, 'ITEM');
+        firstTablePointX += 60;
+    }
+
+    // // Content in the table
+    // setExplanationStyle();
+    // firstTablePointX = startPointX + 2;
+    // for (var i = 0; i < contentArr.length; i++) {
+    //
+    // }
 }
