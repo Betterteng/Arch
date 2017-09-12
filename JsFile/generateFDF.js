@@ -13,17 +13,23 @@ function generatePDF() {
 
     console.log('滕施男太帅了！');
 
-    // drawPageOne();
-    // doc.addPage();
-    // drawPageTwo();
-    // doc.addPage();
-    // drawPageThree();
-    // doc.addPage();
-    // drawPageFour();
-    // doc.addPage();
+    drawPageOne();
+    doc.addPage();
+    drawPageTwo();
+    doc.addPage();
+    drawPageThree();
+    doc.addPage();
+    drawPageFour();
+    doc.addPage();
     drawPageFive();
     doc.addPage();
-    drawPageSix();
+    drawPagePropertyExterior();
+    doc.addPage();
+    drawPageLivingArea();
+    doc.addPage();
+    drawPageBedroomArea();
+    doc.addPage();
+    drawPageWetArea();
 
     // Save the PDF file
     doc.save('a4.pdf');
@@ -478,6 +484,126 @@ function drawPageFive() {
 /**
  * PAGE 6
  * */
-function drawPageSix() {
+function drawPagePropertyExterior() {
+
+    const startPointX = 15;
+    const endPointX = 195;
+    const startPointY = 20;
+    const keysGap = 4;
+
+    // Title
+    setHeadTitleStyle();
+    doc.text(startPointX, startPointY, 'Property Exterior');
+
+    // Subtitles
+    setTableTitleStyle();
+    doc.text(startPointX, startPointY + 5, 'Key');
+
+    // Draw keys
+    setExplanationStyle();
+    doc.text(startPointX + 2, startPointY + 10, 'NA - Not applicable, no such item');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 1, '   X - Maintenance item or Minor defect');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
+    doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
+    doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+}
+
+/**
+ * PAGE Living Area
+ * */
+function drawPageLivingArea() {
+
+    const startPointX = 15;
+    const endPointX = 195;
+    const startPointY = 20;
+    const keysGap = 4;
+
+    // Title
+    setHeadTitleStyle();
+    doc.text(startPointX, startPointY, 'Property Interior - Living Area');
+
+    // Subtitles
+    setTableTitleStyle();
+    doc.text(startPointX, startPointY + 5, 'Key');
+
+    // Draw keys
+    setExplanationStyle();
+    doc.text(startPointX + 2, startPointY + 10, 'NA - Not applicable, no such item');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 1, '   X - Maintenance item or Minor defect');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
+    doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
+    doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+}
+
+/**
+ * PAGE Bedroom Area
+ * */
+function drawPageBedroomArea() {
+
+    const startPointX = 15;
+    const endPointX = 195;
+    const startPointY = 20;
+    const keysGap = 4;
+
+    // Title
+    setHeadTitleStyle();
+    doc.text(startPointX, startPointY, 'Property Interior - Bedroom Area');
+
+    // Subtitles
+    setTableTitleStyle();
+    doc.text(startPointX, startPointY + 5, 'Key');
+
+    // Draw keys
+    setExplanationStyle();
+    doc.text(startPointX + 2, startPointY + 10, 'NA - Not applicable, no such item');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 1, '   X - Maintenance item or Minor defect');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
+    doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
+    doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+}
+
+/**
+ * PAGE Wet Area
+ * */
+function drawPageWetArea() {
+
+    const startPointX = 15;
+    const endPointX = 195;
+    const startPointY = 20;
+    const keysGap = 4;
+
+    // Title
+    setHeadTitleStyle();
+    doc.text(startPointX, startPointY, 'Property Interior - Service (wet) Area');
+
+    // Subtitles
+    setTableTitleStyle();
+    doc.text(startPointX, startPointY + 5, 'Key');
+
+    // Draw keys
+    setExplanationStyle();
+    doc.text(startPointX + 2, startPointY + 10, 'NA - Not applicable, no such item');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 1, '   X - Maintenance item or Minor defect');
+    doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
+    doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
+    doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+}
+
+/**
+ * PAGE Attachments
+ * */
+
+function drawPageAttachments() {
+
+    const startPointX = 15;
+    const endPointX = 195;
+    const startPointY = 20;
+    const keysGap = 4;
+
+    // Title
+    setHeadTitleStyle();
+    doc.text(startPointX, startPointY, 'Attachments');
+
+    // Explanation
 
 }
