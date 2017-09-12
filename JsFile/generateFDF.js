@@ -22,6 +22,8 @@ function generatePDF() {
     // drawPageFour();
     // doc.addPage();
     drawPageFive();
+    doc.addPage();
+    drawPageSix();
 
     // Save the PDF file
     doc.save('a4.pdf');
@@ -119,7 +121,6 @@ function drawPageOne() {
      * */
     //fillUserInputPageOne();
 }
-
 function fillUserInputPageOne() {
 
     var firstTableContentY2 = 45;
@@ -368,7 +369,6 @@ function drawPageFour() {
      * */
     fillUserInputPageFour();
 }
-
 function fillUserInputPageFour() {
 
     var eviDefSumArr = [];
@@ -419,12 +419,13 @@ function drawPageFive() {
     const firstTableContentArr1 = ['Architects', 'Building Contractors', 'Bricklayers', 'Concrete Contractors', 'Carpenter & Joiners',
         'Cabinet Makers', 'Damp Houses', 'Drainers', 'Electrical Contractors', 'Excavating Contractors', 'Fencing Contractors',
         'Glass Merch/Glazier', 'Home Maint./Repair', 'House Restump/Reblock'];
-
-    const firstTableTitleArr2 = ['IC', 'LA', 'LG', 'UP', 'PC', 'PD', 'PG', 'PL', 'PV', 'RC', 'SE', 'TL', 'TS'];
-
+    const firstTableTitleArr2 = ['IC', 'LA', 'LG', 'UP', 'PC', 'PD', 'PG', 'PL', 'PV', 'RC', 'SE', 'TL', 'TS', ''];
     const firstTableContentArr2 = ['Insulation Contractors', 'Landscape Architects', 'Landscape Gardener & Contractors', 'Underpinning Services',
         'Pest Control', 'Painter & Decorators', 'Plumbers & Gasfitters', 'Plasterers', 'Paving-Various', 'Roof Const./Repair/Clean',
-        'Structural Engineers', 'Tile Layers-Wall/Floor', 'Tilers & Slaters'];
+        'Structural Engineers', 'Tile Layers-Wall/Floor', 'Tilers & Slaters', ''];
+    const keyArr1 = ['NA - ', '   X - ', '   U - ', '   G - ', ' XX - ', '', '', '', '', '', '', '', '', '', '', '', ''];
+    const keyArr2 = ['Not applicable, no such item', 'Maintenance item or Minor defect', 'Unknow/Inaccessible/Not tested',
+        'No visible significant defect', 'Major defect', '', '', '', '', '', '', '', '', '', '', '', ''];
 
     var firstTablePositionY;
 
@@ -445,6 +446,11 @@ function drawPageFive() {
     firstTablePositionY = 35;
     doc.line(startPointX, firstTablePositionY, endPointX, firstTablePositionY);
     doc.line(startPointX, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2, endPointX, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2);
+    // Vertical lines
+    doc.line(startPointX, firstTablePositionY, startPointX, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2);
+    doc.line(startPointX + 52, firstTablePositionY, startPointX + 52, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2);
+    doc.line(startPointX + 117, firstTablePositionY, startPointX + 117, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2);
+    doc.line(endPointX, firstTablePositionY, endPointX, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2);
 
     // Titles in the table
     setTableContentStyle();
@@ -452,12 +458,8 @@ function drawPageFive() {
     firstTablePositionY += firstTableGap;
     for (var i = 0; i < firstTableTitleArr1.length; i++) {
         doc.text(startPointX + 2, firstTablePositionY, firstTableTitleArr1[i]);
-        firstTablePositionY += firstTableGap;
-    }
-    firstTablePositionY = 35;
-    firstTablePositionY += firstTableGap;
-    for (var i = 0; i < firstTableTitleArr2.length; i++) {
         doc.text(startPointX + 55, firstTablePositionY, firstTableTitleArr2[i]);
+        doc.text(startPointX + 120, firstTablePositionY, keyArr1[i]);
         firstTablePositionY += firstTableGap;
     }
 
@@ -467,12 +469,15 @@ function drawPageFive() {
     firstTablePositionY += firstTableGap;
     for (var i = 0; i < firstTableContentArr1.length; i++) {
         doc.text(startPointX + 10, firstTablePositionY, firstTableContentArr1[i]);
-        firstTablePositionY += firstTableGap;
-    }
-    firstTablePositionY = 35;
-    firstTablePositionY += firstTableGap;
-    for (var i = 0; i < firstTableContentArr2.length; i++) {
         doc.text(startPointX + 63, firstTablePositionY, firstTableContentArr2[i]);
+        doc.text(startPointX + 128, firstTablePositionY, keyArr2[i]);
         firstTablePositionY += firstTableGap;
     }
+}
+
+/**
+ * PAGE 6
+ * */
+function drawPageSix() {
+
 }
