@@ -13,13 +13,15 @@ function generatePDF() {
 
     console.log('滕施男太帅了！');
 
-    drawPageOne();
-    doc.addPage();
-    drawPageTwo();
-    doc.addPage();
-    drawPageThree();
-    doc.addPage();
-    drawPageFour();
+    // drawPageOne();
+    // doc.addPage();
+    // drawPageTwo();
+    // doc.addPage();
+    // drawPageThree();
+    // doc.addPage();
+    // drawPageFour();
+    // doc.addPage();
+    drawPageFive();
 
     // Save the PDF file
     doc.save('a4.pdf');
@@ -402,4 +404,20 @@ function fillUserInputPageFour() {
     }
 
     console.log(eviDefSumArr);
+}
+
+/**
+ * PAGE 5
+ * */
+
+function drawPageFive() {
+
+    // Title
+    setHeadTitleStyle();
+    doc.text(15, 20, 'Property Assessment Notes');
+
+    // Subtitles
+    setTableTitleStyle();
+    doc.text(15, 25, 'Professional and Trade Guide');
+
 }
