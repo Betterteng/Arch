@@ -419,9 +419,12 @@ function drawPageFive() {
     const firstTableContentArr1 = ['Architects', 'Building Contractors', 'Bricklayers', 'Concrete Contractors', 'Carpenter & Joiners',
         'Cabinet Makers', 'Damp Houses', 'Drainers', 'Electrical Contractors', 'Excavating Contractors', 'Fencing Contractors',
         'Glass Merch/Glazier', 'Home Maint./Repair', 'House Restump/Reblock'];
+
     const firstTableTitleArr2 = ['IC', 'LA', 'LG', 'UP', 'PC', 'PD', 'PG', 'PL', 'PV', 'RC', 'SE', 'TL', 'TS'];
+
     const firstTableContentArr2 = ['Insulation Contractors', 'Landscape Architects', 'Landscape Gardener & Contractors', 'Underpinning Services',
-        'Pest Control', 'PD', 'PG', 'PL', 'PV', 'RC', 'SE', 'TL', 'TS'];
+        'Pest Control', 'Painter & Decorators', 'Plumbers & Gasfitters', 'Plasterers', 'Paving-Various', 'Roof Const./Repair/Clean',
+        'Structural Engineers', 'Tile Layers-Wall/Floor', 'Tilers & Slaters'];
 
     var firstTablePositionY;
 
@@ -445,9 +448,16 @@ function drawPageFive() {
 
     // Titles in the table
     setTableContentStyle();
+    firstTablePositionY = 35;
     firstTablePositionY += firstTableGap;
     for (var i = 0; i < firstTableTitleArr1.length; i++) {
         doc.text(startPointX + 2, firstTablePositionY, firstTableTitleArr1[i]);
+        firstTablePositionY += firstTableGap;
+    }
+    firstTablePositionY = 35;
+    firstTablePositionY += firstTableGap;
+    for (var i = 0; i < firstTableTitleArr2.length; i++) {
+        doc.text(startPointX + 55, firstTablePositionY, firstTableTitleArr2[i]);
         firstTablePositionY += firstTableGap;
     }
 
@@ -457,6 +467,12 @@ function drawPageFive() {
     firstTablePositionY += firstTableGap;
     for (var i = 0; i < firstTableContentArr1.length; i++) {
         doc.text(startPointX + 10, firstTablePositionY, firstTableContentArr1[i]);
+        firstTablePositionY += firstTableGap;
+    }
+    firstTablePositionY = 35;
+    firstTablePositionY += firstTableGap;
+    for (var i = 0; i < firstTableContentArr2.length; i++) {
+        doc.text(startPointX + 63, firstTablePositionY, firstTableContentArr2[i]);
         firstTablePositionY += firstTableGap;
     }
 }
