@@ -409,25 +409,54 @@ function fillUserInputPageFour() {
 /**
  * PAGE 5
  * */
-
 function drawPageFive() {
 
-    var firstTablePositionY = 35;
-    var firstTableTitleArr1 = ['AR', 'BC', 'BR', 'CC', 'CJ', 'CM', 'DH', ]
+    const firstTableGap = 4;
+    const startPointX = 15;
+    const endPointX = 195;
+    const startPointY = 20;
+    const firstTableTitleArr1 = ['AR', 'BC', 'BR', 'CC', 'CJ', 'CM', 'DH', 'DR', 'EL', 'EX', 'FC', 'GL', 'HM', 'HR'];
+    const firstTableContentArr1 = ['Architects', 'Building Contractors', 'Bricklayers', 'Concrete Contractors', 'Carpenter & Joiners',
+        'Cabinet Makers', 'Damp Houses', 'Drainers', 'Electrical Contractors', 'Excavating Contractors', 'Fencing Contractors',
+        'Glass Merch/Glazier', 'Home Maint./Repair', 'House Restump/Reblock'];
+    const firstTableTitleArr2 = ['IC', 'LA', 'LG', 'UP', 'PC', 'PD', 'PG', 'PL', 'PV', 'RC', 'SE', 'TL', 'TS'];
+    const firstTableContentArr2 = ['Insulation Contractors', 'Landscape Architects', 'Landscape Gardener & Contractors', 'Underpinning Services',
+        'Pest Control', 'PD', 'PG', 'PL', 'PV', 'RC', 'SE', 'TL', 'TS'];
+
+    var firstTablePositionY;
 
     // Title
     setHeadTitleStyle();
-    doc.text(15, 20, 'Property Assessment Notes');
+    doc.text(startPointX, startPointY, 'Property Assessment Notes');
 
     // Subtitles
     setTableTitleStyle();
-    doc.text(15, 25, 'Professional and Trade Guide');
+    doc.text(startPointX, startPointY + 5, 'Professional and Trade Guide');
 
     // Explanation
     setExplanationStyle();
-    doc.text(15, 30, 'Your architect may refer you to the  following professional or tradespeople:');
+    doc.text(startPointX, startPointY + 10, 'Your architect may refer you to the  following professional or tradespeople:');
 
     // Horizontal lines
     setLinesStyle();
-    doc.line(15, firstTablePositionY, 195, firstTablePositionY);
+    firstTablePositionY = 35;
+    doc.line(startPointX, firstTablePositionY, endPointX, firstTablePositionY);
+    doc.line(startPointX, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2, endPointX, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 2);
+
+    // Titles in the table
+    setTableContentStyle();
+    firstTablePositionY += firstTableGap;
+    for (var i = 0; i < firstTableTitleArr1.length; i++) {
+        doc.text(startPointX + 2, firstTablePositionY, firstTableTitleArr1[i]);
+        firstTablePositionY += firstTableGap;
+    }
+
+    // Content in the table
+    setExplanationStyle();
+    firstTablePositionY = 35;
+    firstTablePositionY += firstTableGap;
+    for (var i = 0; i < firstTableContentArr1.length; i++) {
+        doc.text(startPointX + 10, firstTablePositionY, firstTableContentArr1[i]);
+        firstTablePositionY += firstTableGap;
+    }
 }
