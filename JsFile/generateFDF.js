@@ -31,12 +31,12 @@ function generatePDF() {
     // doc.addPage();
     // drawPageWetArea();
     // doc.addPage();
-    // drawPageAttachments();
-    // doc.addPage();
-    test();
+    drawPageAttachments();
+    doc.addPage();
+    termsAndConditions();
 
     // Save the PDF file
-    //doc.save('a4.pdf');
+    doc.save('a4.pdf');
 }
 
 /**
@@ -82,7 +82,7 @@ function drawPageOne() {
         secondTableBorderY += 6;
     }
     // Draw third table's horizontal lines
-    for (var i = 0; i < (thirdTableLeftContentArr.length +2); i++) {
+    for (var i = 0; i < (thirdTableLeftContentArr.length + 2); i++) {
         doc.line(15, thirdTableBorderY, 195, thirdTableBorderY);
         thirdTableBorderY += 6;
     }
@@ -340,7 +340,7 @@ function drawPageFour() {
     doc.text(17, 61, 'Major Defects');
     doc.text(17, 73, 'Serious Structural Defects');
     doc.text(17, 164, 'Assessment Summary');
-    
+
     // Draw lines
     // Horizontal
     setLinesStyle();
@@ -638,17 +638,60 @@ function drawPageAttachments() {
     }
 }
 
-function test() {
+function termsAndConditions() {
 
-    var columns = ["ID", "Name", "Country"];
+    const startPointX = 15;
+    const endPointX = 195;
+    const startPointY = 20;
+    //
+    // var column = [
+    //     {title: 'ColA', dataKey: 'firstCol'}
+    // ];
+    //
+    // var result = [
+    //     {'firstCol': 'The following selected attachments are an important part of this Report. These can be downloaded from the Archicentre Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by referring to the Report cover email for downloading instructions. If you have difficulty downloading the following ticked attachments, please contact Archicentre Australia on 1300 13 45 13 immediately.'}
+    // ];
+    //
+    // // Title
+    // setHeadTitleStyle();
+    // doc.text(startPointX, startPointY, 'Terms & Conditions');
+    //
+    // // Only pt supported (not mm or in)
+    // doc.autoTable(column, result, {
+    //     margin: {
+    //         top: 18
+    //     },
+    //     theme: 'striped',
+    //     bodyStyles: {valign: 'top'},
+    //     styles: {overflow: 'linebreak', columnWidth: 'wrap'},
+    //     columnStyles: {text: {columnWidth: 'auto'}}
+    // });
+
+
+    var columns = ["",""];
     var rows = [
-            [1, "Shaw", "Tanzania"],
-        [2, "Nelson", "Kazakhstan"],
-        [3, "Garcia", "Madagascar"]
+        ["The following selected attachments are an important part of this Report.attachments are an important part of this Report These can be downloaded from the Archicentre Australia Supplementary Documents page www.archicen",
+            "The following selected attachments are an important part of this Report. These can be downloaded from the Archicentre Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by"]
 ];
 
-// Only pt supported (not mm or in)
-    var doc = new jsPDF('p', 'pt');
-    doc.autoTable(columns, rows);
-    doc.save('table.pdf');
+    //Title
+    setHeadTitleStyle();
+    doc.text(startPointX, startPointY, 'Terms & Conditions');
+
+    doc.autoTable(columns, rows, {
+        theme: 'plain',
+        margin: {
+            top: 13
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            cellPadding: {top: 3, right: 8, bottom: 0, left: 2}
+        }
+    });
 }
+
+
+
+
+
