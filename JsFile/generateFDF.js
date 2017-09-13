@@ -11,7 +11,7 @@ var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
  * */
 function generatePDF() {
 
-    console.log('滕施男太帅了！');
+    console.log('Nice!');
 
     // drawPageOne();
     // doc.addPage();
@@ -31,10 +31,12 @@ function generatePDF() {
     // doc.addPage();
     // drawPageWetArea();
     // doc.addPage();
-    drawPageAttachments();
+    // drawPageAttachments();
+    // doc.addPage();
+    test();
 
     // Save the PDF file
-    doc.save('a4.pdf');
+    //doc.save('a4.pdf');
 }
 
 /**
@@ -634,11 +636,19 @@ function drawPageAttachments() {
         doc.text(firstTablePointX, startPointY2 + 4, 'ITEM');
         firstTablePointX += 60;
     }
+}
 
-    // // Content in the table
-    // setExplanationStyle();
-    // firstTablePointX = startPointX + 2;
-    // for (var i = 0; i < contentArr.length; i++) {
-    //
-    // }
+function test() {
+
+    var columns = ["ID", "Name", "Country"];
+    var rows = [
+            [1, "Shaw", "Tanzania"],
+        [2, "Nelson", "Kazakhstan"],
+        [3, "Garcia", "Madagascar"]
+];
+
+// Only pt supported (not mm or in)
+    var doc = new jsPDF('p', 'pt');
+    doc.autoTable(columns, rows);
+    doc.save('table.pdf');
 }
