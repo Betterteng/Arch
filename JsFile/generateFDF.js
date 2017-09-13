@@ -21,7 +21,7 @@ function generatePDF() {
     // doc.addPage();
     // drawPageFour();
     // doc.addPage();
-    drawPagePropertyAssessmentNotes();
+    //drawPagePropertyAssessmentNotes();
     // doc.addPage();
     // drawPagePropertyExterior();
     // doc.addPage();
@@ -35,8 +35,10 @@ function generatePDF() {
     // doc.addPage();
     // termsAndConditions();
 
+    getSiteGardenEntries();
+
     // Save the PDF file
-    doc.save('a4.pdf');
+    //doc.save('a4.pdf');
 }
 
 /**
@@ -703,4 +705,13 @@ function termsAndConditions() {
             cellPadding: {top: 3, right: 8, bottom: 0, left: 2}
         }
     });
+}
+
+function getSiteGardenEntries() {
+    var firstSection = [];
+    for (var i = 0; i < 6; i ++) {
+        firstSection[i] = document.getElementById(i + 200 + '').value;
+    }
+
+    console.log(firstSection);
 }
