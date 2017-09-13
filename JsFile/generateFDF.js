@@ -712,6 +712,9 @@ function getSiteGardenEntries() {
     for (var i = 0; i < 6; i ++) {
         firstSection[i] = document.getElementById(i + 200 + '').value;
     }
+    firstSection.splice(1, 0, 'Structure/Walls');
+    firstSection.splice(3, 0, 'Roof/Ceiling');
+    firstSection.splice(5, 0, 'Floor/Finish');
 
     console.log(firstSection);
 }
