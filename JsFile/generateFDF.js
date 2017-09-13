@@ -21,7 +21,7 @@ function generatePDF() {
     // doc.addPage();
     // drawPageFour();
     // doc.addPage();
-    //drawPagePropertyAssessmentNotes();
+    drawPagePropertyAssessmentNotes();
     // doc.addPage();
     // drawPagePropertyExterior();
     // doc.addPage();
@@ -35,10 +35,8 @@ function generatePDF() {
     // doc.addPage();
     // termsAndConditions();
 
-    getSiteGardenEntries();
-
     // Save the PDF file
-    //doc.save('a4.pdf');
+    doc.save('a4.pdf');
 }
 
 /**
@@ -489,6 +487,9 @@ function drawPagePropertyAssessmentNotes() {
 
     // Draw Site & Garden table
 
+    doc.autoTable(getSiteGardenColumns(), getSiteGardenEntries(), {
+        margin: {top: 100}
+    });
 }
 
 /**
@@ -707,14 +708,71 @@ function termsAndConditions() {
     });
 }
 
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions
+ |--------------------------------------------------------------------------
+ */
+
 function getSiteGardenEntries() {
+
     var firstSection = [];
+    var secondSection = [];
+    var data = [];
+
     for (var i = 0; i < 6; i ++) {
         firstSection[i] = document.getElementById(i + 200 + '').value;
     }
-    firstSection.splice(1, 0, 'Structure/Walls');
-    firstSection.splice(3, 0, 'Roof/Ceiling');
-    firstSection.splice(5, 0, 'Floor/Finish');
 
-    console.log(firstSection);
+    // firstSection.splice(1, 0, 'Structure/Walls');
+    // firstSection.splice(3, 0, 'Roof/Ceiling');
+    // firstSection.splice(5, 0, 'Floor/Finish');
+    //
+    // if (firstSection[firstSection.length - 2] == '') {
+    //     firstSection[firstSection.length - 2] = 'Other';
+    //     firstSection[firstSection.length - 1] = '-';
+    // }
+
+    firstSection = validateSiteGardenEntries(firstSection);
+
+    data.push({
+        1: firstSection[0],
+        2: firstSection[1],
+        3: firstSection[2],
+        4: firstSection[3],
+        5: firstSection[4],
+        6: firstSection[5],
+        7: firstSection[6],
+        8: firstSection[7],
+        9: firstSection[8]
+    });
+
+    return data;
+}
+
+function getSiteGardenColumns() {
+    return [
+        {title: "Site & Garden", dataKey: "1"},
+        {title: "Option", dataKey: "2"},
+        {title: "Result", dataKey: "3"},
+        {title: "Option", dataKey: "4"},
+        {title: "Result", dataKey: "5"},
+        {title: "Option", dataKey: "6"},
+        {title: "Result", dataKey: "7"},
+        {title: "Option", dataKey: "8"},
+        {title: "Result", dataKey: "9"}
+    ];
+};
+
+function validateSiteGardenEntries(arr) {
+    arr.splice(1, 0, 'Structure/Walls');
+    arr.splice(3, 0, 'Roof/Ceiling');
+    arr.splice(5, 0, 'Floor/Finish');
+
+    if (arr[arr.length - 2] == '') {
+        arr[arr.length - 2] = 'Other';
+        arr[arr.length - 1] = '-';
+    }
+
+    return arr;
 }
