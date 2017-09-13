@@ -724,16 +724,12 @@ function getSiteGardenEntries() {
         firstSection[i] = document.getElementById(i + 200 + '').value;
     }
 
-    // firstSection.splice(1, 0, 'Structure/Walls');
-    // firstSection.splice(3, 0, 'Roof/Ceiling');
-    // firstSection.splice(5, 0, 'Floor/Finish');
-    //
-    // if (firstSection[firstSection.length - 2] == '') {
-    //     firstSection[firstSection.length - 2] = 'Other';
-    //     firstSection[firstSection.length - 1] = '-';
-    // }
+    for (var i = 0; i < 6; i++) {
+        secondSection[i] = document.getElementById(i + 210 + '').value;
+    }
 
     firstSection = validateSiteGardenEntries(firstSection);
+    secondSection = validateSiteGardenEntries(secondSection);
 
     data.push({
         1: firstSection[0],
@@ -745,6 +741,18 @@ function getSiteGardenEntries() {
         7: firstSection[6],
         8: firstSection[7],
         9: firstSection[8]
+    });
+
+    data.push({
+        1: secondSection[0],
+        2: secondSection[1],
+        3: secondSection[2],
+        4: secondSection[3],
+        5: secondSection[4],
+        6: secondSection[5],
+        7: secondSection[6],
+        8: secondSection[7],
+        9: secondSection[8]
     });
 
     return data;
