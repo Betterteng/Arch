@@ -21,7 +21,7 @@ function generatePDF() {
     // doc.addPage();
     // drawPageFour();
     // doc.addPage();
-    // drawPageFive();
+    drawPagePropertyAssessmentNotes();
     // doc.addPage();
     // drawPagePropertyExterior();
     // doc.addPage();
@@ -31,9 +31,9 @@ function generatePDF() {
     // doc.addPage();
     // drawPageWetArea();
     // doc.addPage();
-    drawPageAttachments();
-    doc.addPage();
-    termsAndConditions();
+    // drawPageAttachments();
+    // doc.addPage();
+    // termsAndConditions();
 
     // Save the PDF file
     doc.save('a4.pdf');
@@ -417,9 +417,9 @@ function fillUserInputPageFour() {
 }
 
 /**
- * PAGE 5
+ * PAGE Property Assessment Notes
  * */
-function drawPageFive() {
+function drawPagePropertyAssessmentNotes() {
 
     const firstTableGap = 4;
     const startPointX = 15;
@@ -437,11 +437,12 @@ function drawPageFive() {
     const keyArr2 = ['Not applicable, no such item', 'Maintenance item or Minor defect', 'Unknow/Inaccessible/Not tested',
         'No visible significant defect', 'Major defect', '', '', '', '', '', '', '', '', '', '', '', ''];
 
-    var firstTablePositionY;
+    var firstTablePositionY = 35;
 
     // Title
     setHeadTitleStyle();
     doc.text(startPointX, startPointY, 'Property Assessment Notes');
+    doc.text(startPointX, firstTablePositionY + firstTableTitleArr1.length * firstTableGap + 15, 'Site & Garden');
 
     // Subtitles
     setTableTitleStyle();
@@ -483,10 +484,13 @@ function drawPageFive() {
         doc.text(startPointX + 128, firstTablePositionY, keyArr2[i]);
         firstTablePositionY += firstTableGap;
     }
+
+    // Draw Site & Garden table
+
 }
 
 /**
- * PAGE 6
+ * PAGE Property Exterior
  * */
 function drawPagePropertyExterior() {
 
@@ -638,10 +642,12 @@ function drawPageAttachments() {
     }
 }
 
+/**
+ * PAGE Terms & Conditions
+ * */
 function termsAndConditions() {
 
     const startPointX = 15;
-    const endPointX = 195;
     const startPointY = 20;
 
     var columns = ["", ""];
@@ -661,16 +667,17 @@ function termsAndConditions() {
         'assessed property relative to the average condition of well-maintained similar properties of a similar age.\n\n(3)   Archicentre Australia accepts no ' +
         'liability with respect to work carried out by other trades, consultants or practitioners referred by Archicentre Australia. It is your responsibility ' +
         'to make appropriate contractual arrangements with such person.\n\n(4)   The Report is not a certificate of compliance for the property within the ' +
-        'requirements of any Act, regulation, ordinance or local by-law.',
+        'requirements of any Act, regulation, ordinance or local by-law.\n\n(5)   Archicentre Australia does not accept responsibility for services other than ' +
+        'those provided in this Report.\n\n' + '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of ' +
+        'the cost of a new assessment and report, at the election of Archicentre Australia.',
 
-        '(5)   Archicentre Australia does not accept responsibility for services other than those provided in this Report.\n\n' +
-        '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of the cost ' +
-        'of a new assessment and report, at the election of Archicentre Australia.\n\n' + '(7)The assessment assumes that the existing use of the ' +
+
+        '(7)   The assessment assumes that the existing use of the ' +
         'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
         'change in use should be verified with the relevant authorities.\n\n(8)   The Property Maintenance Guide constitutes a vital part of the architect’s ' +
         'recommendations and failure to observe either the recommendations or the Property Maintenance Guide could lead to premature deterioration of ' +
         'the property.\n\n(9)   The Health and Safety Warnings constitutes a vital part of Archicentre Australia’s recommendation to you. Failure ' +
-        'to observe the provisions of the warning sheet could jeopardise the safety of the occupants.(10)   The Report and its appendices and attachments, as ' +
+        'to observe the provisions of the warning sheet could jeopardise the safety of the occupants.\n\n(10)   The Report and its appendices and attachments, as ' +
         'issued by Archicentre Australia, takes precedence over any oral advice or draft reports, to the extent of any inconsistencies, ' +
         'and only the Report and its appendices and attachments, which form a vital part of the architect’s recommendations, ' +
         'shall be relied upon by you.\n\n(11)   If you are dissatisfied with the Report you agree to promptly give Archicentre Australia written notice ' +
@@ -697,6 +704,3 @@ function termsAndConditions() {
         }
     });
 }
-
-
-

@@ -588,7 +588,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-sm form-group">
             <input placeholder="Garage / Shed" class="form-control" type="text">
             <div class="row form-group">
@@ -679,13 +678,10 @@
             </div>
         </div>
     </div>
-    <div class="container" style="text-align: center;">
-        <button onclick="moreSiteGardenSheds()" id="moreShedButton">Add More Garage or Shed</button>
-        <!-- <div class="row" style="align-content: center;" ><button  onclick="moreSiteGardenBoundaries()" >More Boundaries</button></div> -->
-        <br>
-        <br>
+    <div style="text-align: center;">
+        <button onclick="moreSiteGardenSheds()" id="moreShedButton">Add More Garage or Shed</button><br><br>
     </div>
-    <div class="container" id="SiteGardenShed" style="display:none;padding: 0">
+    <div id="SiteGardenShed" style="display:none;padding: 0">
         <div class="row form-group">
             <div class="col-sm form-group">
                 <input placeholder="Garage / Shed" class="form-control" type="text">
@@ -776,7 +772,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-sm form-group">
                 <input placeholder="Garage / Shed" class="form-control" type="text">
                 <div class="row form-group">
@@ -867,7 +862,7 @@
                 </div>
             </div>
         </div>
-        <div class="row form-group">
+        <div class="row">
             <div class="col-sm form-group">
                 <input placeholder="Garage / Shed" class="form-control" type="text">
                 <div class="row form-group">
@@ -957,7 +952,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-sm form-group">
                 <input placeholder="Garage / Shed" class="form-control" type="text">
                 <div class="row form-group">
@@ -1048,9 +1042,9 @@
                 </div>
             </div>
         </div>
-
         <hr>
     </div>
+    <hr>
     <div class="row form-group">
         <div class="col-sm form-group">
             <input placeholder="Rear" class="form-control" type="text">
@@ -1231,13 +1225,10 @@
             </div>
         </div>
     </div>
-    <div class="container" style="text-align: center;">
-        <button onclick="moreSiteGardenBoundaries()" id="moreBoundariesButton">Add More Boundaries</button>
-        <!-- <div class="row" style="align-content: center;" ><button  onclick="moreSiteGardenBoundaries()" >More Boundaries</button></div> -->
-        <br>
-        <br>
+    <div style="text-align: center;">
+        <button onclick="moreSiteGardenBoundaries()" id="moreBoundariesButton">Add More Boundaries</button><br><br>
     </div>
-    <div class="container" id="SiteGardenBoundary" style="display:none;padding: 0">
+    <div id="SiteGardenBoundary" style="display:none;padding: 0">
         <div class="row form-group" id="SiteGardenBoundary1">
             <div class="col-sm form-group">
                 <input placeholder="Boundary A" class="form-control" type="text">
@@ -1418,7 +1409,7 @@
                 </div>
             </div>
         </div>
-        <div class="row form-group" id="SiteGardenBoundary2">
+        <div class="row" id="SiteGardenBoundary2">
             <div class="col-sm form-group">
                 <input placeholder="Boundary C" class="form-control" type="text">
                 <div class="row form-group">
@@ -1599,8 +1590,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
 <div class="container">
@@ -6625,9 +6614,7 @@
 </div>
 
 <div class="container" style="text-align: center">
-    <button onclick="moreBedrooms()" id="moreBedroomsButton">Add More Bedrooms</button>
-    <br>
-    <br>
+    <button onclick="moreBedrooms()" id="moreBedroomsButton">Add More Bedrooms</button><br><br>
 </div>
 
 <div class="container" id="BedroomAreasMoreRooms" style="display: none">
@@ -8220,7 +8207,6 @@
             </div>
         </div>
     </div>
-
     <div class="container" style="text-align: center">
         <button onclick="moreBathrooms()" id="moreBathroomsButton">Add More Bathrooms</button>
         <br>
@@ -9397,214 +9383,214 @@
         <hr>
     </div>
     <div class="form-group">
-        <div class="row">
-            <div class="col-sm-3 form-group"><label class="sectionSubHead">Laundry</label></div>
+            <div class="row">
+                <div class="col-sm-3 form-group"><label class="sectionSubHead">Laundry</label></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label>Floor Structure/Finish</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Cupboards</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Walls</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Electrics</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Tub/Sink/Splashback</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label>Ceiling</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Exhaust/Ventilation</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Windows/Doors</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Dampness</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label>Water Pressure</label><br>
+                    <select style="width:100%">
+                        <optgroup label="No Visible Significant Defect">
+                            <option value="✔">✔</option>
+                        </optgroup>
+                        <optgroup label="Major Defect">
+                            <option value="XX">XX</option>
+                        </optgroup>
+                        <optgroup label="Maintenance Item or Minor Defect">
+                            <option value="X">X</option>
+                        </optgroup>
+                        <optgroup label="Unknown / Inaccessible / Not Tested">
+                            <option value="U">U</option>
+                        </optgroup>
+                        <optgroup label="Not Applicable; No Such Item">
+                            <option value="NA">NA</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="row form-group">
-            <div class="col-sm">
-                <label>Floor Structure/Finish</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Cupboards</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Walls</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Electrics</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Tub/Sink/Splashback</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="col-sm">
-                <label>Ceiling</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Exhaust/Ventilation</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Windows/Doors</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Dampness</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="col-sm">
-                <label>Water Pressure</label><br>
-                <select style="width:100%">
-                    <optgroup label="No Visible Significant Defect">
-                        <option value="✔">✔</option>
-                    </optgroup>
-                    <optgroup label="Major Defect">
-                        <option value="XX">XX</option>
-                    </optgroup>
-                    <optgroup label="Maintenance Item or Minor Defect">
-                        <option value="X">X</option>
-                    </optgroup>
-                    <optgroup label="Unknown / Inaccessible / Not Tested">
-                        <option value="U">U</option>
-                    </optgroup>
-                    <optgroup label="Not Applicable; No Such Item">
-                        <option value="NA">NA</option>
-                    </optgroup>
-                </select>
-            </div>
-        </div>
-    </div>
     <hr>
     <div class="container" style="text-align: center">
         <button onclick="moreLaundry()" id="moreLaundryButton">Add One Laundry</button>
@@ -9822,7 +9808,6 @@
             </div>
         </div>
     </div>
-
     <div class="form-group">
         <div class="row">
             <div class="col-sm-3 form-group"><label class="sectionSubHead">Powder Room</label></div>
@@ -10074,7 +10059,6 @@
             </div>
         </div>
     </div>
-
     <div class="container" style="text-align: center">
         <button onclick="morePowderRooms()" id="morePowderRoomsButton">Add More Powder Rooms</button>
         <br>
