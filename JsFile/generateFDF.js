@@ -668,11 +668,19 @@ function termsAndConditions() {
     // });
 
 
-    var columns = ["",""];
+    var columns = ["", ""];
     var rows = [
-        ["The following selected attachments are an important part of this Report.attachments are an important part of this Report These can be downloaded from the Archicentre Australia Supplementary Documents page www.archicen",
-            "The following selected attachments are an important part of this Report. These can be downloaded from the Archicentre Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by"]
-];
+        ['Report has been prepared by Archicentre Australia – a division of ArchiAdvisory Pty Ltd – and the named architect ' +
+        'and is supplied to you (the named customer) on the basis of and subject to the Scope of Assessment and the Terms and Conditions ' +
+        'of the Contract and the Assessment and Archicentre Australia accepts no responsibility to other persons relying on the report.\n\n' +
+        'This Report has been prepared in accordance with Australian Standard 4349.1-2007 Assessment of Buildings Part 1: Pre-purchase Inspections' +
+        ' – Residential Buildings and to any other Australian Standards and definitions cited in the Terms and Conditions.\n',
+        '(5)   Archicentre Australia does not accept responsibility for services other than those provided in this Report.\n\n' +
+        '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of the cost ' +
+        'of a new assessment and report, at the election of Archicentre Australia.\n\n' + '(7)The assessment assumes that the existing use of the ' +
+        'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
+        'change in use should be verified with the relevant authorities.']
+    ];
 
     //Title
     setHeadTitleStyle();
@@ -691,7 +699,40 @@ function termsAndConditions() {
     });
 }
 
-
+// function getLeftCol() {
+//     var result1 = 'Report has been prepared by Archicentre Australia – a division of ArchiAdvisory Pty Ltd – and the named architect ' +
+//         'and is supplied to you (the named customer) on the basis of and subject to the Scope of Assessment and the Terms and Conditions ' +
+//         'of the Contract and the Assessment and Archicentre Australia accepts no responsibility to other persons relying on the report.\n' +
+//         'This Report has been prepared in accordance with Australian Standard 4349.1-2007 Assessment of Buildings Part 1: Pre-purchase Inspections' +
+//         ' – Residential Buildings and to any other Australian Standards and definitions cited in the Terms and Conditions.\n';
+//
+//     var result2 = '(5)   Archicentre Australia does not accept responsibility for services other than those provided in this Report.\n' +
+//         '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of the cost ' +
+//         'of a new assessment and report, at the election of Archicentre Australia.\n' + '(7)The assessment assumes that the existing use of the ' +
+//         'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
+//         'change in use should be verified with the relevant authorities.';
+//
+//     return [result1, result2];
+// }
+//
+// function getRightCol() {
+//     var result2 = '(5)   Archicentre Australia does not accept responsibility for services other than those provided in this Report.\n' +
+//         '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of the cost ' +
+//         'of a new assessment and report, at the election of Archicentre Australia.\n' + '(7)The assessment assumes that the existing use of the ' +
+//         'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
+//         'change in use should be verified with the relevant authorities.';
+// }
+//
+// function test1() {
+//     var x = [{'111'}
+//     ];
+//     return x;
+// }
+//
+// function test2() {
+//     var x = [{'2222'}];
+//     return x;
+// }
 
 
 
