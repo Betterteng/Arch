@@ -720,40 +720,14 @@ function getSiteGardenEntries() {
     var secondSection = [];
     var data = [];
 
-    for (var i = 0; i < 6; i ++) {
-        firstSection[i] = document.getElementById(i + 200 + '').value;
-    }
-
-    for (var i = 0; i < 6; i++) {
-        secondSection[i] = document.getElementById(i + 210 + '').value;
-    }
+    for (var i = 0; i < 6; i ++) {firstSection[i] = document.getElementById(i + 200 + '').value;}
+    for (var i = 0; i < 6; i++) {secondSection[i] = document.getElementById(i + 210 + '').value;}
 
     firstSection = validateSiteGardenEntries(firstSection);
     secondSection = validateSiteGardenEntries(secondSection);
 
-    data.push({
-        1: firstSection[0],
-        2: firstSection[1],
-        3: firstSection[2],
-        4: firstSection[3],
-        5: firstSection[4],
-        6: firstSection[5],
-        7: firstSection[6],
-        8: firstSection[7],
-        9: firstSection[8]
-    });
-
-    data.push({
-        1: secondSection[0],
-        2: secondSection[1],
-        3: secondSection[2],
-        4: secondSection[3],
-        5: secondSection[4],
-        6: secondSection[5],
-        7: secondSection[6],
-        8: secondSection[7],
-        9: secondSection[8]
-    });
+    data.push({1: firstSection[0], 2: firstSection[1], 3: firstSection[2], 4: firstSection[3], 5: firstSection[4], 6: firstSection[5], 7: firstSection[6], 8: firstSection[7], 9: firstSection[8]});
+    data.push({1: secondSection[0], 2: secondSection[1], 3: secondSection[2], 4: secondSection[3], 5: secondSection[4], 6: secondSection[5], 7: secondSection[6], 8: secondSection[7], 9: secondSection[8]});
 
     return data;
 }
