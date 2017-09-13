@@ -643,30 +643,6 @@ function termsAndConditions() {
     const startPointX = 15;
     const endPointX = 195;
     const startPointY = 20;
-    //
-    // var column = [
-    //     {title: 'ColA', dataKey: 'firstCol'}
-    // ];
-    //
-    // var result = [
-    //     {'firstCol': 'The following selected attachments are an important part of this Report. These can be downloaded from the Archicentre Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by referring to the Report cover email for downloading instructions. If you have difficulty downloading the following ticked attachments, please contact Archicentre Australia on 1300 13 45 13 immediately.'}
-    // ];
-    //
-    // // Title
-    // setHeadTitleStyle();
-    // doc.text(startPointX, startPointY, 'Terms & Conditions');
-    //
-    // // Only pt supported (not mm or in)
-    // doc.autoTable(column, result, {
-    //     margin: {
-    //         top: 18
-    //     },
-    //     theme: 'striped',
-    //     bodyStyles: {valign: 'top'},
-    //     styles: {overflow: 'linebreak', columnWidth: 'wrap'},
-    //     columnStyles: {text: {columnWidth: 'auto'}}
-    // });
-
 
     var columns = ["", ""];
     var rows = [
@@ -674,12 +650,35 @@ function termsAndConditions() {
         'and is supplied to you (the named customer) on the basis of and subject to the Scope of Assessment and the Terms and Conditions ' +
         'of the Contract and the Assessment and Archicentre Australia accepts no responsibility to other persons relying on the report.\n\n' +
         'This Report has been prepared in accordance with Australian Standard 4349.1-2007 Assessment of Buildings Part 1: Pre-purchase Inspections' +
-        ' – Residential Buildings and to any other Australian Standards and definitions cited in the Terms and Conditions.\n',
+        ' – Residential Buildings and to any other Australian Standards and definitions cited in the Terms and Conditions.\n\nPlease note that having provided ' +
+        'to you an opportunity to read or hear the Scope of Assessment and the Terms and Conditions following upon you making a booking for the Property ' +
+        'Assessment, the architect has proceeded to conduct the assessment of the property and Archicentre Australia has proceeded to supply this Report ' +
+        'on the basis that you have accepted the Scope of Assessment and the Terms and Conditions and/or are deemed to have done so ' +
+        'upon the architect arriving at the property.\n\nThe Report is to be read in conjunction with all other Archicentre Australia Reports issued ' +
+        'concurrently for the property.\n\nThe Scope of Assessment and the Terms and Conditions take precedence over any oral or written representations ' +
+        'by Archicentre Australia, to the extent of any inconsistency.\n\n(1)   After making the booking, the customer is deemed to have accepted these Terms and ' +
+        'Conditions and Scope of Assessment upon the architect arriving on site.\n\n(2)   The Report is not a guarantee but is an opinion of the condition of the ' +
+        'assessed property relative to the average condition of well-maintained similar properties of a similar age.\n\n(3)   Archicentre Australia accepts no ' +
+        'liability with respect to work carried out by other trades, consultants or practitioners referred by Archicentre Australia. It is your responsibility ' +
+        'to make appropriate contractual arrangements with such person.\n\n(4)   The Report is not a certificate of compliance for the property within the ' +
+        'requirements of any Act, regulation, ordinance or local by-law.',
+
         '(5)   Archicentre Australia does not accept responsibility for services other than those provided in this Report.\n\n' +
         '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of the cost ' +
         'of a new assessment and report, at the election of Archicentre Australia.\n\n' + '(7)The assessment assumes that the existing use of the ' +
         'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
-        'change in use should be verified with the relevant authorities.']
+        'change in use should be verified with the relevant authorities.\n\n(8)   The Property Maintenance Guide constitutes a vital part of the architect’s ' +
+        'recommendations and failure to observe either the recommendations or the Property Maintenance Guide could lead to premature deterioration of ' +
+        'the property.\n\n(9)   The Health and Safety Warnings constitutes a vital part of Archicentre Australia’s recommendation to you. Failure ' +
+        'to observe the provisions of the warning sheet could jeopardise the safety of the occupants.(10)   The Report and its appendices and attachments, as ' +
+        'issued by Archicentre Australia, takes precedence over any oral advice or draft reports, to the extent of any inconsistencies, ' +
+        'and only the Report and its appendices and attachments, which form a vital part of the architect’s recommendations, ' +
+        'shall be relied upon by you.\n\n(11)   If you are dissatisfied with the Report you agree to promptly give Archicentre Australia written notice ' +
+        'specifying the matters about which you are dissatisfied and allow Archicentre Australia to attempt to resolve the matters with you within 28 days ' +
+        'of receipt by Archicentre Australia of such written notice before taking any remedial action or incurring any costs.\n\n(12)   Reference to Archicentre ' +
+        'Australia in this Report and any other documentation includes, where the context permits, its agents and representatives authorised to act on ' +
+        'its behalf.\n\n(13)   These Terms and Conditions are in addition to, and do not replace or remove, any rights or implied guarantees conferred ' +
+        'by the Competition and Consumer Act 2010 or any other consumer protection legislation']
     ];
 
     //Title
@@ -698,41 +697,6 @@ function termsAndConditions() {
         }
     });
 }
-
-// function getLeftCol() {
-//     var result1 = 'Report has been prepared by Archicentre Australia – a division of ArchiAdvisory Pty Ltd – and the named architect ' +
-//         'and is supplied to you (the named customer) on the basis of and subject to the Scope of Assessment and the Terms and Conditions ' +
-//         'of the Contract and the Assessment and Archicentre Australia accepts no responsibility to other persons relying on the report.\n' +
-//         'This Report has been prepared in accordance with Australian Standard 4349.1-2007 Assessment of Buildings Part 1: Pre-purchase Inspections' +
-//         ' – Residential Buildings and to any other Australian Standards and definitions cited in the Terms and Conditions.\n';
-//
-//     var result2 = '(5)   Archicentre Australia does not accept responsibility for services other than those provided in this Report.\n' +
-//         '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of the cost ' +
-//         'of a new assessment and report, at the election of Archicentre Australia.\n' + '(7)The assessment assumes that the existing use of the ' +
-//         'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
-//         'change in use should be verified with the relevant authorities.';
-//
-//     return [result1, result2];
-// }
-//
-// function getRightCol() {
-//     var result2 = '(5)   Archicentre Australia does not accept responsibility for services other than those provided in this Report.\n' +
-//         '(6)    Archicentre Australia’s liability shall be limited to the provision of a new assessment and report or the payment of the cost ' +
-//         'of a new assessment and report, at the election of Archicentre Australia.\n' + '(7)The assessment assumes that the existing use of the ' +
-//         'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
-//         'change in use should be verified with the relevant authorities.';
-// }
-//
-// function test1() {
-//     var x = [{'111'}
-//     ];
-//     return x;
-// }
-//
-// function test2() {
-//     var x = [{'2222'}];
-//     return x;
-// }
 
 
 

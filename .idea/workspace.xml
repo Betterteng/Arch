@@ -703,8 +703,8 @@
       <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1233">
-              <caret line="735" column="0" selection-start-line="735" selection-start-column="0" selection-end-line="735" selection-end-column="0" />
+            <state relative-caret-position="-402">
+              <caret line="644" column="27" selection-start-line="644" selection-start-column="27" selection-end-line="644" selection-end-column="27" />
               <folding>
                 <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -923,12 +923,12 @@
       <workItem from="1505179947543" duration="38000" />
       <workItem from="1505179990981" duration="54000" />
       <workItem from="1505180067940" duration="13039000" />
-      <workItem from="1505259177423" duration="13593000" />
+      <workItem from="1505259177423" duration="14265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126141000" />
+    <option name="totallyTimeSpent" value="126813000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -7722,8 +7722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1233">
-          <caret line="735" column="0" selection-start-line="735" selection-start-column="0" selection-end-line="735" selection-end-column="0" />
+        <state relative-caret-position="-402">
+          <caret line="644" column="27" selection-start-line="644" selection-start-column="27" selection-end-line="644" selection-end-column="27" />
           <folding>
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
