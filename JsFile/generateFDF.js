@@ -485,7 +485,7 @@ function drawPagePropertyAssessmentNotes() {
         firstTablePositionY += firstTableGap;
     }
 
-    // Draw Site & Garden table
+    // Draw Site & Garden first table
     doc.autoTable(getSiteGardenColumns(), getSiteGardenEntries(), {
         margin: {top: 100},
         showHeader: 'never',
@@ -493,6 +493,9 @@ function drawPagePropertyAssessmentNotes() {
             1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'}
         }
     });
+
+    // Draw Site & Garden second table
+
 }
 
 /**
@@ -728,6 +731,7 @@ function getSiteGardenEntries() {
     var sectionsTwoArr = [sectionSeven, sectionEight, sectionNine, sectionTen, sectionEleven, sectionTwelve];
     var data = [];
 
+    // Extract data from the web page
     for (var i = 0; i < 6; i ++) {
         firstSection[i] = document.getElementById(i + 200 + '').value;
         secondSection[i] = document.getElementById(i + 210 + '').value;
@@ -749,8 +753,8 @@ function getSiteGardenEntries() {
     for (var i = 0; i < sectionsTwoArr.length; i++) {sectionsTwoArr[i] = validateSiteGardenEntries2(sectionsTwoArr[i]);}
 
     // Prepare the rows
-    data.push({1: firstSection[0], 2: firstSection[1], 3: firstSection[2], 4: firstSection[3], 5: firstSection[4], 6: firstSection[5], 7: firstSection[6], 8: firstSection[7], 9: firstSection[8]});
-    data.push({1: secondSection[0], 2: secondSection[1], 3: secondSection[2], 4: secondSection[3], 5: secondSection[4], 6: secondSection[5], 7: secondSection[6], 8: secondSection[7], 9: secondSection[8]});
+    if (firstSection[0] != '') {data.push({1: firstSection[0], 2: firstSection[1], 3: firstSection[2], 4: firstSection[3], 5: firstSection[4], 6: firstSection[5], 7: firstSection[6], 8: firstSection[7], 9: firstSection[8]});}
+    if (secondSection[0] != '') {data.push({1: secondSection[0], 2: secondSection[1], 3: secondSection[2], 4: secondSection[3], 5: secondSection[4], 6: secondSection[5], 7: secondSection[6], 8: secondSection[7], 9: secondSection[8]});}
     if (thirdSection[0] != '') {data.push({1: thirdSection[0], 2: thirdSection[1], 3: thirdSection[2], 4: thirdSection[3], 5: thirdSection[4], 6: thirdSection[5], 7: thirdSection[6], 8: thirdSection[7], 9: thirdSection[8]});}
     if (fourthSection[0] != '') {data.push({1: fourthSection[0], 2: fourthSection[1], 3: fourthSection[2], 4: fourthSection[3], 5: fourthSection[4], 6: fourthSection[5], 7: fourthSection[6], 8: fourthSection[7], 9: fourthSection[8]});}
     if (fifthSection[0] != '') {data.push({1: fifthSection[0], 2: fifthSection[1], 3: fifthSection[2], 4: fifthSection[3], 5: fifthSection[4], 6: fifthSection[5], 7: fifthSection[6], 8: fifthSection[7], 9: fifthSection[8]});}
@@ -765,7 +769,14 @@ function getSiteGardenEntries() {
 }
 
 function countRows1stTableSiteGarden() {
+    var count = 0;
+    for (var i = 200; i < 311; i += 10) {
+        if (document.getElementById(i + '').value != '') {
+            count++;
+        }
+    }
 
+    return count;
 }
 
 /**

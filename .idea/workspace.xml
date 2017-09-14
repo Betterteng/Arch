@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f208ff00-eb39-4a31-be9a-2c45479c42fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessmentReport.html" afterPath="$PROJECT_DIR$/AssessmentReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/generateFDF.js" afterPath="$PROJECT_DIR$/JsFile/generateFDF.js" />
     </list>
     <ignored path="Arch.iws" />
@@ -762,8 +761,8 @@
       <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="739" column="70" selection-start-line="739" selection-start-column="70" selection-end-line="739" selection-end-column="70" />
+            <state relative-caret-position="337">
+              <caret line="757" column="0" selection-start-line="757" selection-start-column="0" selection-end-line="757" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -988,12 +987,12 @@
       <workItem from="1505179990981" duration="54000" />
       <workItem from="1505180067940" duration="13039000" />
       <workItem from="1505259177423" duration="17708000" />
-      <workItem from="1505300982103" duration="15558000" />
+      <workItem from="1505300982103" duration="16254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145814000" />
+    <option name="totallyTimeSpent" value="146510000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -8398,8 +8397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="739" column="70" selection-start-line="739" selection-start-column="70" selection-end-line="739" selection-end-column="70" />
+        <state relative-caret-position="337">
+          <caret line="757" column="0" selection-start-line="757" selection-start-column="0" selection-end-line="757" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
