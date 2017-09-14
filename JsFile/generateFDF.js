@@ -504,14 +504,15 @@ function drawPagePropertyAssessmentNotes() {
         margin: {top: 100 + if1stTableExistSiteGarden() + countRows1stTableSiteGarden() * plugInTableCellGap},
         showHeader: 'never',
         columnStyles: {
-            leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'}
+            leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+            rightCol: {columnWidth: 'auto'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle'
         }
     });
-
-    /**
-     * Remember comment codes below!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-     * */
-    //getSiteGardenEntries2ndTable();
 }
 
 /**
