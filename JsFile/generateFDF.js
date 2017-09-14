@@ -486,9 +486,12 @@ function drawPagePropertyAssessmentNotes() {
     }
 
     // Draw Site & Garden table
-
     doc.autoTable(getSiteGardenColumns(), getSiteGardenEntries(), {
-        margin: {top: 100}
+        margin: {top: 100},
+        showHeader: 'never',
+        columnStyles: {
+            1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'}
+        }
     });
 }
 
@@ -714,35 +717,60 @@ function termsAndConditions() {
  |--------------------------------------------------------------------------
  */
 
+/**
+ * Extract data from Site & Garden section and put them in the table
+ * */
 function getSiteGardenEntries() {
 
-    var firstSection = [];
-    var secondSection = [];
-    var thirdSection = [];
-    var fourthSection = [];
+    var firstSection = [], secondSection = [], thirdSection = [], fourthSection = [], fifthSection = [], sixthSection = [],
+        sectionSeven = [], sectionEight = [], sectionNine = [], sectionTen = [], sectionEleven = [], sectionTwelve = [];
+    var sectionsOneArr = [firstSection, secondSection, thirdSection, fourthSection, fifthSection, sixthSection];
+    var sectionsTwoArr = [sectionSeven, sectionEight, sectionNine, sectionTen, sectionEleven, sectionTwelve];
     var data = [];
-
 
     for (var i = 0; i < 6; i ++) {
         firstSection[i] = document.getElementById(i + 200 + '').value;
         secondSection[i] = document.getElementById(i + 210 + '').value;
         thirdSection[i] = document.getElementById(i + 220 + '').value;
         fourthSection[i] = document.getElementById(i + 230 + '').value;
+        fifthSection[i] = document.getElementById(i + 240 + '').value;
+        sixthSection[i] = document.getElementById(i + 250 + '').value;
+
+        sectionSeven[i] = document.getElementById(i + 260 + '').value;
+        sectionEight[i] = document.getElementById(i + 270 + '').value;
+        sectionNine[i] = document.getElementById(i + 280 + '').value;
+        sectionTen[i] = document.getElementById(i + 290 + '').value;
+        sectionEleven[i] = document.getElementById(i + 300 + '').value;
+        sectionTwelve[i] = document.getElementById(i + 310 + '').value;
     }
 
-    firstSection = validateSiteGardenEntries(firstSection);
-    secondSection = validateSiteGardenEntries(secondSection);
-    thirdSection = validateSiteGardenEntries(thirdSection);
-    fourthSection = validateSiteGardenEntries(fourthSection);
+    // Add new attributes to the array and validate if the [other] is empty
+    for (var i = 0; i < sectionsOneArr.length; i++) {sectionsOneArr[i] = validateSiteGardenEntries1(sectionsOneArr[i]);}
+    for (var i = 0; i < sectionsTwoArr.length; i++) {sectionsTwoArr[i] = validateSiteGardenEntries2(sectionsTwoArr[i]);}
 
+    // Prepare the rows
     data.push({1: firstSection[0], 2: firstSection[1], 3: firstSection[2], 4: firstSection[3], 5: firstSection[4], 6: firstSection[5], 7: firstSection[6], 8: firstSection[7], 9: firstSection[8]});
     data.push({1: secondSection[0], 2: secondSection[1], 3: secondSection[2], 4: secondSection[3], 5: secondSection[4], 6: secondSection[5], 7: secondSection[6], 8: secondSection[7], 9: secondSection[8]});
     if (thirdSection[0] != '') {data.push({1: thirdSection[0], 2: thirdSection[1], 3: thirdSection[2], 4: thirdSection[3], 5: thirdSection[4], 6: thirdSection[5], 7: thirdSection[6], 8: thirdSection[7], 9: thirdSection[8]});}
     if (fourthSection[0] != '') {data.push({1: fourthSection[0], 2: fourthSection[1], 3: fourthSection[2], 4: fourthSection[3], 5: fourthSection[4], 6: fourthSection[5], 7: fourthSection[6], 8: fourthSection[7], 9: fourthSection[8]});}
+    if (fifthSection[0] != '') {data.push({1: fifthSection[0], 2: fifthSection[1], 3: fifthSection[2], 4: fifthSection[3], 5: fifthSection[4], 6: fifthSection[5], 7: fifthSection[6], 8: fifthSection[7], 9: fifthSection[8]});}
+    if (sixthSection[0] != '') {data.push({1: sixthSection[0], 2: sixthSection[1], 3: sixthSection[2], 4: sixthSection[3], 5: sixthSection[4], 6: sixthSection[5], 7: sixthSection[6], 8: sixthSection[7], 9: sixthSection[8]});}
+    if (sectionSeven[0] != '') {data.push({1: sectionSeven[0], 2: sectionSeven[1], 3: sectionSeven[2], 4: sectionSeven[3], 5: sectionSeven[4], 6: sectionSeven[5], 7: sectionSeven[6], 8: sectionSeven[7], 9: sectionSeven[8]});}
+    if (sectionEight[0] != '') {data.push({1: sectionEight[0], 2: sectionEight[1], 3: sectionEight[2], 4: sectionEight[3], 5: sectionEight[4], 6: sectionEight[5], 7: sectionEight[6], 8: sectionEight[7], 9: sectionEight[8]});}
+    if (sectionNine[0] != '') {data.push({1: sectionNine[0], 2: sectionNine[1], 3: sectionNine[2], 4: sectionNine[3], 5: sectionNine[4], 6: sectionNine[5], 7: sectionNine[6], 8: sectionNine[7], 9: sectionNine[8]});}
+    if (sectionEleven[0] != '') {data.push({1: sectionEleven[0], 2: sectionEleven[1], 3: sectionEleven[2], 4: sectionEleven[3], 5: sectionEleven[4], 6: sectionEleven[5], 7: sectionEleven[6], 8: sectionEleven[7], 9: sectionEleven[8]});}
+    if (sectionTwelve[0] != '') {data.push({1: sectionTwelve[0], 2: sectionTwelve[1], 3: sectionTwelve[2], 4: sectionTwelve[3], 5: sectionTwelve[4], 6: sectionTwelve[5], 7: sectionTwelve[6], 8: sectionTwelve[7], 9: sectionTwelve[8]});}
 
     return data;
 }
 
+function countRows1stTableSiteGarden() {
+
+}
+
+/**
+ * Get Site & Garden columns
+ * */
 function getSiteGardenColumns() {
     return [
         {title: "Site & Garden", dataKey: "1"},
@@ -757,10 +785,29 @@ function getSiteGardenColumns() {
     ];
 };
 
-function validateSiteGardenEntries(arr) {
+/**
+ * Add new attributes and validate if the other is empty
+ * */
+function validateSiteGardenEntries1(arr) {
     arr.splice(1, 0, 'Structure/Walls');
     arr.splice(3, 0, 'Roof/Ceiling');
     arr.splice(5, 0, 'Floor/Finish');
+
+    if (arr[arr.length - 2] == '') {
+        arr[arr.length - 2] = 'Other';
+        arr[arr.length - 1] = '-';
+    }
+
+    return arr;
+}
+
+/**
+ * Add new attributes and validate if the other is empty
+ * */
+function validateSiteGardenEntries2(arr) {
+    arr.splice(1, 0, 'Fences/Rating');
+    arr.splice(3, 0, 'Paving');
+    arr.splice(5, 0, 'Surface Drainage');
 
     if (arr[arr.length - 2] == '') {
         arr[arr.length - 2] = 'Other';
