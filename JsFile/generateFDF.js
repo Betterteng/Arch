@@ -729,6 +729,8 @@ function getSiteGardenEntries() {
         sectionSeven = [], sectionEight = [], sectionNine = [], sectionTen = [], sectionEleven = [], sectionTwelve = [];
     var sectionsOneArr = [firstSection, secondSection, thirdSection, fourthSection, fifthSection, sixthSection];
     var sectionsTwoArr = [sectionSeven, sectionEight, sectionNine, sectionTen, sectionEleven, sectionTwelve];
+    var allSections = [firstSection, secondSection, thirdSection, fourthSection, fifthSection, sixthSection,
+        sectionSeven, sectionEight, sectionNine, sectionTen, sectionEleven, sectionTwelve];
     var data = [];
 
     // Extract data from the web page
@@ -749,26 +751,38 @@ function getSiteGardenEntries() {
     }
 
     // Add new attributes to the array and validate if the [other] is empty
-    for (var i = 0; i < sectionsOneArr.length; i++) {sectionsOneArr[i] = validateSiteGardenEntries1(sectionsOneArr[i]);}
-    for (var i = 0; i < sectionsTwoArr.length; i++) {sectionsTwoArr[i] = validateSiteGardenEntries2(sectionsTwoArr[i]);}
+    for (var i = 0; i < sectionsOneArr.length; i++) {
+        sectionsOneArr[i] = validateSiteGardenEntries1(sectionsOneArr[i]);
+    }
+    for (var i = 0; i < sectionsTwoArr.length; i++) {
+        sectionsTwoArr[i] = validateSiteGardenEntries2(sectionsTwoArr[i]);
+    }
 
     // Prepare the rows
-    if (firstSection[0] != '') {data.push({1: firstSection[0], 2: firstSection[1], 3: firstSection[2], 4: firstSection[3], 5: firstSection[4], 6: firstSection[5], 7: firstSection[6], 8: firstSection[7], 9: firstSection[8]});}
-    if (secondSection[0] != '') {data.push({1: secondSection[0], 2: secondSection[1], 3: secondSection[2], 4: secondSection[3], 5: secondSection[4], 6: secondSection[5], 7: secondSection[6], 8: secondSection[7], 9: secondSection[8]});}
-    if (thirdSection[0] != '') {data.push({1: thirdSection[0], 2: thirdSection[1], 3: thirdSection[2], 4: thirdSection[3], 5: thirdSection[4], 6: thirdSection[5], 7: thirdSection[6], 8: thirdSection[7], 9: thirdSection[8]});}
-    if (fourthSection[0] != '') {data.push({1: fourthSection[0], 2: fourthSection[1], 3: fourthSection[2], 4: fourthSection[3], 5: fourthSection[4], 6: fourthSection[5], 7: fourthSection[6], 8: fourthSection[7], 9: fourthSection[8]});}
-    if (fifthSection[0] != '') {data.push({1: fifthSection[0], 2: fifthSection[1], 3: fifthSection[2], 4: fifthSection[3], 5: fifthSection[4], 6: fifthSection[5], 7: fifthSection[6], 8: fifthSection[7], 9: fifthSection[8]});}
-    if (sixthSection[0] != '') {data.push({1: sixthSection[0], 2: sixthSection[1], 3: sixthSection[2], 4: sixthSection[3], 5: sixthSection[4], 6: sixthSection[5], 7: sixthSection[6], 8: sixthSection[7], 9: sixthSection[8]});}
-    if (sectionSeven[0] != '') {data.push({1: sectionSeven[0], 2: sectionSeven[1], 3: sectionSeven[2], 4: sectionSeven[3], 5: sectionSeven[4], 6: sectionSeven[5], 7: sectionSeven[6], 8: sectionSeven[7], 9: sectionSeven[8]});}
-    if (sectionEight[0] != '') {data.push({1: sectionEight[0], 2: sectionEight[1], 3: sectionEight[2], 4: sectionEight[3], 5: sectionEight[4], 6: sectionEight[5], 7: sectionEight[6], 8: sectionEight[7], 9: sectionEight[8]});}
-    if (sectionNine[0] != '') {data.push({1: sectionNine[0], 2: sectionNine[1], 3: sectionNine[2], 4: sectionNine[3], 5: sectionNine[4], 6: sectionNine[5], 7: sectionNine[6], 8: sectionNine[7], 9: sectionNine[8]});}
-    if (sectionEleven[0] != '') {data.push({1: sectionEleven[0], 2: sectionEleven[1], 3: sectionEleven[2], 4: sectionEleven[3], 5: sectionEleven[4], 6: sectionEleven[5], 7: sectionEleven[6], 8: sectionEleven[7], 9: sectionEleven[8]});}
-    if (sectionTwelve[0] != '') {data.push({1: sectionTwelve[0], 2: sectionTwelve[1], 3: sectionTwelve[2], 4: sectionTwelve[3], 5: sectionTwelve[4], 6: sectionTwelve[5], 7: sectionTwelve[6], 8: sectionTwelve[7], 9: sectionTwelve[8]});}
+    for (var i = 0 ; i < allSections.length; i++) {
+        if (allSections[i][0] != '') {
+            data.push({
+                1: allSections[i][0],
+                2: allSections[i][1],
+                3: allSections[i][2],
+                4: allSections[i][3],
+                5: allSections[i][4],
+                6: allSections[i][5],
+                7: allSections[i][6],
+                8: allSections[i][7],
+                9: allSections[i][8]
+            });
+        }
+    }
 
     return data;
 }
 
+/**
+ * Count how many rows are there in the first table in Site & Garden Page
+ * */
 function countRows1stTableSiteGarden() {
+
     var count = 0;
     for (var i = 200; i < 311; i += 10) {
         if (document.getElementById(i + '').value != '') {
@@ -797,7 +811,7 @@ function getSiteGardenColumns() {
 };
 
 /**
- * Add new attributes and validate if the other is empty
+ * Add new attributes and validate if the [Other input] is empty
  * */
 function validateSiteGardenEntries1(arr) {
     arr.splice(1, 0, 'Structure/Walls');
@@ -813,7 +827,7 @@ function validateSiteGardenEntries1(arr) {
 }
 
 /**
- * Add new attributes and validate if the other is empty
+ * Add new attributes and validate if the [Other input] is empty
  * */
 function validateSiteGardenEntries2(arr) {
     arr.splice(1, 0, 'Fences/Rating');
