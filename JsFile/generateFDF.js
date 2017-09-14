@@ -718,16 +718,27 @@ function getSiteGardenEntries() {
 
     var firstSection = [];
     var secondSection = [];
+    var thirdSection = [];
+    var fourthSection = [];
     var data = [];
 
-    for (var i = 0; i < 6; i ++) {firstSection[i] = document.getElementById(i + 200 + '').value;}
-    for (var i = 0; i < 6; i++) {secondSection[i] = document.getElementById(i + 210 + '').value;}
+
+    for (var i = 0; i < 6; i ++) {
+        firstSection[i] = document.getElementById(i + 200 + '').value;
+        secondSection[i] = document.getElementById(i + 210 + '').value;
+        thirdSection[i] = document.getElementById(i + 220 + '').value;
+        fourthSection[i] = document.getElementById(i + 230 + '').value;
+    }
 
     firstSection = validateSiteGardenEntries(firstSection);
     secondSection = validateSiteGardenEntries(secondSection);
+    thirdSection = validateSiteGardenEntries(thirdSection);
+    fourthSection = validateSiteGardenEntries(fourthSection);
 
     data.push({1: firstSection[0], 2: firstSection[1], 3: firstSection[2], 4: firstSection[3], 5: firstSection[4], 6: firstSection[5], 7: firstSection[6], 8: firstSection[7], 9: firstSection[8]});
     data.push({1: secondSection[0], 2: secondSection[1], 3: secondSection[2], 4: secondSection[3], 5: secondSection[4], 6: secondSection[5], 7: secondSection[6], 8: secondSection[7], 9: secondSection[8]});
+    if (thirdSection[0] != '') {data.push({1: thirdSection[0], 2: thirdSection[1], 3: thirdSection[2], 4: thirdSection[3], 5: thirdSection[4], 6: thirdSection[5], 7: thirdSection[6], 8: thirdSection[7], 9: thirdSection[8]});}
+    if (fourthSection[0] != '') {data.push({1: fourthSection[0], 2: fourthSection[1], 3: fourthSection[2], 4: fourthSection[3], 5: fourthSection[4], 6: fourthSection[5], 7: fourthSection[6], 8: fourthSection[7], 9: fourthSection[8]});}
 
     return data;
 }
