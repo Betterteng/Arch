@@ -21,11 +21,11 @@ function generatePDF() {
     // doc.addPage();
     // drawPageFour();
     // doc.addPage();
-    drawPagePropertyAssessmentNotes();
-    doc.addPage();
-    drawPagePropertyAssessmentNotesCont();
+    // drawPagePropertyAssessmentNotes();
     // doc.addPage();
-    // drawPagePropertyExterior();
+    // drawPagePropertyAssessmentNotesCont();
+    // doc.addPage();
+    drawPagePropertyExterior();
     // doc.addPage();
     // drawPageLivingArea();
     // doc.addPage();
@@ -528,7 +528,6 @@ function drawPagePropertyAssessmentNotesCont() {
 function drawPagePropertyExterior() {
 
     const startPointX = 15;
-    const endPointX = 195;
     const startPointY = 20;
     const keysGap = 4;
 
@@ -547,6 +546,26 @@ function drawPagePropertyExterior() {
     doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
     doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
     doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+
+    // Draw first table
+    doc.autoTable(getExterior1stTableCols(), getExterior1stTableRows(), {
+        theme: 'grid',
+        margin: {top: 45, bottom: 50},
+        showHeader: 'never',
+        columnStyles: {
+            1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'},
+            2: {fontStyle: 'bold', halign: 'right'},
+            4: {fontStyle: 'bold', halign: 'right'},
+            6: {fontStyle: 'bold', halign: 'right'},
+            8: {fontStyle: 'bold', halign: 'right'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle',
+            halign: 'center'
+        }
+    });
 }
 
 /**
@@ -765,7 +784,6 @@ function getSiteGardenEntries() {
         fourthSection[i] = document.getElementById(i + 230 + '').value;
         fifthSection[i] = document.getElementById(i + 240 + '').value;
         sixthSection[i] = document.getElementById(i + 250 + '').value;
-
         sectionSeven[i] = document.getElementById(i + 260 + '').value;
         sectionEight[i] = document.getElementById(i + 270 + '').value;
         sectionNine[i] = document.getElementById(i + 280 + '').value;
@@ -930,4 +948,49 @@ function validateSiteGardenEntries2(arr) {
     }
 
     return arr;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions for Property Exterior
+ |--------------------------------------------------------------------------
+ */
+
+/**
+ * Get Property Exterior columns in first table
+ * */
+function getExterior1stTableCols() {
+    return [
+        {title: "111", dataKey: "1"},
+        {title: "222", dataKey: "2"},
+        {title: "333", dataKey: "3"},
+        {title: "444", dataKey: "4"},
+        {title: "555", dataKey: "5"},
+        {title: "666", dataKey: "6"},
+        {title: "777", dataKey: "7"},
+        {title: "888", dataKey: "8"},
+        {title: "999", dataKey: "9"}
+    ];
+}
+
+/**
+ * Get Property Exterior rows in first table
+ * */
+function getExterior1stTableRows() {
+
+    var section1 = [], section2 = [], section3 = [];
+    var data = [];
+
+    // Extract data
+    for (var i = 0; i < 8; i++) {section1[i] = document.getElementById(i + 330 + '').value;}
+    for (var i = 0; i < 5; i++) {section2[i] = document.getElementById(i + 340 + '').value;}
+
+    // Prepare rows
+    data.push({1: 'Roofing', 2: 'Covering', 3: section1[0], 4: 'Valleys', 5: section1[1], 6: 'Ridges', 7: section1[2], 8: 'Overhanging tree', 9: section1[3]});
+    data.push({1: '', 2: 'Chimney/Vents/Flues', 3: section1[4], 4: 'Flashing', 5: section1[5], 6: 'Box Gutters', 7: section1[6], 8: 'Skylights', 9: section1[7]});
+
+    data.push({1: 'Roof Space', 2: 'Frame', 3: section2[0], 4: 'Insulation', 5: section2[1], 6: 'Services', 7: section2[2], 8: 'Lining/Sarking', 9: section2[3]});
+    data.push({1: '', 2: 'Underside of Roof', 3: section2[4], 4: '', 5: '', 6: '', 7: '', 8: '', 9: ''});
+
+    return data;
 }
