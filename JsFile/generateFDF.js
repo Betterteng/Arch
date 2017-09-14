@@ -385,7 +385,6 @@ function fillUserInputPageFour() {
 
     var eviDefSumArr = [];
     var positionY = 104;
-    var positionY2 = 0;
 
     setTableContentStyle();
     // Summary of the condition of the property
@@ -561,9 +560,10 @@ function drawPagePropertyExterior() {
         },
         styles: {
             overflow: 'linebreak',
-            columnWidth: 'auto',
+            columnWidth: 'wrap',
             valign: 'middle',
-            halign: 'center'
+            halign: 'center',
+            fontSize: 7
         }
     });
 }
@@ -978,12 +978,33 @@ function getExterior1stTableCols() {
  * */
 function getExterior1stTableRows() {
 
-    var section1 = [], section2 = [], section3 = [];
+    var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [], section6 = [], section7 = [],
+        section8 = [], section9 = [], section10 = [], section11 = [], section12 = [], section13 = [],
+        section14 = [], section15 = [], section16 = [], section17 = [];
     var data = [];
 
     // Extract data
     for (var i = 0; i < 8; i++) {section1[i] = document.getElementById(i + 330 + '').value;}
     for (var i = 0; i < 5; i++) {section2[i] = document.getElementById(i + 340 + '').value;}
+    for (var i = 0; i < 6; i++) {
+        section3[i] = document.getElementById(i + 350 + '').value;
+        section4[i] = document.getElementById(i + 360 + '').value;
+        section5[i] = document.getElementById(i + 370 + '').value;
+        section6[i] = document.getElementById(i + 380 + '').value;
+        section7[i] = document.getElementById(i + 390 + '').value;
+        section8[i] = document.getElementById(i + 400 + '').value;
+        section9[i] = document.getElementById(i + 410 + '').value;
+        section10[i] = document.getElementById(i + 420 + '').value;
+        section11[i] = document.getElementById(i + 430 + '').value;
+        section16[i] = document.getElementById(i + 500 + '').value;
+        //section17[i] = document.getElementById(i + 520 + '').value;
+    }
+    for (var i = 0; i < 7; i++) {
+        section12[i] = document.getElementById(i + 440 + '').value;
+        section13[i] = document.getElementById(i + 450 + '').value;
+        section14[i] = document.getElementById(i + 460 + '').value;
+        section15[i] = document.getElementById(i + 470 + '').value;
+    }
 
     // Prepare rows
     data.push({1: 'Roofing', 2: 'Covering', 3: section1[0], 4: 'Valleys', 5: section1[1], 6: 'Ridges', 7: section1[2], 8: 'Overhanging tree', 9: section1[3]});
@@ -991,6 +1012,67 @@ function getExterior1stTableRows() {
 
     data.push({1: 'Roof Space', 2: 'Frame', 3: section2[0], 4: 'Insulation', 5: section2[1], 6: 'Services', 7: section2[2], 8: 'Lining/Sarking', 9: section2[3]});
     data.push({1: '', 2: 'Underside of Roof', 3: section2[4], 4: '', 5: '', 6: '', 7: '', 8: '', 9: ''});
+
+    data.push({1: 'Sub-Floor', 2: 'Stumps/Piers', 3: section3[0], 4: 'Walls', 5: section3[1], 6: 'Services', 7: section3[2], 8: '', 9: ''});
+    data.push({1: '', 2: 'Ventilation/Damp', 3: section3[3], 4: 'Framing', 5: section3[4], 6: 'Underside of Floor', 7: section3[5], 8: '', 9: ''});
+
+    data.push({1: 'Wall (Front)', 2: 'Structure/Finish', 3: section4[0], 4: 'Eaves', 5: section4[1], 6: 'Gutter Downpipe', 7: section4[2], 8: '', 9: ''});
+    data.push({1: '', 2: 'Sub-Floor Vents', 3: section4[3], 4: 'Doors/Windows', 5: section4[4], 6: 'Balcony/Deck', 7: section4[5], 8: '', 9: ''});
+
+    data.push({1: 'Wall (Rear)', 2: 'Structure/Finish', 3: section5[0], 4: 'Eaves', 5: section5[1], 6: 'Gutter Downpipe', 7: section5[2], 8: '', 9: ''});
+    data.push({1: '', 2: 'Sub-Floor Vents', 3: section5[3], 4: 'Doors/Windows', 5: section5[4], 6: 'Balcony/Deck', 7: section5[5], 8: '', 9: ''});
+
+    data.push({1: 'Wall (Rear)', 2: 'Structure/Finish', 3: section6[0], 4: 'Eaves', 5: section6[1], 6: 'Gutter Downpipe', 7: section6[2], 8: '', 9: ''});
+    data.push({1: '', 2: 'Sub-Floor Vents', 3: section6[3], 4: 'Doors/Windows', 5: section6[4], 6: 'Balcony/Deck', 7: section6[5], 8: '', 9: ''});
+
+    data.push({1: 'Wall (Rear)', 2: 'Structure/Finish', 3: section7[0], 4: 'Eaves', 5: section7[1], 6: 'Gutter Downpipe', 7: section7[2], 8: '', 9: ''});
+    data.push({1: '', 2: 'Sub-Floor Vents', 3: section7[3], 4: 'Doors/Windows', 5: section7[4], 6: 'Balcony/Deck', 7: section7[5], 8: '', 9: ''});
+
+    if (document.getElementById('ExteriorWall1').value != '') {
+        data.push({1: document.getElementById('ExteriorWall1').value, 2: 'Structure/Finish', 3: section8[0], 4: 'Eaves', 5: section8[1], 6: 'Gutter Downpipe', 7: section8[2], 8: '', 9: ''});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section8[3], 4: 'Doors/Windows', 5: section8[4], 6: 'Balcony/Deck', 7: section8[5], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('ExteriorWall2').value != '') {
+        data.push({1: document.getElementById('ExteriorWall2').value, 2: 'Structure/Finish', 3: section9[0], 4: 'Eaves', 5: section9[1], 6: 'Gutter Downpipe', 7: section9[2], 8: '', 9: ''});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section9[3], 4: 'Doors/Windows', 5: section9[4], 6: 'Balcony/Deck', 7: section9[5], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('ExteriorWall3').value != '') {
+        data.push({1: document.getElementById('ExteriorWall3').value, 2: 'Structure/Finish', 3: section10[0], 4: 'Eaves', 5: section10[1], 6: 'Gutter Downpipe', 7: section10[2], 8: '', 9: ''});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section10[3], 4: 'Doors/Windows', 5: section10[4], 6: 'Balcony/Deck', 7: section10[5], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('ExteriorWall4').value != '') {
+        data.push({1: document.getElementById('ExteriorWall4').value, 2: 'Structure/Finish', 3: section11[0], 4: 'Eaves', 5: section11[1], 6: 'Gutter Downpipe', 7: section11[2], 8: '', 9: ''});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section11[3], 4: 'Doors/Windows', 5: section11[4], 6: 'Balcony/Deck', 7: section11[5], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('Verandahs1').value != '') {
+        data.push({1: document.getElementById('Verandahs1').value, 2: 'Steps', 3: section12[0], 4: 'Walls', 5: section12[1], 6: 'Roof/Ceiling', 7: section12[2], 8: 'Doors/Windows', 9: section12[3]});
+        data.push({1: '', 2: 'Floor Structure', 3: section12[4], 4: 'Sub-Floor Vents', 5: section12[5], 6: 'Posts/Balustrade', 7: section12[6], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('Verandahs2').value != '') {
+        data.push({1: document.getElementById('Verandahs2').value, 2: 'Steps', 3: section13[0], 4: 'Walls', 5: section13[1], 6: 'Roof/Ceiling', 7: section13[2], 8: 'Doors/Windows', 9: section13[3]});
+        data.push({1: '', 2: 'Floor Structure', 3: section13[4], 4: 'Sub-Floor Vents', 5: section13[5], 6: 'Posts/Balustrade', 7: section13[6], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('Verandahs3').value != '') {
+        data.push({1: document.getElementById('Verandahs3').value, 2: 'Steps', 3: section14[0], 4: 'Walls', 5: section14[1], 6: 'Roof/Ceiling', 7: section14[2], 8: 'Doors/Windows', 9: section14[3]});
+        data.push({1: '', 2: 'Floor Structure', 3: section14[4], 4: 'Sub-Floor Vents', 5: section14[5], 6: 'Posts/Balustrade', 7: section14[6], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('Verandahs4').value != '') {
+        data.push({1: document.getElementById('Verandahs4').value, 2: 'Steps', 3: section15[0], 4: 'Walls', 5: section15[1], 6: 'Roof/Ceiling', 7: section15[2], 8: 'Doors/Windows', 9: section15[3]});
+        data.push({1: '', 2: 'Floor Structure', 3: section15[4], 4: 'Sub-Floor Vents', 5: section15[5], 6: 'Posts/Balustrade', 7: section15[6], 8: '', 9: ''});
+    }
+
+    if (document.getElementById('ExteriorOther1').value != '') {
+        data.push({1: document.getElementById('ExteriorOther1').value, 2: section16[0], 3: section16[1], 4: section16[2], 5: section16[3], 6: section16[4], 7: section7[5], 8: '', 9: ''});
+        data.push({1: '', 2: section16[6], 3: section16[7], 4: section16[8], 5: section16[9], 6: section16[10], 7: section16[11], 8: '', 9: ''});
+    }
+
 
     return data;
 }
