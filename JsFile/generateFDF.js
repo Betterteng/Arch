@@ -425,6 +425,7 @@ function drawPagePropertyAssessmentNotes() {
     const startPointX = 15;
     const endPointX = 195;
     const startPointY = 20;
+    const plugInTableCellGap = 8;
     const firstTableTitleArr1 = ['AR', 'BC', 'BR', 'CC', 'CJ', 'CM', 'DH', 'DR', 'EL', 'EX', 'FC', 'GL', 'HM', 'HR'];
     const firstTableContentArr1 = ['Architects', 'Building Contractors', 'Bricklayers', 'Concrete Contractors', 'Carpenter & Joiners',
         'Cabinet Makers', 'Damp Houses', 'Drainers', 'Electrical Contractors', 'Excavating Contractors', 'Fencing Contractors',
@@ -487,6 +488,7 @@ function drawPagePropertyAssessmentNotes() {
 
     // Draw Site & Garden first table
     doc.autoTable(getSiteGardenColumns(), getSiteGardenEntries(), {
+        theme: 'grid',
         margin: {top: 100},
         showHeader: 'never',
         columnStyles: {
@@ -494,8 +496,22 @@ function drawPagePropertyAssessmentNotes() {
         }
     });
 
-    // Draw Site & Garden second table
+    console.log('How many rows in the first table (Site & Garden Page): ' + countRows1stTableSiteGarden());
 
+    // Draw Site & Garden second table
+    doc.autoTable(getSiteGarden2ndTableCols(), getSiteGardenEntries2ndTable(), {
+        theme: 'grid',
+        margin: {top: 100 + if1stTableExistSiteGarden() + countRows1stTableSiteGarden() * plugInTableCellGap},
+        showHeader: 'never',
+        columnStyles: {
+            leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'}
+        }
+    });
+
+    /**
+     * Remember comment codes below!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     * */
+    //getSiteGardenEntries2ndTable();
 }
 
 /**
@@ -681,20 +697,20 @@ function termsAndConditions() {
         'the cost of a new assessment and report, at the election of Archicentre Australia.',
 
 
-        '(7)   The assessment assumes that the existing use of the ' +
-        'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
-        'change in use should be verified with the relevant authorities.\n\n(8)   The Property Maintenance Guide constitutes a vital part of the architect’s ' +
-        'recommendations and failure to observe either the recommendations or the Property Maintenance Guide could lead to premature deterioration of ' +
-        'the property.\n\n(9)   The Health and Safety Warnings constitutes a vital part of Archicentre Australia’s recommendation to you. Failure ' +
-        'to observe the provisions of the warning sheet could jeopardise the safety of the occupants.\n\n(10)   The Report and its appendices and attachments, as ' +
-        'issued by Archicentre Australia, takes precedence over any oral advice or draft reports, to the extent of any inconsistencies, ' +
-        'and only the Report and its appendices and attachments, which form a vital part of the architect’s recommendations, ' +
-        'shall be relied upon by you.\n\n(11)   If you are dissatisfied with the Report you agree to promptly give Archicentre Australia written notice ' +
-        'specifying the matters about which you are dissatisfied and allow Archicentre Australia to attempt to resolve the matters with you within 28 days ' +
-        'of receipt by Archicentre Australia of such written notice before taking any remedial action or incurring any costs.\n\n(12)   Reference to Archicentre ' +
-        'Australia in this Report and any other documentation includes, where the context permits, its agents and representatives authorised to act on ' +
-        'its behalf.\n\n(13)   These Terms and Conditions are in addition to, and do not replace or remove, any rights or implied guarantees conferred ' +
-        'by the Competition and Consumer Act 2010 or any other consumer protection legislation']
+            '(7)   The assessment assumes that the existing use of the ' +
+            'building will continue. The assessment will not assess the fitness of the building for any intended purpose. Any proposed ' +
+            'change in use should be verified with the relevant authorities.\n\n(8)   The Property Maintenance Guide constitutes a vital part of the architect’s ' +
+            'recommendations and failure to observe either the recommendations or the Property Maintenance Guide could lead to premature deterioration of ' +
+            'the property.\n\n(9)   The Health and Safety Warnings constitutes a vital part of Archicentre Australia’s recommendation to you. Failure ' +
+            'to observe the provisions of the warning sheet could jeopardise the safety of the occupants.\n\n(10)   The Report and its appendices and attachments, as ' +
+            'issued by Archicentre Australia, takes precedence over any oral advice or draft reports, to the extent of any inconsistencies, ' +
+            'and only the Report and its appendices and attachments, which form a vital part of the architect’s recommendations, ' +
+            'shall be relied upon by you.\n\n(11)   If you are dissatisfied with the Report you agree to promptly give Archicentre Australia written notice ' +
+            'specifying the matters about which you are dissatisfied and allow Archicentre Australia to attempt to resolve the matters with you within 28 days ' +
+            'of receipt by Archicentre Australia of such written notice before taking any remedial action or incurring any costs.\n\n(12)   Reference to Archicentre ' +
+            'Australia in this Report and any other documentation includes, where the context permits, its agents and representatives authorised to act on ' +
+            'its behalf.\n\n(13)   These Terms and Conditions are in addition to, and do not replace or remove, any rights or implied guarantees conferred ' +
+            'by the Competition and Consumer Act 2010 or any other consumer protection legislation']
     ];
 
     //Title
@@ -716,12 +732,12 @@ function termsAndConditions() {
 
 /*
  |--------------------------------------------------------------------------
- | Below is some helper functions
+ | Below is some helper functions for Site & Garden
  |--------------------------------------------------------------------------
  */
 
 /**
- * Extract data from Site & Garden section and put them in the table
+ * Extract data from Site & Garden section (1st table)
  * */
 function getSiteGardenEntries() {
 
@@ -734,7 +750,7 @@ function getSiteGardenEntries() {
     var data = [];
 
     // Extract data from the web page
-    for (var i = 0; i < 6; i ++) {
+    for (var i = 0; i < 6; i++) {
         firstSection[i] = document.getElementById(i + 200 + '').value;
         secondSection[i] = document.getElementById(i + 210 + '').value;
         thirdSection[i] = document.getElementById(i + 220 + '').value;
@@ -759,7 +775,7 @@ function getSiteGardenEntries() {
     }
 
     // Prepare the rows
-    for (var i = 0 ; i < allSections.length; i++) {
+    for (var i = 0; i < allSections.length; i++) {
         if (allSections[i][0] != '') {
             data.push({
                 1: allSections[i][0],
@@ -773,6 +789,51 @@ function getSiteGardenEntries() {
                 9: allSections[i][8]
             });
         }
+    }
+
+    return data;
+}
+
+/**
+ * Extract data from Site & Garden section (2nd table)
+ * */
+function getSiteGardenEntries2ndTable() {
+
+    const leftColTitle = ['Access\nNotes', 'Access\nLimitation', 'Major and\nSerious\nStructural\nDefects\nFound',
+        'Professional\nand Trade\nRecommendations', 'Maintenance\nItems and\nMinor Defects\nFound', 'Professional\nand Trade\nRecommendations', 'General Notes'];
+
+    var data = [];
+    var rightColContent;
+    var accessNotes, accessLimitation, MajFound, siteGardenLbl1, MainFound, siteGardenLbl2, generalNotes;
+
+    // Extract data from web page (left part)
+    if (document.getElementById('SiteGardenAccessNotes').value.trim() != '') {accessNotes = document.getElementById('SiteGardenAccessNotes').value.trim();} else {accessNotes = 'NA';}
+    if (document.getElementById('MajFound').value.trim() != '') {MajFound = document.getElementById('MajFound').value.trim();} else {MajFound = 'NA';}
+    if (document.getElementById('MainFound').value.trim() != '') {MainFound = document.getElementById('MainFound').value.trim();} else {MainFound = 'NA';}
+    if (document.getElementById('generalNotes').value.trim() != '') {generalNotes = document.getElementById('generalNotes').value.trim();} else {generalNotes = 'NA';}
+
+    // Extract data from web page (right part)
+    accessLimitation = document.getElementById('SiteGardenAccessLimitation').value;
+    if (document.getElementById('siteGardenLbl1').textContent.trim() != 'Choices will be displayed here...') {
+        siteGardenLbl1 = document.getElementById('siteGardenLbl1').textContent.trim();
+    } else {
+        siteGardenLbl1 = 'NA';
+    }
+    if (document.getElementById('siteGardenLbl2').textContent.trim() != 'Choices will be displayed here...') {
+        siteGardenLbl2 = document.getElementById('siteGardenLbl2').textContent.trim();
+    } else {
+        siteGardenLbl2 = 'NA';
+    }
+
+    // Prepare the right columns in the PDF
+    rightColContent = [accessNotes, accessLimitation, MajFound, siteGardenLbl1, MainFound, siteGardenLbl2, generalNotes];
+
+    // Prepare the rows
+    for (var i = 0; i < leftColTitle.length; i++) {
+        data.push({
+            leftCol: leftColTitle[i],
+            rightCol: rightColContent[i]
+        });
     }
 
     return data;
@@ -794,7 +855,18 @@ function countRows1stTableSiteGarden() {
 }
 
 /**
- * Get Site & Garden columns
+ * Check if the first table in Site & Garden page has any rows
+ * */
+function if1stTableExistSiteGarden() {
+    if (countRows1stTableSiteGarden() == 0) {
+        return 0;
+    } else {
+        return 5;
+    }
+}
+
+/**
+ * Get Site & Garden columns in first table
  * */
 function getSiteGardenColumns() {
     return [
@@ -808,7 +880,17 @@ function getSiteGardenColumns() {
         {title: "Option", dataKey: "8"},
         {title: "Result", dataKey: "9"}
     ];
-};
+}
+
+/**
+ * Get Site & Garden columns in second table
+ * */
+function getSiteGarden2ndTableCols() {
+    return [
+        {title: "Option", dataKey: "leftCol"},
+        {title: "Result", dataKey: "rightCol"}
+    ];
+}
 
 /**
  * Add new attributes and validate if the [Other input] is empty
