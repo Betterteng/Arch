@@ -22,6 +22,8 @@ function generatePDF() {
     // drawPageFour();
     // doc.addPage();
     drawPagePropertyAssessmentNotes();
+    doc.addPage();
+    drawPagePropertyAssessmentNotesCont();
     // doc.addPage();
     // drawPagePropertyExterior();
     // doc.addPage();
@@ -417,7 +419,7 @@ function fillUserInputPageFour() {
 }
 
 /**
- * PAGE Property Assessment Notes
+ * PAGE Property Assessment Notes - 1
  * */
 function drawPagePropertyAssessmentNotes() {
 
@@ -425,7 +427,6 @@ function drawPagePropertyAssessmentNotes() {
     const startPointX = 15;
     const endPointX = 195;
     const startPointY = 20;
-    const plugInTableCellGap = 8;
     const firstTableTitleArr1 = ['AR', 'BC', 'BR', 'CC', 'CJ', 'CM', 'DH', 'DR', 'EL', 'EX', 'FC', 'GL', 'HM', 'HR'];
     const firstTableContentArr1 = ['Architects', 'Building Contractors', 'Bricklayers', 'Concrete Contractors', 'Carpenter & Joiners',
         'Cabinet Makers', 'Damp Houses', 'Drainers', 'Electrical Contractors', 'Excavating Contractors', 'Fencing Contractors',
@@ -497,11 +498,17 @@ function drawPagePropertyAssessmentNotes() {
     });
 
     console.log('How many rows in the first table (Site & Garden Page): ' + countRows1stTableSiteGarden());
+}
+
+/**
+ * PAGE Property Assessment Notes - 2
+ * */
+function drawPagePropertyAssessmentNotesCont() {
 
     // Draw Site & Garden second table
     doc.autoTable(getSiteGarden2ndTableCols(), getSiteGardenEntries2ndTable(), {
         theme: 'grid',
-        margin: {top: 100 + if1stTableExistSiteGarden() + countRows1stTableSiteGarden() * plugInTableCellGap},
+        margin: {top: 20, bottom: 50},
         showHeader: 'never',
         columnStyles: {
             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},

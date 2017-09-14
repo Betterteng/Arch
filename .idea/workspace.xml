@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f208ff00-eb39-4a31-be9a-2c45479c42fc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/generateFDF.js" afterPath="$PROJECT_DIR$/JsFile/generateFDF.js" />
     </list>
     <ignored path="Arch.iws" />
@@ -28,7 +29,7 @@
       <file leaf-file-name="AssessmentReport.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AssessmentReport.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="15">
               <caret line="1591" column="6" selection-start-line="1591" selection-start-column="6" selection-end-line="1591" selection-end-column="6" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -765,8 +766,8 @@
       <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="518" column="25" selection-start-line="518" selection-start-column="25" selection-end-line="518" selection-end-column="25" />
+            <state relative-caret-position="345">
+              <caret line="826" column="12" selection-start-line="826" selection-start-column="12" selection-end-line="826" selection-end-column="12" />
               <folding>
                 <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
                 <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
@@ -779,6 +780,7 @@
                 <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+                <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
                 <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
                 <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
                 <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -828,9 +830,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -857,6 +858,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -896,7 +898,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -993,12 +994,13 @@
       <workItem from="1505179990981" duration="54000" />
       <workItem from="1505180067940" duration="13039000" />
       <workItem from="1505259177423" duration="17708000" />
-      <workItem from="1505300982103" duration="26159000" />
+      <workItem from="1505300982103" duration="26269000" />
+      <workItem from="1505391605361" duration="980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156415000" />
+    <option name="totallyTimeSpent" value="157505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1010,10 +1012,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.104792" sideWeight="0.4935065" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1042988" sideWeight="0.4935065" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1125,6 +1127,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -1867,6 +1870,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -2609,6 +2613,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -3351,6 +3356,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -4085,6 +4091,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -4811,6 +4818,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -5537,6 +5545,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -6263,6 +6272,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -6989,6 +6999,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
@@ -7768,7 +7779,7 @@
     <entry file="file://$PROJECT_DIR$/node_modules/jspdf-autotable/examples/examples.js" />
     <entry file="file://$PROJECT_DIR$/AssessmentReport.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="15">
           <caret line="1591" column="6" selection-start-line="1591" selection-start-column="6" selection-end-line="1591" selection-end-column="6" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -8461,8 +8472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="518" column="25" selection-start-line="518" selection-start-column="25" selection-end-line="518" selection-end-column="25" />
+        <state relative-caret-position="345">
+          <caret line="826" column="12" selection-start-line="826" selection-start-column="12" selection-end-line="826" selection-end-column="12" />
           <folding>
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
@@ -8475,6 +8486,7 @@
             <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenColumns#0" expanded="false" />
