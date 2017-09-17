@@ -1073,6 +1073,5 @@ function getExterior1stTableRows() {
         data.push({1: '', 2: section16[6], 3: section16[7], 4: section16[8], 5: section16[9], 6: section16[10], 7: section16[11], 8: '', 9: ''});
     }
 
-
     return data;
 }
