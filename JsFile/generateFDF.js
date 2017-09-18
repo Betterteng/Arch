@@ -1145,14 +1145,18 @@ function getDetailCols() {
  * */
 function getLivingAreasRows() {
 
-    var idStartPoint;
-    var idEndPoint = 640;
-    var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [];
-    var roomArr = [section1, section2, section3, section4, section5];
+    var idStartPoint = 600;
+    var idEndPoint = 660;
+    var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [], section6 = [], section7 = [],
+        section8 = [], section9 = [];
+    var roomArr = [section1, section2, section3, section4, section5, section6, section7];
+    var stairArr = [section8, section9]
     var data = [];
 
-    // Extract data
-    idStartPoint = 600;
+    /**
+     * Extract data
+     */
+    // Rooms
     for (var j = 0; j < roomArr.length; j++) {
         for (var i = 0; i < 10; i++) {
             roomArr[j][i] = document.getElementById(i + idStartPoint + '').value.trim();
@@ -1160,19 +1164,36 @@ function getLivingAreasRows() {
         idStartPoint += 10;
         if (idStartPoint > idEndPoint) {break;}
     }
+    // Stairs
+    for (var i = 0; i < 5; i++) {
+        section8[i] = document.getElementById(i + 670 + '').value.trim();
+        section9[i] = document.getElementById(i + 675 + '').value.trim();
+    }
 
-    // Do some validations for the sections where have [other <input>]
+    /**
+     * Do some validations for the sections where have [other <input>]
+     * */
     for (var i = 0; i < roomArr.length; i++) {
         validateArr(roomArr[i]);
     }
 
-    // Prepare rows
+    /**
+     * Prepare rows
+     * */
+    // Room
     for (var i = 0; i < roomArr.length; i++) {
         if (roomArr[i][0] != '') {
             data.push({1: roomArr[i][0], 2: 'Floor Structure/Finish', 3: roomArr[i][1], 4: 'Ceiling', 5: roomArr[i][2], 6: 'Wall', 7: roomArr[i][3], 8: 'Electrics', 9: roomArr[i][4]});
             data.push({1: '', 2: 'Cupboards', 3: roomArr[i][5], 4: 'Windows/Doors', 5: roomArr[i][6], 6: 'Dampness', 7: roomArr[i][7], 8: roomArr[i][8], 9: roomArr[i][9]});
         }
     }
+    // Stair
+    for (var i = 0; i < stairArr.length; i++) {
+        if (stairArr[i][0] != '') {
+            data.push({1: stairArr[i][0], 2: 'Structure', 3: stairArr[i][1], 4: 'Floor Finish', 5: stairArr[i][2], 6: 'Balustrade', 7: stairArr[i][3], 8: 'Underside', 9: stairArr[i][4]});
+        }
+    }
+    // Kitchen
 
     return data;
 }
