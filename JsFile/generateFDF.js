@@ -23,9 +23,11 @@ function generatePDF() {
     // doc.addPage();
     // drawPagePropertyAssessmentNotes();
     // doc.addPage();
-    // drawPagePropertyAssessmentNotesCont();
+    drawPagePropertyAssessmentNotesCont();
     // doc.addPage();
-    drawPagePropertyExterior();
+    //drawPagePropertyExterior();
+    //doc.addPage();
+    //drawPagePropertyExteriorCont();
     // doc.addPage();
     // drawPageLivingArea();
     // doc.addPage();
@@ -505,7 +507,7 @@ function drawPagePropertyAssessmentNotes() {
 function drawPagePropertyAssessmentNotesCont() {
 
     // Draw Site & Garden second table
-    doc.autoTable(getSiteGarden2ndTableCols(), getSiteGardenEntries2ndTable(), {
+    doc.autoTable(getNoteCols(), getNoteRows('SiteGardenAccessNotes', 'MajFound', 'MainFound', 'generalNotes', 'SiteGardenAccessLimitation', 'siteGardenLbl1', 'siteGardenLbl2'), {
         theme: 'grid',
         margin: {top: 20, bottom: 50},
         showHeader: 'never',
@@ -564,6 +566,28 @@ function drawPagePropertyExterior() {
             valign: 'middle',
             halign: 'center',
             fontSize: 7
+        }
+    });
+}
+
+/**
+ * PAGE Property Exterior - Note Page
+ * */
+function drawPagePropertyExteriorCont() {
+
+    // Notes
+    doc.autoTable(getNoteCols(), getNoteRows('ExteriorAN', 'ExteriorMJF', 'ExteriorMNF', 'ExteriorGN', 'ExteriorAL', 'propertyExteriorLbl1', 'propertyExteriorLbl2'), {
+        theme: 'grid',
+        margin: {top: 20, bottom: 50},
+        showHeader: 'never',
+        columnStyles: {
+            leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+            rightCol: {columnWidth: 'auto'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle'
         }
     });
 }
@@ -821,51 +845,6 @@ function getSiteGardenEntries() {
 }
 
 /**
- * Extract data from Site & Garden section (2nd table)
- * */
-function getSiteGardenEntries2ndTable() {
-
-    const leftColTitle = ['Access\nNotes', 'Access\nLimitation', 'Major and\nSerious\nStructural\nDefects\nFound',
-        'Professional\nand Trade\nRecommendations', 'Maintenance\nItems and\nMinor Defects\nFound', 'Professional\nand Trade\nRecommendations', 'General Notes'];
-
-    var data = [];
-    var rightColContent;
-    var accessNotes, accessLimitation, MajFound, siteGardenLbl1, MainFound, siteGardenLbl2, generalNotes;
-
-    // Extract data from web page (left part)
-    if (document.getElementById('SiteGardenAccessNotes').value.trim() != '') {accessNotes = document.getElementById('SiteGardenAccessNotes').value.trim();} else {accessNotes = 'NA';}
-    if (document.getElementById('MajFound').value.trim() != '') {MajFound = document.getElementById('MajFound').value.trim();} else {MajFound = 'NA';}
-    if (document.getElementById('MainFound').value.trim() != '') {MainFound = document.getElementById('MainFound').value.trim();} else {MainFound = 'NA';}
-    if (document.getElementById('generalNotes').value.trim() != '') {generalNotes = document.getElementById('generalNotes').value.trim();} else {generalNotes = 'NA';}
-
-    // Extract data from web page (right part)
-    accessLimitation = document.getElementById('SiteGardenAccessLimitation').value;
-    if (document.getElementById('siteGardenLbl1').textContent.trim() != 'Choices will be displayed here...') {
-        siteGardenLbl1 = document.getElementById('siteGardenLbl1').textContent.trim();
-    } else {
-        siteGardenLbl1 = 'NA';
-    }
-    if (document.getElementById('siteGardenLbl2').textContent.trim() != 'Choices will be displayed here...') {
-        siteGardenLbl2 = document.getElementById('siteGardenLbl2').textContent.trim();
-    } else {
-        siteGardenLbl2 = 'NA';
-    }
-
-    // Prepare the right columns in the PDF
-    rightColContent = [accessNotes, accessLimitation, MajFound, siteGardenLbl1, MainFound, siteGardenLbl2, generalNotes];
-
-    // Prepare the rows
-    for (var i = 0; i < leftColTitle.length; i++) {
-        data.push({
-            leftCol: leftColTitle[i],
-            rightCol: rightColContent[i]
-        });
-    }
-
-    return data;
-}
-
-/**
  * Count how many rows are there in the first table in Site & Garden Page
  * */
 function countRows1stTableSiteGarden() {
@@ -996,14 +975,17 @@ function getExterior1stTableRows() {
         section9[i] = document.getElementById(i + 410 + '').value;
         section10[i] = document.getElementById(i + 420 + '').value;
         section11[i] = document.getElementById(i + 430 + '').value;
-        section16[i] = document.getElementById(i + 500 + '').value;
-        //section17[i] = document.getElementById(i + 520 + '').value;
     }
     for (var i = 0; i < 7; i++) {
         section12[i] = document.getElementById(i + 440 + '').value;
         section13[i] = document.getElementById(i + 450 + '').value;
         section14[i] = document.getElementById(i + 460 + '').value;
         section15[i] = document.getElementById(i + 470 + '').value;
+    }
+
+    for (var i = 0; i < 12; i++) {
+        section16[i] = document.getElementById(i + 500 + '').value;
+        section17[i] = document.getElementById(i + 520 + '').value;
     }
 
     // Prepare rows
@@ -1069,9 +1051,75 @@ function getExterior1stTableRows() {
     }
 
     if (document.getElementById('ExteriorOther1').value != '') {
-        data.push({1: document.getElementById('ExteriorOther1').value, 2: section16[0], 3: section16[1], 4: section16[2], 5: section16[3], 6: section16[4], 7: section7[5], 8: '', 9: ''});
+        data.push({1: document.getElementById('ExteriorOther1').value, 2: section16[0], 3: section16[1], 4: section16[2], 5: section16[3], 6: section16[4], 7: section16[5], 8: '', 9: ''});
         data.push({1: '', 2: section16[6], 3: section16[7], 4: section16[8], 5: section16[9], 6: section16[10], 7: section16[11], 8: '', 9: ''});
     }
 
+    if (document.getElementById('ExteriorOther2').value != '') {
+        data.push({1: document.getElementById('ExteriorOther2').value, 2: section17[0], 3: section17[1], 4: section17[2], 5: section17[3], 6: section17[4], 7: section17[5], 8: '', 9: ''});
+        data.push({1: '', 2: section17[6], 3: section17[7], 4: section17[8], 5: section17[9], 6: section17[10], 7: section17[11], 8: '', 9: ''});
+    }
+
     return data;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Below is some general helper functions
+ |--------------------------------------------------------------------------
+ */
+
+/**
+ * Extract data from the note section
+ * */
+function getNoteRows(AN, MJF, MNF, GN, AL, LBL1, LBL2) {
+
+    const leftColTitle = ['Access\nNotes', 'Access\nLimitation', 'Major and\nSerious\nStructural\nDefects\nFound',
+        'Professional\nand Trade\nRecommendations', 'Maintenance\nItems and\nMinor Defects\nFound', 'Professional\nand Trade\nRecommendations', 'General Notes'];
+
+    var data = [];
+    var rightColContent;
+    var accessNotes, accessLimitation, MajFound, Lbl1, MainFound, Lbl2, generalNotes;
+
+    // Extract data from web page (left part)
+    if (document.getElementById(AN).value.trim() != '') {accessNotes = document.getElementById(AN).value.trim();} else {accessNotes = 'NA';}
+    if (document.getElementById(MJF).value.trim() != '') {MajFound = document.getElementById(MJF).value.trim();} else {MajFound = 'NA';}
+    if (document.getElementById(MNF).value.trim() != '') {MainFound = document.getElementById(MNF).value.trim();} else {MainFound = 'NA';}
+    if (document.getElementById(GN).value.trim() != '') {generalNotes = document.getElementById(GN).value.trim();} else {generalNotes = 'NA';}
+
+    // Extract data from web page (right part)
+    accessLimitation = document.getElementById(AL).value;
+    if (document.getElementById(LBL1).textContent.trim() != 'Choices will be displayed here...') {
+        Lbl1 = document.getElementById(LBL1).textContent.trim();
+    } else {
+        Lbl1 = 'NA';
+    }
+    if (document.getElementById(LBL2).textContent.trim() != 'Choices will be displayed here...') {
+        Lbl2 = document.getElementById(LBL2).textContent.trim();
+    } else {
+        Lbl2 = 'NA';
+    }
+
+    // Prepare the right columns in the PDF
+    rightColContent = [accessNotes, accessLimitation, MajFound, Lbl1, MainFound, Lbl2, generalNotes];
+
+    // Prepare the rows
+    for (var i = 0; i < leftColTitle.length; i++) {
+        data.push({
+            leftCol: leftColTitle[i],
+            rightCol: rightColContent[i]
+        });
+    }
+
+    return data;
+}
+
+/**
+ * Set up the columns for note section
+ * */
+function getNoteCols() {
+    return [
+        {title: "Option", dataKey: "leftCol"},
+        {title: "Result", dataKey: "rightCol"}
+    ];
 }
