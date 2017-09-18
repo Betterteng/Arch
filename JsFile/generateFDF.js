@@ -1148,9 +1148,10 @@ function getLivingAreasRows() {
     var idStartPoint = 600;
     var idEndPoint = 660;
     var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [], section6 = [], section7 = [],
-        section8 = [], section9 = [];
+        section8 = [], section9 = [], section10 = [], section11 = [];
     var roomArr = [section1, section2, section3, section4, section5, section6, section7];
-    var stairArr = [section8, section9]
+    var stairArr = [section8, section9];
+    var kitchenArr = [section10];
     var data = [];
 
     /**
@@ -1169,12 +1170,20 @@ function getLivingAreasRows() {
         section8[i] = document.getElementById(i + 670 + '').value.trim();
         section9[i] = document.getElementById(i + 675 + '').value.trim();
     }
+    // Kitchen
+    for (var i = 0; i < 20; i++) {
+        section10[i] = document.getElementById(i + 700 + '').value.trim();
+        //section11[i] = document.getElementById(i + 720 + '').value.trim();
+    }
 
     /**
      * Do some validations for the sections where have [other <input>]
      * */
     for (var i = 0; i < roomArr.length; i++) {
-        validateArr(roomArr[i]);
+        validateArr(roomArr[i], 'validateLastOneInput');
+    }
+    for (var i = 0; i < kitchenArr.length; i++) {
+        validateArr(kitchenArr[i], 'validateLastThreeInput');
     }
 
     /**
@@ -1194,6 +1203,14 @@ function getLivingAreasRows() {
         }
     }
     // Kitchen
+    for (var i = 0; i < kitchenArr.length; i++) {
+        if (kitchenArr[i][0] != '') {
+            data.push({1: kitchenArr[i][0], 2: 'Floor Structure/Finish', 3: kitchenArr[i][1], 4: 'Walls', 5: kitchenArr[i][2], 6: 'Ceiling', 7: kitchenArr[i][3], 8: 'Electrics', 9: kitchenArr[i][4]});
+            data.push({1: '', 2: 'Cupboards', 3: kitchenArr[i][5], 4: 'Windows/Doors', 5: kitchenArr[i][6], 6: 'Dampness', 7: kitchenArr[i][7], 8: 'Sink/Water Pressure', 9: kitchenArr[i][8]});
+            data.push({1: '', 2: 'Splashback', 3: kitchenArr[i][9], 4: 'Bench-top', 5: kitchenArr[i][10], 6: 'Exhaust/Rangehood', 7: kitchenArr[i][11], 8: 'Stove/Cooktop/Oven', 9: kitchenArr[i][12]});
+            data.push({1: '', 2: 'Dishwasher', 3: kitchenArr[i][13], 4: kitchenArr[i][14], 5: kitchenArr[i][15], 6: kitchenArr[i][16], 7: kitchenArr[i][17], 8: kitchenArr[i][18], 9: kitchenArr[i][19]});
+        }
+    }
 
     return data;
 }
@@ -1201,11 +1218,28 @@ function getLivingAreasRows() {
 /**
  * Check the array
  * */
-function validateArr(arr) {
+function validateArr(arr, option) {
 
     // If the other input is empty, replace the meaningless input
-    if (arr[arr.length - 2].trim() == '') {
-        arr[arr.length - 2] = 'NA';
-        arr[arr.length - 1] = '-';
+    if (option == 'validateLastOneInput') {
+        if (arr[arr.length - 2] == '') {
+            arr[arr.length - 2] = 'NA';
+            arr[arr.length - 1] = '-';
+        }
+    }
+
+    if (option == 'validateLastThreeInput') {
+        if (arr[arr.length - 6] == '') {
+            arr[arr.length - 6] = 'NA';
+            arr[arr.length - 5] = '-';
+        }
+        if (arr[arr.length - 4] == '') {
+            arr[arr.length - 4] = 'NA';
+            arr[arr.length - 3] = '-';
+        }
+        if (arr[arr.length - 2] == '') {
+            arr[arr.length - 2] = 'NA';
+            arr[arr.length - 1] = '-'
+        }
     }
 }
