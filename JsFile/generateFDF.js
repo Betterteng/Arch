@@ -23,13 +23,13 @@ function generatePDF() {
     // doc.addPage();
     // drawPagePropertyAssessmentNotes();
     // doc.addPage();
-    drawPagePropertyAssessmentNotesCont();
+    // drawPagePropertyAssessmentNotesCont();
     // doc.addPage();
-    //drawPagePropertyExterior();
-    //doc.addPage();
-    //drawPagePropertyExteriorCont();
+    // drawPagePropertyExterior();
     // doc.addPage();
-    // drawPageLivingArea();
+    // drawPagePropertyExteriorCont();
+    // doc.addPage();
+    drawPageLivingArea();
     // doc.addPage();
     // drawPageBedroomArea();
     // doc.addPage();
@@ -489,7 +489,7 @@ function drawPagePropertyAssessmentNotes() {
     }
 
     // Draw Site & Garden first table
-    doc.autoTable(getSiteGardenColumns(), getSiteGardenEntries(), {
+    doc.autoTable(getDetailCols(), getSiteGardenEntries(), {
         theme: 'grid',
         margin: {top: 100},
         showHeader: 'never',
@@ -598,7 +598,6 @@ function drawPagePropertyExteriorCont() {
 function drawPageLivingArea() {
 
     const startPointX = 15;
-    const endPointX = 195;
     const startPointY = 20;
     const keysGap = 4;
 
@@ -617,6 +616,27 @@ function drawPageLivingArea() {
     doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
     doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
     doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+
+    // Draw living areas table
+    doc.autoTable(getDetailCols(), getLivingAreasRows(), {
+        theme: 'grid',
+        margin: {top: 45, bottom: 50},
+        showHeader: 'never',
+        columnStyles: {
+            1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'},
+            2: {fontStyle: 'bold', halign: 'right'},
+            4: {fontStyle: 'bold', halign: 'right'},
+            6: {fontStyle: 'bold', halign: 'right'},
+            8: {fontStyle: 'bold', halign: 'right'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle',
+            halign: 'center',
+            fontSize: 7
+        }
+    });
 }
 
 /**
@@ -871,33 +891,6 @@ function if1stTableExistSiteGarden() {
 }
 
 /**
- * Get Site & Garden columns in first table
- * */
-function getSiteGardenColumns() {
-    return [
-        {title: "Site & Garden", dataKey: "1"},
-        {title: "Option", dataKey: "2"},
-        {title: "Result", dataKey: "3"},
-        {title: "Option", dataKey: "4"},
-        {title: "Result", dataKey: "5"},
-        {title: "Option", dataKey: "6"},
-        {title: "Result", dataKey: "7"},
-        {title: "Option", dataKey: "8"},
-        {title: "Result", dataKey: "9"}
-    ];
-}
-
-/**
- * Get Site & Garden columns in second table
- * */
-function getSiteGarden2ndTableCols() {
-    return [
-        {title: "Option", dataKey: "leftCol"},
-        {title: "Result", dataKey: "rightCol"}
-    ];
-}
-
-/**
  * Add new attributes and validate if the [Other input] is empty
  * */
 function validateSiteGardenEntries1(arr) {
@@ -1122,4 +1115,76 @@ function getNoteCols() {
         {title: "Option", dataKey: "leftCol"},
         {title: "Result", dataKey: "rightCol"}
     ];
+}
+
+/**
+ * Set up the columns for detail-table section
+ * */
+function getDetailCols() {
+    return [
+        {title: "Site & Garden", dataKey: "1"},
+        {title: "Option", dataKey: "2"},
+        {title: "Result", dataKey: "3"},
+        {title: "Option", dataKey: "4"},
+        {title: "Result", dataKey: "5"},
+        {title: "Option", dataKey: "6"},
+        {title: "Result", dataKey: "7"},
+        {title: "Option", dataKey: "8"},
+        {title: "Result", dataKey: "9"}
+    ];
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions for interior
+ |--------------------------------------------------------------------------
+ */
+
+/**
+ * Set up the rows for detail-table section - Living area
+ * */
+function getLivingAreasRows() {
+
+    var idStartPoint;
+    var idEndPoint = 640;
+    var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [];
+    var roomArr = [section1, section2, section3, section4, section5];
+    var data = [];
+
+    // Extract data
+    idStartPoint = 600;
+    for (var j = 0; j < roomArr.length; j++) {
+        for (var i = 0; i < 10; i++) {
+            roomArr[j][i] = document.getElementById(i + idStartPoint + '').value.trim();
+        }
+        idStartPoint += 10;
+        if (idStartPoint > idEndPoint) {break;}
+    }
+
+    // Do some validations for the sections where have [other <input>]
+    for (var i = 0; i < roomArr.length; i++) {
+        validateArr(roomArr[i]);
+    }
+
+    // Prepare rows
+    for (var i = 0; i < roomArr.length; i++) {
+        if (roomArr[i][0] != '') {
+            data.push({1: roomArr[i][0], 2: 'Floor Structure/Finish', 3: roomArr[i][1], 4: 'Ceiling', 5: roomArr[i][2], 6: 'Wall', 7: roomArr[i][3], 8: 'Electrics', 9: roomArr[i][4]});
+            data.push({1: '', 2: 'Cupboards', 3: roomArr[i][5], 4: 'Windows/Doors', 5: roomArr[i][6], 6: 'Dampness', 7: roomArr[i][7], 8: roomArr[i][8], 9: roomArr[i][9]});
+        }
+    }
+
+    return data;
+}
+
+/**
+ * Check the array
+ * */
+function validateArr(arr) {
+
+    // If the other input is empty, replace the meaningless input
+    if (arr[arr.length - 2].trim() == '') {
+        arr[arr.length - 2] = 'NA';
+        arr[arr.length - 1] = '-';
+    }
 }
