@@ -1358,9 +1358,13 @@ function getBedroomAreasRows() {
 function getWetAreaRows() {
 
     var data = [];
-    var idStartPointBathroom = 1000;
-    var section1 = [], section2 = [], section3 = [];
-    var bathroomArr = [section1, section2];
+    var idStartPointBathroom = 1000, idStartPointLaundry = 1200, idStartPointPowderRoom = 1300;
+    var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [], section6 = [],
+        section7 = [], section8 = [],
+        section9 = [], section10 = [], section11 = [];
+    var bathroomArr = [section1, section2, section3, section4, section5, section6];
+    var laundryArr = [section7, section8];
+    var powderRoomArr = [section9, section10, section11];
 
     /**
      * Extract data
@@ -1371,6 +1375,20 @@ function getWetAreaRows() {
             bathroomArr[j][i] = document.getElementById(i + idStartPointBathroom + '').value.trim();
         }
         idStartPointBathroom += 20;
+    }
+    // Laundry
+    for (var j = 0; j < laundryArr.length; j++) {
+        for (var i = 0; i < 11; i++) {
+            laundryArr[j][i] = document.getElementById(i + idStartPointLaundry + '').value.trim();
+        }
+        idStartPointLaundry += 20;
+    }
+    //Powder room
+    for (var j = 0; j < powderRoomArr.length; j++) {
+        for (var i = 0; i < 13; i++) {
+            powderRoomArr[j][i] = document.getElementById(i + idStartPointPowderRoom + '').value.trim();
+        }
+        idStartPointPowderRoom += 20;
     }
 
     /**
@@ -1383,6 +1401,22 @@ function getWetAreaRows() {
             data.push({1: '', 2: 'Cupboards/Vanity', 3: bathroomArr[i][5], 4: 'Ceiling', 5: bathroomArr[i][6], 6: 'Dampness', 7: bathroomArr[i][7], 8: 'Mirror', 9: bathroomArr[i][8]});
             data.push({1: '', 2: 'Exhaust/Ventilation', 3: bathroomArr[i][9], 4: 'Water Pressure', 5: bathroomArr[i][10], 6: 'Bath', 7: bathroomArr[i][11], 8: '', 9: ''});
             data.push({1: '', 2: 'Shower', 3: bathroomArr[i][12], 4: 'Toilet Suite', 5: bathroomArr[i][13], 6: 'Basin/Splashback', 7: bathroomArr[i][14], 8: '', 9: ''});
+        }
+    }
+    // Laundry
+    for (var i = 0; i < laundryArr.length; i++) {
+        if (laundryArr[i][0] != '') {
+            data.push({1: laundryArr[i][0], 2: 'Floor Structure/Finish', 3: laundryArr[i][1], 4: 'Walls', 5: laundryArr[i][2], 6: 'Walls', 7: laundryArr[i][3], 8: 'Electrics', 9: laundryArr[i][4]});
+            data.push({1: '', 2: 'Tub/Sink/Splashback', 3: laundryArr[i][5], 4: 'Ceiling', 5: laundryArr[i][6], 6: 'Exhaust/Ventilation', 7: laundryArr[i][7], 8: 'Windows/Doors', 9: laundryArr[i][8]});
+            data.push({1: '', 2: 'Dampness', 3: laundryArr[i][9], 4: 'Water Pressure', 5: laundryArr[i][10], 6: '', 7: '', 8: '', 9: ''});
+        }
+    }
+    // Powder room
+    for (var i = 0; i < powderRoomArr.length; i++) {
+        if (powderRoomArr[i][0] != '') {
+            data.push({1: powderRoomArr[i][0], 2: 'Floor Structure/Finish', 3: powderRoomArr[i][1], 4: 'Windows/Doors', 5: powderRoomArr[i][2], 6: 'Walls', 7: powderRoomArr[i][3], 8: 'Electrics', 9: powderRoomArr[i][4]});
+            data.push({1: '', 2: 'Cupboards/Vanity', 3: powderRoomArr[i][5], 4: 'Ceiling', 5: powderRoomArr[i][6], 6: 'Dampness', 7: powderRoomArr[i][7], 8: 'Basin/Splashback', 9: powderRoomArr[i][8]});
+            data.push({1: '', 2: 'Exhaust/Ventilation', 3: powderRoomArr[i][9], 4: 'Water Pressure', 5: powderRoomArr[i][10], 6: 'Toilet Suite', 7: powderRoomArr[i][11], 8: 'Mirror', 9: powderRoomArr[i][12]});
         }
     }
 
