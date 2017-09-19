@@ -29,9 +29,9 @@ function generatePDF() {
     // doc.addPage();
     // drawPagePropertyExteriorCont();
     // doc.addPage();
-    drawPageLivingArea();
+    // drawPageLivingArea();
     // doc.addPage();
-    // drawPageBedroomArea();
+    drawPageBedroomArea();
     // doc.addPage();
     // drawPageWetArea();
     // doc.addPage();
@@ -593,7 +593,7 @@ function drawPagePropertyExteriorCont() {
 }
 
 /**
- * PAGE Living Area
+ * PAGE Living Area - 1
  * */
 function drawPageLivingArea() {
 
@@ -645,7 +645,6 @@ function drawPageLivingArea() {
 function drawPageBedroomArea() {
 
     const startPointX = 15;
-    const endPointX = 195;
     const startPointY = 20;
     const keysGap = 4;
 
@@ -664,6 +663,27 @@ function drawPageBedroomArea() {
     doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
     doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
     doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+
+    // Draw bedroom areas table
+    doc.autoTable(getDetailCols(), getBedroomAreasRows(), {
+        theme: 'grid',
+        margin: {top: 45, bottom: 50},
+        showHeader: 'never',
+        columnStyles: {
+            1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'},
+            2: {fontStyle: 'bold', halign: 'right'},
+            4: {fontStyle: 'bold', halign: 'right'},
+            6: {fontStyle: 'bold', halign: 'right'},
+            8: {fontStyle: 'bold', halign: 'right'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle',
+            halign: 'center',
+            fontSize: 7
+        }
+    });
 }
 
 /**
@@ -1134,9 +1154,38 @@ function getDetailCols() {
     ];
 }
 
+/**
+ * Check the array
+ * */
+function validateArr(arr, option) {
+
+    // If the other input is empty, replace the meaningless input
+    if (option == 'validateLastOneInput') {
+        if (arr[arr.length - 2] == '') {
+            arr[arr.length - 2] = 'NA';
+            arr[arr.length - 1] = '-';
+        }
+    }
+
+    if (option == 'validateLastThreeInput') {
+        if (arr[arr.length - 6] == '') {
+            arr[arr.length - 6] = 'NA';
+            arr[arr.length - 5] = '-';
+        }
+        if (arr[arr.length - 4] == '') {
+            arr[arr.length - 4] = 'NA';
+            arr[arr.length - 3] = '-';
+        }
+        if (arr[arr.length - 2] == '') {
+            arr[arr.length - 2] = 'NA';
+            arr[arr.length - 1] = '-'
+        }
+    }
+}
+
 /*
  |--------------------------------------------------------------------------
- | Below is some helper functions for interior
+ | Below is some helper functions for interior - living
  |--------------------------------------------------------------------------
  */
 
@@ -1151,7 +1200,7 @@ function getLivingAreasRows() {
         section8 = [], section9 = [], section10 = [], section11 = [];
     var roomArr = [section1, section2, section3, section4, section5, section6, section7];
     var stairArr = [section8, section9];
-    var kitchenArr = [section10];
+    var kitchenArr = [section10, section11];
     var data = [];
 
     /**
@@ -1173,7 +1222,9 @@ function getLivingAreasRows() {
     // Kitchen
     for (var i = 0; i < 20; i++) {
         section10[i] = document.getElementById(i + 700 + '').value.trim();
-        //section11[i] = document.getElementById(i + 720 + '').value.trim();
+    }
+    for (var i = 0; i < 20; i++) {
+        section11[i] = document.getElementById(i + 800 + '').value.trim();
     }
 
     /**
@@ -1215,31 +1266,32 @@ function getLivingAreasRows() {
     return data;
 }
 
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions for interior - bedroom
+ |--------------------------------------------------------------------------
+ */
+
 /**
- * Check the array
+ * Set up the rows for detail-table section - Living area
  * */
-function validateArr(arr, option) {
+function getBedroomAreasRows() {
 
-    // If the other input is empty, replace the meaningless input
-    if (option == 'validateLastOneInput') {
-        if (arr[arr.length - 2] == '') {
-            arr[arr.length - 2] = 'NA';
-            arr[arr.length - 1] = '-';
-        }
-    }
+    var data = [];
+    var section1 = [];
 
-    if (option == 'validateLastThreeInput') {
-        if (arr[arr.length - 6] == '') {
-            arr[arr.length - 6] = 'NA';
-            arr[arr.length - 5] = '-';
-        }
-        if (arr[arr.length - 4] == '') {
-            arr[arr.length - 4] = 'NA';
-            arr[arr.length - 3] = '-';
-        }
-        if (arr[arr.length - 2] == '') {
-            arr[arr.length - 2] = 'NA';
-            arr[arr.length - 1] = '-'
-        }
-    }
+
+    data.push({
+        1: '1',
+        2: '2',
+        3: '3',
+        4: '4',
+        5: '5',
+        6: '6',
+        7: '7',
+        8: '8',
+        9: '9'
+    });
+
+    return data;
 }
