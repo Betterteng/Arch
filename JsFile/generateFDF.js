@@ -31,9 +31,11 @@ function generatePDF() {
     // doc.addPage();
     // drawPageLivingArea();
     // doc.addPage();
-    drawPageBedroomArea();
+    // drawPageBedroomArea();
     // doc.addPage();
-    // drawPageWetArea();
+    // drawInteriorNotes();
+    // doc.addPage();
+    drawPageWetArea();
     // doc.addPage();
     // drawPageAttachments();
     // doc.addPage();
@@ -593,7 +595,7 @@ function drawPagePropertyExteriorCont() {
 }
 
 /**
- * PAGE Living Area - 1
+ * PAGE Living Area
  * */
 function drawPageLivingArea() {
 
@@ -687,12 +689,33 @@ function drawPageBedroomArea() {
 }
 
 /**
+ * PAGE Interior Notes
+ * */
+function drawInteriorNotes() {
+
+    // Notes
+    doc.autoTable(getNoteCols(), getNoteRows('interiorAN', 'interiorMJF', 'interiorMNF', 'interiorGN', 'interiorAL', 'propertyInteriorLbl1', 'propertyInteriorLbl2'), {
+        theme: 'grid',
+        margin: {top: 20, bottom: 50},
+        showHeader: 'never',
+        columnStyles: {
+            leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+            rightCol: {columnWidth: 'auto'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle'
+        }
+    });
+}
+
+/**
  * PAGE Wet Area
  * */
 function drawPageWetArea() {
 
     const startPointX = 15;
-    const endPointX = 195;
     const startPointY = 20;
     const keysGap = 4;
 
@@ -711,6 +734,27 @@ function drawPageWetArea() {
     doc.text(startPointX + 2, startPointY + 10 + keysGap * 2, '   U - Unknow/Inaccessible/Not tested');
     doc.text(startPointX + 80, startPointY + 10, '   G - No visible significant defect');
     doc.text(startPointX + 80, startPointY + 10 + keysGap * 1, ' XX - Major defect');
+
+    // Detail table
+    doc.autoTable(getDetailCols(), getWetAreaRows(), {
+        theme: 'grid',
+        margin: {top: 45, bottom: 50},
+        showHeader: 'never',
+        columnStyles: {
+            1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'},
+            2: {fontStyle: 'bold', halign: 'right'},
+            4: {fontStyle: 'bold', halign: 'right'},
+            6: {fontStyle: 'bold', halign: 'right'},
+            8: {fontStyle: 'bold', halign: 'right'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle',
+            halign: 'center',
+            fontSize: 7
+        }
+    });
 }
 
 /**
@@ -1278,20 +1322,69 @@ function getLivingAreasRows() {
 function getBedroomAreasRows() {
 
     var data = [];
-    var section1 = [];
+    var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [], section6 = [];
+    var bedroomArr = [section1, section2, section3, section4, section5, section6];
 
+    // Extract data
+    for (var i = 0; i < 8; i++) {
+        section1[i] = document.getElementById(i + 850 + '').value.trim();
+        section2[i] = document.getElementById(i + 860 + '').value.trim();
+        section3[i] = document.getElementById(i + 870 + '').value.trim();
+        section4[i] = document.getElementById(i + 880 + '').value.trim();
+        section5[i] = document.getElementById(i + 890 + '').value.trim();
+        section6[i] = document.getElementById(i + 900 + '').value.trim();
+    }
 
-    data.push({
-        1: '1',
-        2: '2',
-        3: '3',
-        4: '4',
-        5: '5',
-        6: '6',
-        7: '7',
-        8: '8',
-        9: '9'
-    });
+    // Prepare rows
+    for (var i = 0; i < bedroomArr.length; i++) {
+        if (bedroomArr[i][0] != '') {
+            data.push({1: bedroomArr[i][0], 2: 'Floor Structure/Finish', 3: bedroomArr[i][1], 4: 'Windows/Doors', 5: bedroomArr[i][2], 6: 'Walls', 7: bedroomArr[i][3], 8: 'Robes', 9: bedroomArr[i][4]});
+            data.push({1: '', 2: 'Ceiling', 3: bedroomArr[i][5], 4: 'Dampness', 5: bedroomArr[i][6], 6: 'Electrics', 7: bedroomArr[i][7], 8: '', 9: ''});
+        }
+    }
+
+    return data;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions for wet areas
+ |--------------------------------------------------------------------------
+ */
+
+/**
+ * Set up the rows for detail-table section - wet area
+ * */
+function getWetAreaRows() {
+
+    var data = [];
+    var idStartPointBathroom = 1000;
+    var section1 = [], section2 = [], section3 = [];
+    var bathroomArr = [section1, section2];
+
+    /**
+     * Extract data
+     * */
+    // Bathroom
+    for (var j = 0; j < bathroomArr.length; j++) {
+        for (var i = 0; i < 15; i++) {
+            bathroomArr[j][i] = document.getElementById(i + idStartPointBathroom + '').value.trim();
+        }
+        idStartPointBathroom += 20;
+    }
+
+    /**
+     * Prepare rows
+     * */
+    // Bathroom
+    for (var i = 0; i < bathroomArr.length; i++) {
+        if (bathroomArr[i][0] != '') {
+            data.push({1: bathroomArr[i][0], 2: 'Floor Structure/Finish', 3: bathroomArr[i][1], 4: 'Windows/Doors', 5: bathroomArr[i][2], 6: 'Walls', 7: bathroomArr[i][3], 8: 'Electrics', 9: bathroomArr[i][4]});
+            data.push({1: '', 2: 'Cupboards/Vanity', 3: bathroomArr[i][5], 4: 'Ceiling', 5: bathroomArr[i][6], 6: 'Dampness', 7: bathroomArr[i][7], 8: 'Mirror', 9: bathroomArr[i][8]});
+            data.push({1: '', 2: 'Exhaust/Ventilation', 3: bathroomArr[i][9], 4: 'Water Pressure', 5: bathroomArr[i][10], 6: 'Bath', 7: bathroomArr[i][11], 8: '', 9: ''});
+            data.push({1: '', 2: 'Shower', 3: bathroomArr[i][12], 4: 'Toilet Suite', 5: bathroomArr[i][13], 6: 'Basin/Splashback', 7: bathroomArr[i][14], 8: '', 9: ''});
+        }
+    }
 
     return data;
 }
