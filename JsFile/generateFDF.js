@@ -36,6 +36,8 @@ function generatePDF() {
     // drawInteriorNotes();
     // doc.addPage();
     drawPageWetArea();
+    doc.addPage();
+    drawPageWetAreaCont();
     // doc.addPage();
     // drawPageAttachments();
     // doc.addPage();
@@ -758,6 +760,28 @@ function drawPageWetArea() {
 }
 
 /**
+ * PAGE Wet Area
+ * */
+function drawPageWetAreaCont() {
+
+    // Notes
+    doc.autoTable(getNoteCols(), getNoteRows('interiorAN', 'interiorMJF', 'interiorMNF', 'interiorGN', 'interiorAL', 'propertyInteriorLbl1', 'propertyInteriorLbl2'), {
+        theme: 'grid',
+        margin: {top: 20, bottom: 50},
+        showHeader: 'never',
+        columnStyles: {
+            leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+            rightCol: {columnWidth: 'auto'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle'
+        }
+    });
+}
+
+/**
  * PAGE Attachments
  * */
 function drawPageAttachments() {
@@ -1225,6 +1249,15 @@ function validateArr(arr, option) {
             arr[arr.length - 1] = '-'
         }
     }
+
+    if (option == 'validateServices') {
+        for (var i = 2; i < 14; i += 2) {
+            if (arr[arr.length - i] == '') {
+                arr[arr.length - i] = 'NA';
+                arr[arr.length - i + 1] = '-';
+            }
+        }
+    }
 }
 
 /*
@@ -1361,7 +1394,8 @@ function getWetAreaRows() {
     var idStartPointBathroom = 1000, idStartPointLaundry = 1200, idStartPointPowderRoom = 1300;
     var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [], section6 = [],
         section7 = [], section8 = [],
-        section9 = [], section10 = [], section11 = [];
+        section9 = [], section10 = [], section11 = [],
+        section12 = [];
     var bathroomArr = [section1, section2, section3, section4, section5, section6];
     var laundryArr = [section7, section8];
     var powderRoomArr = [section9, section10, section11];
@@ -1390,6 +1424,16 @@ function getWetAreaRows() {
         }
         idStartPointPowderRoom += 20;
     }
+    // Services
+    for (var i = 0; i < 18; i++) {
+        section12[i] = document.getElementById(i + 1400 + '').value.trim();
+    }
+
+    /**
+     * Validate entries
+     * */
+    // Services
+    validateArr(section12, 'validateServices');
 
     /**
      * Prepare rows
@@ -1418,6 +1462,12 @@ function getWetAreaRows() {
             data.push({1: '', 2: 'Cupboards/Vanity', 3: powderRoomArr[i][5], 4: 'Ceiling', 5: powderRoomArr[i][6], 6: 'Dampness', 7: powderRoomArr[i][7], 8: 'Basin/Splashback', 9: powderRoomArr[i][8]});
             data.push({1: '', 2: 'Exhaust/Ventilation', 3: powderRoomArr[i][9], 4: 'Water Pressure', 5: powderRoomArr[i][10], 6: 'Toilet Suite', 7: powderRoomArr[i][11], 8: 'Mirror', 9: powderRoomArr[i][12]});
         }
+    }
+    // Services
+    if (section12[0] != '') {
+        data.push({1: section12[0], 2: 'Heater/Unit', 3: section12[1], 4: 'Smoke Detector/s', 5: section12[2], 6: 'Cooler/Unit', 7: section12[3], 8: 'Hot Water Service', 9: section12[4]});
+        data.push({1: '', 2: 'Switchboard', 3: section12[5], 4: section12[6], 5: section12[7], 6: section12[8], 7: section12[9], 8: section12[10], 9: section12[11]});
+        data.push({1: '', 2: section12[12], 3: section12[13], 4: section12[14], 5: section12[15], 6: section12[16], 7: section12[17], 8: '', 9: ''});
     }
 
     return data;
