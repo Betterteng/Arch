@@ -25,7 +25,7 @@ function generatePDF() {
     // doc.addPage();
     // drawPagePropertyAssessmentNotesCont();
     // doc.addPage();
-    // drawPagePropertyExterior();
+    drawPagePropertyExterior();
     // doc.addPage();
     // drawPagePropertyExteriorCont();
     // doc.addPage();
@@ -35,9 +35,9 @@ function generatePDF() {
     // doc.addPage();
     // drawInteriorNotes();
     // doc.addPage();
-    drawPageWetArea();
-    doc.addPage();
-    drawPageWetAreaCont();
+    // drawPageWetArea();
+    // doc.addPage();
+    // drawPageWetAreaCont();
     // doc.addPage();
     // drawPageAttachments();
     // doc.addPage();
@@ -765,7 +765,7 @@ function drawPageWetArea() {
 function drawPageWetAreaCont() {
 
     // Notes
-    doc.autoTable(getNoteCols(), getNoteRows('interiorAN', 'interiorMJF', 'interiorMNF', 'interiorGN', 'interiorAL', 'propertyInteriorLbl1', 'propertyInteriorLbl2'), {
+    doc.autoTable(getNoteCols(), getNoteRows('wetAN', 'wetMJF', 'wetMNF', 'wetGN', 'wetAL', 'wetAreasLbl1', 'wetAreasLbl2'), {
         theme: 'grid',
         margin: {top: 20, bottom: 50},
         showHeader: 'never',
@@ -1040,7 +1040,7 @@ function getExterior1stTableRows() {
 
     var section1 = [], section2 = [], section3 = [], section4 = [], section5 = [], section6 = [], section7 = [],
         section8 = [], section9 = [], section10 = [], section11 = [], section12 = [], section13 = [],
-        section14 = [], section15 = [], section16 = [], section17 = [];
+        section14 = [], section15 = [], section16 = [], section17 = [], sectionTitle = [], sectionOther = [];
     var data = [];
 
     // Extract data
@@ -1062,53 +1062,73 @@ function getExterior1stTableRows() {
         section13[i] = document.getElementById(i + 450 + '').value;
         section14[i] = document.getElementById(i + 460 + '').value;
         section15[i] = document.getElementById(i + 470 + '').value;
+        sectionTitle[i] = document.getElementById(i + 2000 + '').value.trim();
     }
-
     for (var i = 0; i < 12; i++) {
         section16[i] = document.getElementById(i + 500 + '').value;
         section17[i] = document.getElementById(i + 520 + '').value;
     }
+    for (var i = 0; i < 32; i++) {
+        sectionOther[i] = document.getElementById(i + 3000 + '').value.trim();
+    }
+
+    //Validate the other
+    validateArr(sectionOther, 'validateWallOther');
 
     // Prepare rows
-    data.push({1: 'Roofing', 2: 'Covering', 3: section1[0], 4: 'Valleys', 5: section1[1], 6: 'Ridges', 7: section1[2], 8: 'Overhanging tree', 9: section1[3]});
-    data.push({1: '', 2: 'Chimney/Vents/Flues', 3: section1[4], 4: 'Flashing', 5: section1[5], 6: 'Box Gutters', 7: section1[6], 8: 'Skylights', 9: section1[7]});
+    if (sectionTitle[0] != '') {
+        data.push({1: sectionTitle[0], 2: 'Covering', 3: section1[0], 4: 'Valleys', 5: section1[1], 6: 'Ridges', 7: section1[2], 8: 'Overhanging tree', 9: section1[3]});
+        data.push({1: '', 2: 'Chimney/Vents/Flues', 3: section1[4], 4: 'Flashing', 5: section1[5], 6: 'Box Gutters', 7: section1[6], 8: 'Skylights', 9: section1[7]});
+    }
 
-    data.push({1: 'Roof Space', 2: 'Frame', 3: section2[0], 4: 'Insulation', 5: section2[1], 6: 'Services', 7: section2[2], 8: 'Lining/Sarking', 9: section2[3]});
-    data.push({1: '', 2: 'Underside of Roof', 3: section2[4], 4: '', 5: '', 6: '', 7: '', 8: '', 9: ''});
+    if (sectionTitle[1] != '') {
+        data.push({1: sectionTitle[1], 2: 'Frame', 3: section2[0], 4: 'Insulation', 5: section2[1], 6: 'Services', 7: section2[2], 8: 'Lining/Sarking', 9: section2[3]});
+        data.push({1: '', 2: 'Underside of Roof', 3: section2[4], 4: '', 5: '', 6: '', 7: '', 8: '', 9: ''});
+    }
 
-    data.push({1: 'Sub-Floor', 2: 'Stumps/Piers', 3: section3[0], 4: 'Walls', 5: section3[1], 6: 'Services', 7: section3[2], 8: '', 9: ''});
-    data.push({1: '', 2: 'Ventilation/Damp', 3: section3[3], 4: 'Framing', 5: section3[4], 6: 'Underside of Floor', 7: section3[5], 8: '', 9: ''});
+    if (sectionTitle[2] != '') {
+        data.push({1: sectionTitle[2], 2: 'Stumps/Piers', 3: section3[0], 4: 'Walls', 5: section3[1], 6: 'Services', 7: section3[2], 8: '', 9: ''});
+        data.push({1: '', 2: 'Ventilation/Damp', 3: section3[3], 4: 'Framing', 5: section3[4], 6: 'Underside of Floor', 7: section3[5], 8: '', 9: ''});
+    }
 
-    data.push({1: 'Wall (Front)', 2: 'Structure/Finish', 3: section4[0], 4: 'Eaves', 5: section4[1], 6: 'Gutter Downpipe', 7: section4[2], 8: '', 9: ''});
-    data.push({1: '', 2: 'Sub-Floor Vents', 3: section4[3], 4: 'Doors/Windows', 5: section4[4], 6: 'Balcony/Deck', 7: section4[5], 8: '', 9: ''});
+    if (sectionTitle[3] != '') {
+        data.push({1: sectionTitle[3], 2: 'Structure/Finish', 3: section4[0], 4: 'Eaves', 5: section4[1], 6: 'Gutter Downpipe', 7: section4[2], 8: sectionOther[0], 9: sectionOther[1]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section4[3], 4: 'Doors/Windows', 5: section4[4], 6: 'Balcony/Deck', 7: section4[5], 8: sectionOther[2], 9: sectionOther[3]});
+    }
 
-    data.push({1: 'Wall (Rear)', 2: 'Structure/Finish', 3: section5[0], 4: 'Eaves', 5: section5[1], 6: 'Gutter Downpipe', 7: section5[2], 8: '', 9: ''});
-    data.push({1: '', 2: 'Sub-Floor Vents', 3: section5[3], 4: 'Doors/Windows', 5: section5[4], 6: 'Balcony/Deck', 7: section5[5], 8: '', 9: ''});
+    if (sectionTitle[4] != '') {
+        data.push({1: sectionTitle[4], 2: 'Structure/Finish', 3: section5[0], 4: 'Eaves', 5: section5[1], 6: 'Gutter Downpipe', 7: section5[2], 8: sectionOther[4], 9: sectionOther[5]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section5[3], 4: 'Doors/Windows', 5: section5[4], 6: 'Balcony/Deck', 7: section5[5], 8: sectionOther[6], 9: sectionOther[7]});
+    }
 
-    data.push({1: 'Wall (Rear)', 2: 'Structure/Finish', 3: section6[0], 4: 'Eaves', 5: section6[1], 6: 'Gutter Downpipe', 7: section6[2], 8: '', 9: ''});
-    data.push({1: '', 2: 'Sub-Floor Vents', 3: section6[3], 4: 'Doors/Windows', 5: section6[4], 6: 'Balcony/Deck', 7: section6[5], 8: '', 9: ''});
+    if (sectionTitle[5] != '') {
+        data.push({1: sectionTitle[5], 2: 'Structure/Finish', 3: section6[0], 4: 'Eaves', 5: section6[1], 6: 'Gutter Downpipe', 7: section6[2], 8: sectionOther[8], 9: sectionOther[9]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section6[3], 4: 'Doors/Windows', 5: section6[4], 6: 'Balcony/Deck', 7: section6[5], 8: sectionOther[10], 9: sectionOther[11]});
+    }
 
-    data.push({1: 'Wall (Rear)', 2: 'Structure/Finish', 3: section7[0], 4: 'Eaves', 5: section7[1], 6: 'Gutter Downpipe', 7: section7[2], 8: '', 9: ''});
-    data.push({1: '', 2: 'Sub-Floor Vents', 3: section7[3], 4: 'Doors/Windows', 5: section7[4], 6: 'Balcony/Deck', 7: section7[5], 8: '', 9: ''});
+    if (sectionTitle[6] != '') {
+        data.push({1: sectionTitle[6], 2: 'Structure/Finish', 3: section7[0], 4: 'Eaves', 5: section7[1], 6: 'Gutter Downpipe', 7: section7[2], 8: sectionOther[12], 9: sectionOther[13]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section7[3], 4: 'Doors/Windows', 5: section7[4], 6: 'Balcony/Deck', 7: section7[5], 8: sectionOther[14], 9: sectionOther[15]});
+    }
 
     if (document.getElementById('ExteriorWall1').value != '') {
-        data.push({1: document.getElementById('ExteriorWall1').value, 2: 'Structure/Finish', 3: section8[0], 4: 'Eaves', 5: section8[1], 6: 'Gutter Downpipe', 7: section8[2], 8: '', 9: ''});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section8[3], 4: 'Doors/Windows', 5: section8[4], 6: 'Balcony/Deck', 7: section8[5], 8: '', 9: ''});
+        data.push({1: document.getElementById('ExteriorWall1').value, 2: 'Structure/Finish', 3: section8[0], 4: 'Eaves', 5: section8[1], 6: 'Gutter Downpipe', 7: section8[2], 8: sectionOther[16], 9: sectionOther[17]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section8[3], 4: 'Doors/Windows', 5: section8[4], 6: 'Balcony/Deck', 7: section8[5], 8: sectionOther[18], 9: sectionOther[19]});
     }
 
     if (document.getElementById('ExteriorWall2').value != '') {
-        data.push({1: document.getElementById('ExteriorWall2').value, 2: 'Structure/Finish', 3: section9[0], 4: 'Eaves', 5: section9[1], 6: 'Gutter Downpipe', 7: section9[2], 8: '', 9: ''});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section9[3], 4: 'Doors/Windows', 5: section9[4], 6: 'Balcony/Deck', 7: section9[5], 8: '', 9: ''});
+        data.push({1: document.getElementById('ExteriorWall2').value, 2: 'Structure/Finish', 3: section9[0], 4: 'Eaves', 5: section9[1], 6: 'Gutter Downpipe', 7: section9[2], 8: sectionOther[20], 9: sectionOther[21]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section9[3], 4: 'Doors/Windows', 5: section9[4], 6: 'Balcony/Deck', 7: section9[5], 8: sectionOther[22], 9: sectionOther[23]});
     }
 
     if (document.getElementById('ExteriorWall3').value != '') {
-        data.push({1: document.getElementById('ExteriorWall3').value, 2: 'Structure/Finish', 3: section10[0], 4: 'Eaves', 5: section10[1], 6: 'Gutter Downpipe', 7: section10[2], 8: '', 9: ''});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section10[3], 4: 'Doors/Windows', 5: section10[4], 6: 'Balcony/Deck', 7: section10[5], 8: '', 9: ''});
+        data.push({1: document.getElementById('ExteriorWall3').value, 2: 'Structure/Finish', 3: section10[0], 4: 'Eaves', 5: section10[1], 6: 'Gutter Downpipe', 7: section10[2], 8: sectionOther[24], 9: sectionOther[25]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section10[3], 4: 'Doors/Windows', 5: section10[4], 6: 'Balcony/Deck', 7: section10[5], 8: sectionOther[26], 9: sectionOther[27]});
     }
 
     if (document.getElementById('ExteriorWall4').value != '') {
-        data.push({1: document.getElementById('ExteriorWall4').value, 2: 'Structure/Finish', 3: section11[0], 4: 'Eaves', 5: section11[1], 6: 'Gutter Downpipe', 7: section11[2], 8: '', 9: ''});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section11[3], 4: 'Doors/Windows', 5: section11[4], 6: 'Balcony/Deck', 7: section11[5], 8: '', 9: ''});
+        data.push({1: document.getElementById('ExteriorWall4').value, 2: 'Structure/Finish', 3: section11[0], 4: 'Eaves', 5: section11[1], 6: 'Gutter Downpipe', 7: section11[2], 8: sectionOther[28], 9: sectionOther[29]});
+        data.push({1: '', 2: 'Sub-Floor Vents', 3: section11[3], 4: 'Doors/Windows', 5: section11[4], 6: 'Balcony/Deck', 7: section11[5], 8: sectionOther[30], 9: sectionOther[31]});
     }
 
     if (document.getElementById('Verandahs1').value != '') {
@@ -1255,6 +1275,15 @@ function validateArr(arr, option) {
             if (arr[arr.length - i] == '') {
                 arr[arr.length - i] = 'NA';
                 arr[arr.length - i + 1] = '-';
+            }
+        }
+    }
+
+    if (option == 'validateWallOther') {
+        for (var i = 0; i < 32; i +=2) {
+            if (arr[i] == '') {
+                arr[i] = 'NA';
+                arr[i + 1] = '-';
             }
         }
     }
