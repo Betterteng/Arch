@@ -14,7 +14,7 @@ var pageContent = function (data) {
 
     var str = 'Page ' + data.pageCount;
 
-    doc.addImage(imgData, 'JPG', 15, 275, 150, 10);
+    doc.addImage(imgData, 'JPG', data.settings.margin.left, doc.internal.pageSize.height, 130, 10);
     doc.text(180, doc.internal.pageSize.height - 10, str);
 }
 
