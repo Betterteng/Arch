@@ -29,11 +29,13 @@ function generatePDF() {
     // doc.addPage();
     // drawPagePropertyAssessmentNotesCont();
     // doc.addPage();
+    //drawSiteGardenPic()
+    // doc.addPage();
     // drawPagePropertyExterior();
     // doc.addPage();
-    siteGardenPic()
-    // doc.addPage();
     // drawPagePropertyExteriorCont();
+    //doc.addPage();
+    drawExteriorPic();
     // doc.addPage();
     // drawPageLivingArea();
     // doc.addPage();
@@ -534,6 +536,14 @@ function drawPagePropertyAssessmentNotesCont() {
 }
 
 /**
+ * PAGE Property Assessment Notes - Site & Garden pics
+ * */
+function drawSiteGardenPic() {
+
+    drawPic('AssessmentSiteImage', 3);
+}
+
+/**
  * PAGE Property Exterior
  * */
 function drawPagePropertyExterior() {
@@ -581,27 +591,6 @@ function drawPagePropertyExterior() {
 }
 
 /**
- * PAGE Property Exterior - Site & Garden pics
- * */
-function siteGardenPic() {
-
-    setTableContentStyle();
-
-    for (var i = 0; i < 3; i++) {
-        try {
-            doc.addImage(document.getElementById('AssessmentSiteImage' + i).src, 'JPG', axisX[i], axisY[i], 55, 40);
-        } catch (err) {
-            console.log('AssessmentSiteImage: ' + i + ' is not uploaded.');
-        }
-        if (document.getElementById('AssessmentSiteImageText' + i).value.trim() != '') {
-            doc.text(axisX[i] + 2, axisY[i] + 45, document.getElementById('AssessmentSiteImageText' + i).value.trim());
-        } else {
-            doc.text(axisX[i] + 2, axisY[i] + 45, 'No name for this pic...')
-        }
-    }
-}
-
-/**
  * PAGE Property Exterior - Note Page
  * */
 function drawPagePropertyExteriorCont() {
@@ -621,6 +610,11 @@ function drawPagePropertyExteriorCont() {
             valign: 'middle'
         }
     });
+}
+
+function drawExteriorPic() {
+
+    drawPic('AssessmentExteriorImage', 6);
 }
 
 /**
@@ -1312,6 +1306,29 @@ function validateArr(arr, option) {
                 arr[i] = 'NA';
                 arr[i + 1] = '-';
             }
+        }
+    }
+}
+
+/**
+ * Put images into the PDF,
+ * option means which part (site&garden or exterior...),
+ * maxNum means the max number of that section can accept.
+ * */
+function drawPic(option, maxNum) {
+
+    setTableContentStyle();
+
+    for (var i = 0; i < maxNum; i++) {
+        try {
+            doc.addImage(document.getElementById(option + i).src, 'JPG', axisX[i], axisY[i], 55, 40);
+        } catch (err) {
+            console.log(option + ' [' + i + '] is not uploaded.');
+        }
+        if (document.getElementById(option + 'Text' + i).value.trim() != '') {
+            doc.text(axisX[i] + 2, axisY[i] + 45, document.getElementById(option + 'Text' + i).value.trim());
+        } else {
+            doc.text(axisX[i] + 2, axisY[i] + 45, 'No name for this pic...')
         }
     }
 }
