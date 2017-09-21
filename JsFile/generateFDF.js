@@ -12,14 +12,10 @@ var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
 // Set the footer
 var pageContent = function (data) {
 
-    var totalPagesExp = '{total_pages_count_string}';
-    var str = 'Page' + data.pageCount;
+    var str = 'Page ' + data.pageCount;
 
-    if (typeof doc.putTotalPages === 'function') {
-        str = str + " of " + totalPagesExp;
-    }
-
-    doc.text(150, doc.internal.pageSize.height - 10, str);
+    doc.addImage(imgData, 'JPG', 15, 275, 150, 10);
+    doc.text(180, doc.internal.pageSize.height - 10, str);
 }
 
 /**
@@ -547,9 +543,6 @@ function drawPagePropertyAssessmentNotes() {
             valign: 'middle'
         }
     });
-
-    // Add the footer
-
 }
 
 // /**
@@ -1399,14 +1392,14 @@ function drawPic(option, maxNum) {
     }
 }
 
-/**
- * Add footer to the Page
- * */
-function addFooter() {
-
-    // Put footer at the bottom of the page
-    doc.addImage(imgData, 'JPG', 15, 275, 150, 13);
-}
+// /**
+//  * Add footer to the Page
+//  * */
+// function addFooter() {
+//
+//     // Put footer at the bottom of the page
+//     doc.addImage(imgData, 'JPG', 15, 275, 150, 13);
+// }
 
 /*
  |--------------------------------------------------------------------------
