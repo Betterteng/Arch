@@ -7,8 +7,20 @@ const axisX = [17, 78, 139, 17, 78, 139];
 const axisY = [20, 20, 20, 70, 70, 70];
 
 var doc = new jsPDF();
-//var functionArr = [drawPageOne()];
 var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
+
+// Set the footer
+var pageContent = function (data) {
+
+    var totalPagesExp = '{total_pages_count_string}';
+    var str = 'Page' + data.pageCount;
+
+    if (typeof doc.putTotalPages === 'function') {
+        str = str + " of " + totalPagesExp;
+    }
+
+    doc.text(150, doc.internal.pageSize.height - 10, str);
+}
 
 /**
  * Generate the PDF file and save it.
@@ -26,7 +38,6 @@ function generatePDF() {
     // drawPageFour();
     // doc.addPage();
     drawPagePropertyAssessmentNotes();
-    doc.addPage();
     // doc.addPage();
     // drawSiteGardenPic()
     // doc.addPage();
@@ -507,7 +518,9 @@ function drawPagePropertyAssessmentNotes() {
 
     // Draw Site & Garden first table
     doc.autoTable(getDetailCols(), getSiteGardenEntries(), {
+        addPageContent: pageContent,
         startY: 100,
+        margin: {bottom: 30},
         theme: 'grid',
         showHeader: 'never',
         columnStyles: {
@@ -517,9 +530,11 @@ function drawPagePropertyAssessmentNotes() {
 
     console.log('How many rows in the first table (Site & Garden Page): ' + countRows1stTableSiteGarden());
 
-    // Draw Site & Garden second table
+    // Draw Site & Garden note table
     doc.autoTable(getNoteCols(), getNoteRows('SiteGardenAccessNotes', 'MajFound', 'MainFound', 'generalNotes', 'SiteGardenAccessLimitation', 'siteGardenLbl1', 'siteGardenLbl2'), {
-        startY: doc.autoTable.previous.finalY + 10,
+        addPageContent: pageContent,
+        startY: doc.autoTable.previous.finalY + 8,
+        margin: {bottom: 30},
         theme: 'grid',
         showHeader: 'never',
         columnStyles: {
@@ -532,6 +547,9 @@ function drawPagePropertyAssessmentNotes() {
             valign: 'middle'
         }
     });
+
+    // Add the footer
+
 }
 
 // /**
