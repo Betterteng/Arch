@@ -29,23 +29,29 @@ function generatePDF() {
     // doc.addPage();
     // drawPagePropertyAssessmentNotesCont();
     // doc.addPage();
-    //drawSiteGardenPic()
+    // drawSiteGardenPic()
     // doc.addPage();
     // drawPagePropertyExterior();
     // doc.addPage();
     // drawPagePropertyExteriorCont();
-    //doc.addPage();
-    drawExteriorPic();
+    // doc.addPage();
+    // drawExteriorPic();
     // doc.addPage();
     // drawPageLivingArea();
     // doc.addPage();
+    // drawLivingAreaPic();
+    // doc.addPage();
     // drawPageBedroomArea();
+    // doc.addPage();
+    // drawBedroomAreaPic();
     // doc.addPage();
     // drawInteriorNotes();
     // doc.addPage();
     // drawPageWetArea();
     // doc.addPage();
     // drawPageWetAreaCont();
+    // doc.addPage();
+    drawWetAreaPic();
     // doc.addPage();
     // drawPageAttachments();
     // doc.addPage();
@@ -612,6 +618,9 @@ function drawPagePropertyExteriorCont() {
     });
 }
 
+/**
+ * PAGE Property Exterior - Pic Page
+ * */
 function drawExteriorPic() {
 
     drawPic('AssessmentExteriorImage', 6);
@@ -665,6 +674,14 @@ function drawPageLivingArea() {
 }
 
 /**
+ * PAGE Living Area - Pic
+ * */
+function drawLivingAreaPic() {
+
+    drawPic('AssessmentInteriorLivingImage', 6);
+}
+
+/**
  * PAGE Bedroom Area
  * */
 function drawPageBedroomArea() {
@@ -712,6 +729,14 @@ function drawPageBedroomArea() {
 }
 
 /**
+ * PAGE Bedroom Area - Pic
+ * */
+function drawBedroomAreaPic() {
+
+    drawPic('AssessmentInteriorBedroomImage', 6);
+}
+
+/**
  * PAGE Interior Notes
  * */
 function drawInteriorNotes() {
@@ -734,7 +759,7 @@ function drawInteriorNotes() {
 }
 
 /**
- * PAGE Wet Area
+ * PAGE Wet Area - Page1
  * */
 function drawPageWetArea() {
 
@@ -781,7 +806,7 @@ function drawPageWetArea() {
 }
 
 /**
- * PAGE Wet Area
+ * PAGE Wet Area - Page2
  * */
 function drawPageWetAreaCont() {
 
@@ -800,6 +825,14 @@ function drawPageWetAreaCont() {
             valign: 'middle'
         }
     });
+}
+
+/**
+ * PAGE Wet Area - Page picture
+ * */
+function drawWetAreaPic() {
+
+    drawPic('AssessmentInteriorServiceImage', 3);
 }
 
 /**
@@ -1322,13 +1355,13 @@ function drawPic(option, maxNum) {
     for (var i = 0; i < maxNum; i++) {
         try {
             doc.addImage(document.getElementById(option + i).src, 'JPG', axisX[i], axisY[i], 55, 40);
+            if (document.getElementById(option + 'Text' + i).value.trim() != '') {
+                doc.text(axisX[i] + 2, axisY[i] + 45, document.getElementById(option + 'Text' + i).value.trim());
+            } else {
+                doc.text(axisX[i] + 2, axisY[i] + 45, 'No name for this pic...')
+            }
         } catch (err) {
             console.log(option + ' [' + i + '] is not uploaded.');
-        }
-        if (document.getElementById(option + 'Text' + i).value.trim() != '') {
-            doc.text(axisX[i] + 2, axisY[i] + 45, document.getElementById(option + 'Text' + i).value.trim());
-        } else {
-            doc.text(axisX[i] + 2, axisY[i] + 45, 'No name for this pic...')
         }
     }
 }
