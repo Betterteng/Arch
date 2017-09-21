@@ -51,7 +51,7 @@ function generatePDF() {
     // doc.addPage();
     // drawPageWetAreaCont();
     // doc.addPage();
-    drawWetAreaPic();
+    // drawWetAreaPic();
     // doc.addPage();
     // drawPageAttachments();
     // doc.addPage();
@@ -1364,6 +1364,15 @@ function drawPic(option, maxNum) {
             console.log(option + ' [' + i + '] is not uploaded.');
         }
     }
+}
+
+/**
+ * Add footer to the Page
+ * */
+function addFooter() {
+
+    // Put footer at the bottom of the page
+    doc.addImage(imgData, 'JPG', 15, 275, 150, 13);
 }
 
 /*
