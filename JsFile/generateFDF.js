@@ -25,9 +25,8 @@ function generatePDF() {
     // doc.addPage();
     // drawPageFour();
     // doc.addPage();
-    // drawPagePropertyAssessmentNotes();
-    // doc.addPage();
-    // drawPagePropertyAssessmentNotesCont();
+    drawPagePropertyAssessmentNotes();
+    doc.addPage();
     // doc.addPage();
     // drawSiteGardenPic()
     // doc.addPage();
@@ -508,8 +507,8 @@ function drawPagePropertyAssessmentNotes() {
 
     // Draw Site & Garden first table
     doc.autoTable(getDetailCols(), getSiteGardenEntries(), {
+        startY: 100,
         theme: 'grid',
-        margin: {top: 100},
         showHeader: 'never',
         columnStyles: {
             1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'}
@@ -517,17 +516,11 @@ function drawPagePropertyAssessmentNotes() {
     });
 
     console.log('How many rows in the first table (Site & Garden Page): ' + countRows1stTableSiteGarden());
-}
-
-/**
- * PAGE Property Assessment Notes - 2
- * */
-function drawPagePropertyAssessmentNotesCont() {
 
     // Draw Site & Garden second table
     doc.autoTable(getNoteCols(), getNoteRows('SiteGardenAccessNotes', 'MajFound', 'MainFound', 'generalNotes', 'SiteGardenAccessLimitation', 'siteGardenLbl1', 'siteGardenLbl2'), {
+        startY: doc.autoTable.previous.finalY + 10,
         theme: 'grid',
-        margin: {top: 20, bottom: 50},
         showHeader: 'never',
         columnStyles: {
             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
@@ -540,6 +533,28 @@ function drawPagePropertyAssessmentNotesCont() {
         }
     });
 }
+
+// /**
+//  * PAGE Property Assessment Notes - 2
+//  * */
+// function drawPagePropertyAssessmentNotesCont() {
+//
+//     // Draw Site & Garden second table
+//     doc.autoTable(getNoteCols(), getNoteRows('SiteGardenAccessNotes', 'MajFound', 'MainFound', 'generalNotes', 'SiteGardenAccessLimitation', 'siteGardenLbl1', 'siteGardenLbl2'), {
+//         theme: 'grid',
+//         margin: {top: 20, bottom: 50},
+//         showHeader: 'never',
+//         columnStyles: {
+//             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+//             rightCol: {columnWidth: 'auto'}
+//         },
+//         styles: {
+//             overflow: 'linebreak',
+//             columnWidth: 'wrap',
+//             valign: 'middle'
+//         }
+//     });
+// }
 
 /**
  * PAGE Property Assessment Notes - Site & Garden pics
