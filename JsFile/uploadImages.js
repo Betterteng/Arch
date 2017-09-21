@@ -549,7 +549,9 @@ function AddAssessmentInteriorServiceImage2()
 
 //MARK: UPLOAD FUNCTIONS
 //upload max 6 images
-function read6ImagesURL(input,addButtonID0,addButtonID1,addButtonID2,addButtonID3,addButtonID4,addButtonID5,imageID0,imageID1,imageID2,imageID3,imageID4,imageID5,text0,text1,text2,text3,text4,text5,removeButton0,removeButton1,removeButton2,removeButton3,removeButton4,removeButton5)
+function read6ImagesURL(input,addButtonID0,addButtonID1,addButtonID2,addButtonID3,addButtonID4,addButtonID5,imageID0,
+                        imageID1,imageID2,imageID3,imageID4,imageID5,text0,text1,text2,text3,text4,text5,removeButton0,
+                        removeButton1,removeButton2,removeButton3,removeButton4,removeButton5)
 {
     var count = input.files.length;
     console.log(count);

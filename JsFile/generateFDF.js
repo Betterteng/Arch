@@ -2,6 +2,10 @@
  * Created by TengShinan on 31/8/17.
  */
 
+// Coordination for images
+const axisX = [17, 78, 139, 17, 78, 139];
+const axisY = [20, 20, 20, 70, 70, 70];
+
 var doc = new jsPDF();
 //var functionArr = [drawPageOne()];
 var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
@@ -25,7 +29,9 @@ function generatePDF() {
     // doc.addPage();
     // drawPagePropertyAssessmentNotesCont();
     // doc.addPage();
-    drawPagePropertyExterior();
+    // drawPagePropertyExterior();
+    // doc.addPage();
+    siteGardenPic()
     // doc.addPage();
     // drawPagePropertyExteriorCont();
     // doc.addPage();
@@ -572,6 +578,27 @@ function drawPagePropertyExterior() {
             fontSize: 7
         }
     });
+}
+
+/**
+ * PAGE Property Exterior - Site & Garden pics
+ * */
+function siteGardenPic() {
+
+    setTableContentStyle();
+
+    for (var i = 0; i < 3; i++) {
+        try {
+            doc.addImage(document.getElementById('AssessmentSiteImage' + i).src, 'JPG', axisX[i], axisY[i], 55, 40);
+        } catch (err) {
+            console.log('AssessmentSiteImage: ' + i + ' is not uploaded.');
+        }
+        if (document.getElementById('AssessmentSiteImageText' + i).value.trim() != '') {
+            doc.text(axisX[i] + 2, axisY[i] + 45, document.getElementById('AssessmentSiteImageText' + i).value.trim());
+        } else {
+            doc.text(axisX[i] + 2, axisY[i] + 45, 'No name for this pic...')
+        }
+    }
 }
 
 /**
