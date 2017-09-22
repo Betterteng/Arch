@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f208ff00-eb39-4a31-be9a-2c45479c42fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/generateFDF.js" afterPath="$PROJECT_DIR$/JsFile/generateFDF.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/pdfStyle.js" afterPath="$PROJECT_DIR$/JsFile/pdfStyle.js" />
     </list>
     <ignored path="Arch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AssessmentReport.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AssessmentReport.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AssessmentReport.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="8033" column="68" selection-start-line="8033" selection-start-column="37" selection-end-line="8033" selection-end-column="68" />
+            <state relative-caret-position="423">
+              <caret line="11606" column="68" selection-start-line="11606" selection-start-column="37" selection-end-line="11606" selection-end-column="68" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -899,6 +900,7 @@
                 <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1252,7 +1254,6 @@
                 <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#555143#555149#0" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1287,12 +1288,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="764" selection-end-column="4" />
+            <state relative-caret-position="623">
+              <caret line="776" column="17" selection-start-line="776" selection-start-column="17" selection-end-line="776" selection-end-column="17" />
               <folding>
+                <element signature="e#312#755#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
                 <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -1301,10 +1303,8 @@
                 <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
                 <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
                 <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-                <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-                <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-                <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-                <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+                <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+                <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
                 <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
                 <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
                 <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -1330,8 +1330,8 @@
       <file leaf-file-name="pdfStyle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JsFile/pdfStyle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="28" />
+            <state relative-caret-position="570">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1565,12 +1565,12 @@
       <workItem from="1505778199399" duration="16395000" />
       <workItem from="1505864385743" duration="20407000" />
       <workItem from="1505949677464" duration="13757000" />
-      <workItem from="1506039312806" duration="13257000" />
+      <workItem from="1506039312806" duration="16818000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257901000" />
+    <option name="totallyTimeSpent" value="261462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1678,6 +1678,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -1686,10 +1687,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -2584,6 +2583,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -2937,7 +2937,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -3000,6 +2999,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -3008,10 +3008,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -3906,6 +3904,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -4259,7 +4258,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -4322,6 +4320,7 @@
         <state relative-caret-position="2580">
           <caret line="299" column="24" selection-start-line="299" selection-start-column="24" selection-end-line="299" selection-end-column="24" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -4330,10 +4329,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -5228,6 +5225,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -5581,7 +5579,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -5636,6 +5633,7 @@
         <state relative-caret-position="2580">
           <caret line="299" column="24" selection-start-line="299" selection-start-column="24" selection-end-line="299" selection-end-column="24" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -5644,10 +5642,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -6542,6 +6538,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -6895,7 +6892,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -6942,6 +6938,7 @@
         <state relative-caret-position="2580">
           <caret line="299" column="24" selection-start-line="299" selection-start-column="24" selection-end-line="299" selection-end-column="24" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -6950,10 +6947,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -7856,6 +7851,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -8209,7 +8205,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -8248,6 +8243,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -8256,10 +8252,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -9162,6 +9156,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -9515,7 +9510,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -9554,6 +9548,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -9562,10 +9557,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -10468,6 +10461,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -10821,7 +10815,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -10860,6 +10853,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#312#755#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -10868,10 +10862,8 @@
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
             <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
@@ -11766,6 +11758,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -12119,7 +12112,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -12257,18 +12249,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="776" column="17" selection-start-line="776" selection-start-column="17" selection-end-line="776" selection-end-column="17" />
+          <folding>
+            <element signature="e#312#755#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
+            <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
+            <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageLivingArea#0" expanded="false" />
+            <element signature="n#!!block;n#drawPageBedroomArea#0" expanded="false" />
+            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
+            <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
+            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
+            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
+            <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
+            <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
+            <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
+            <element signature="n#!!block;n#getExterior1stTableRows#0" expanded="false" />
+            <element signature="n#!!block;n#getNoteRows#0" expanded="false" />
+            <element signature="n#!!block;n#getNoteCols#0" expanded="false" />
+            <element signature="n#!!block;n#getDetailCols#0" expanded="false" />
+            <element signature="n#!!block;n#validateArr#0" expanded="false" />
+            <element signature="n#!!block;n#drawPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPic2#0" expanded="false" />
+            <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
+            <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
+            <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/pdfStyle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="570">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AssessmentReport.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="8033" column="68" selection-start-line="8033" selection-start-column="37" selection-end-line="8033" selection-end-column="68" />
+        <state relative-caret-position="423">
+          <caret line="11606" column="68" selection-start-line="11606" selection-start-column="37" selection-end-line="11606" selection-end-column="68" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -13138,6 +13167,7 @@
             <element signature="n#select#0;n#div#1;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#2;n#div#4;n#div#24;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#25;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#25;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -13491,7 +13521,6 @@
             <element signature="n#select#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#select#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#37;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#38;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#555143#555149#0" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#th#1;n#tr#0;n#table#0;n#div#38;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -13521,44 +13550,6 @@
             <element signature="n#div#41;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#42;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#42;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="764" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
-            <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
-            <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetArea#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageWetAreaCont#0" expanded="false" />
-            <element signature="n#!!block;n#drawWetAreaPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
-            <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
-            <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
-            <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
-            <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
-            <element signature="n#!!block;n#getExterior1stTableRows#0" expanded="false" />
-            <element signature="n#!!block;n#getNoteRows#0" expanded="false" />
-            <element signature="n#!!block;n#getNoteCols#0" expanded="false" />
-            <element signature="n#!!block;n#getDetailCols#0" expanded="false" />
-            <element signature="n#!!block;n#validateArr#0" expanded="false" />
-            <element signature="n#!!block;n#drawPic#0" expanded="false" />
-            <element signature="n#!!block;n#drawPic2#0" expanded="false" />
-            <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
-            <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
-            <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -9,7 +9,9 @@ const axisY = [20, 20, 20, 70, 70, 70];
 var doc = new jsPDF();
 var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
 
-// Set the footer
+/**
+ * Set the footer
+ * */
 var pageContent = function (data) {
 
     var str = 'Page ' + data.pageCount;
@@ -44,18 +46,10 @@ function generatePDF() {
     drawPageLivingArea();
     doc.addPage();
     drawPageBedroomArea();
-    // doc.addPage();
-    // drawBedroomAreaPic();
-    // doc.addPage();
-    // drawInteriorNotes();
-    // doc.addPage();
-    // drawPageWetArea();
-    // doc.addPage();
-    // drawPageWetAreaCont();
-    // doc.addPage();
-    // drawWetAreaPic();
-    // doc.addPage();
-    // drawPageAttachments();
+    doc.addPage();
+    drawPageWetArea();
+    doc.addPage();
+    drawPageAttachments();
     // doc.addPage();
     // termsAndConditions();
 
@@ -742,28 +736,6 @@ function drawPageBedroomArea() {
     });
 }
 
-// /**
-//  * PAGE Interior Notes
-//  * */
-// function drawInteriorNotes() {
-//
-//     // Notes
-//     doc.autoTable(getNoteCols(), getNoteRows('interiorAN', 'interiorMJF', 'interiorMNF', 'interiorGN', 'interiorAL', 'propertyInteriorLbl1', 'propertyInteriorLbl2'), {
-//         theme: 'grid',
-//         margin: {top: 20, bottom: 50},
-//         showHeader: 'never',
-//         columnStyles: {
-//             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
-//             rightCol: {columnWidth: 'auto'}
-//         },
-//         styles: {
-//             overflow: 'linebreak',
-//             columnWidth: 'wrap',
-//             valign: 'middle'
-//         }
-//     });
-// }
-
 /**
  * PAGE Wet Area - Page1
  * */
@@ -791,8 +763,9 @@ function drawPageWetArea() {
 
     // Detail table
     doc.autoTable(getDetailCols(), getWetAreaRows(), {
+        startY: 45,
         theme: 'grid',
-        margin: {top: 45, bottom: 50},
+        margin: {bottom: 30},
         showHeader: 'never',
         columnStyles: {
             1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'},
@@ -809,36 +782,50 @@ function drawPageWetArea() {
             fontSize: 7
         }
     });
-}
 
-/**
- * PAGE Wet Area - Page2
- * */
-function drawPageWetAreaCont() {
-
-    // Notes
-    doc.autoTable(getNoteCols(), getNoteRows('wetAN', 'wetMJF', 'wetMNF', 'wetGN', 'wetAL', 'wetAreasLbl1', 'wetAreasLbl2'), {
-        theme: 'grid',
-        margin: {top: 20, bottom: 50},
-        showHeader: 'never',
-        columnStyles: {
-            leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
-            rightCol: {columnWidth: 'auto'}
-        },
-        styles: {
-            overflow: 'linebreak',
-            columnWidth: 'wrap',
-            valign: 'middle'
-        }
-    });
-}
-
-/**
- * PAGE Wet Area - Page picture
- * */
-function drawWetAreaPic() {
-
-    drawPic('AssessmentInteriorServiceImage', 3);
+    // Pics & Access Notes - wet areas
+    if (doc.autoTable.previous.finalY > 210) {
+        doc.addPage();
+        // Pic
+        drawPic2('AssessmentInteriorServiceImage', 3, axisY);
+        // Notes
+        doc.autoTable(getNoteCols(), getNoteRows('wetAN', 'wetMJF', 'wetMNF', 'wetGN', 'wetAL', 'wetAreasLbl1', 'wetAreasLbl2'), {
+            startY: 70,
+            theme: 'grid',
+            margin: {bottom: 30},
+            showHeader: 'never',
+            columnStyles: {
+                leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+                rightCol: {columnWidth: 'auto'}
+            },
+            styles: {
+                overflow: 'linebreak',
+                columnWidth: 'wrap',
+                valign: 'middle'
+            }
+        });
+    } else {
+        var axisYArr = [doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8,
+            doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58];
+        // Pic
+        drawPic2('AssessmentInteriorServiceImage', 3, axisYArr);
+        // Notes
+        doc.autoTable(getNoteCols(), getNoteRows('wetAN', 'wetMJF', 'wetMNF', 'wetGN', 'wetAL', 'wetAreasLbl1', 'wetAreasLbl2'), {
+            startY: doc.autoTable.previous.finalY + 58,
+            theme: 'grid',
+            margin: {bottom: 30},
+            showHeader: 'never',
+            columnStyles: {
+                leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+                rightCol: {columnWidth: 'auto'}
+            },
+            styles: {
+                overflow: 'linebreak',
+                columnWidth: 'wrap',
+                valign: 'middle'
+            }
+        });
+    }
 }
 
 /**
@@ -1602,3 +1589,12 @@ function getWetAreaRows() {
 
     return data;
 }
+
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions for attachment
+ |--------------------------------------------------------------------------
+ */
+/**
+ * Set up the columns for attachment section
+ * */
