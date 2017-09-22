@@ -33,3 +33,8 @@ function setTableContentStyle() {
 function setLinesStyle() {
     doc.setDrawColor(228, 228, 228);
 }
+
+function footerTextStyle() {
+    doc.setFontSize(5);
+    doc.setTextColor(128, 128, 128);
+}

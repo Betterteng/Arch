@@ -13,9 +13,13 @@ var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
 var pageContent = function (data) {
 
     var str = 'Page ' + data.pageCount;
+    var copyRight = '©COPYRIGHT 2016 ARCHICENTRE AUSTRALIA, a division of ARCHIADVISORY PTY LTD ABN 51 614 712 613';
 
-    doc.addImage(imgData, 'JPG', data.settings.margin.left, doc.internal.pageSize.height, 130, 10);
-    doc.text(180, doc.internal.pageSize.height - 10, str);
+    doc.addImage(footerImg, 'PNG', 15, 278, 20, 9);
+    footerTextStyle();
+    doc.text(data.settings.margin.left + 25, doc.internal.pageSize.height - 10, copyRight);
+    setExplanationStyle();
+    doc.text(data.settings.margin.left + 165, doc.internal.pageSize.height - 10, str);
 }
 
 /**
@@ -1391,15 +1395,6 @@ function drawPic(option, maxNum) {
         }
     }
 }
-
-// /**
-//  * Add footer to the Page
-//  * */
-// function addFooter() {
-//
-//     // Put footer at the bottom of the page
-//     doc.addImage(imgData, 'JPG', 15, 275, 150, 13);
-// }
 
 /*
  |--------------------------------------------------------------------------

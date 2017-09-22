@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f208ff00-eb39-4a31-be9a-2c45479c42fc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/footer.js" afterPath="$PROJECT_DIR$/JsFile/footer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/generateFDF.js" afterPath="$PROJECT_DIR$/JsFile/generateFDF.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/pdfStyle.js" afterPath="$PROJECT_DIR$/JsFile/pdfStyle.js" />
     </list>
     <ignored path="Arch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +31,8 @@
       <file leaf-file-name="AssessmentReport.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AssessmentReport.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="11654" column="22" selection-start-line="11654" selection-start-column="22" selection-end-line="11654" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="11658" column="12" selection-start-line="11658" selection-start-column="12" selection-end-line="11658" selection-end-column="12" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1287,21 +1290,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploadImages.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JsFile/uploadImages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11745">
-              <caret line="783" column="73" selection-start-line="783" selection-start-column="73" selection-end-line="783" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="533">
+              <caret line="1398" column="2" selection-start-line="1398" selection-start-column="2" selection-end-line="1398" selection-end-column="2" />
               <folding>
                 <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
                 <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
@@ -1309,7 +1302,7 @@
                 <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
                 <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-                <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+                <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
                 <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
                 <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
                 <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -1343,6 +1336,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="pdfStyle.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JsFile/pdfStyle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -1362,14 +1365,14 @@
       <list>
         <option value="$PROJECT_DIR$/general.css" />
         <option value="$PROJECT_DIR$/JsFile/collectUserInput.js" />
-        <option value="$PROJECT_DIR$/JsFile/pdfStyle.js" />
         <option value="$PROJECT_DIR$/JsFile/clearLabels.js" />
         <option value="$PROJECT_DIR$/JsFile/addLabels.js" />
         <option value="$PROJECT_DIR$/JsFile/showMore.js" />
         <option value="$PROJECT_DIR$/JsFile/uploadImages.js" />
         <option value="$PROJECT_DIR$/CssFile/general.css" />
-        <option value="$PROJECT_DIR$/JsFile/footer.js" />
         <option value="$PROJECT_DIR$/AssessmentReport.html" />
+        <option value="$PROJECT_DIR$/JsFile/footer.js" />
+        <option value="$PROJECT_DIR$/JsFile/pdfStyle.js" />
         <option value="$PROJECT_DIR$/JsFile/generateFDF.js" />
       </list>
     </option>
@@ -1571,11 +1574,12 @@
       <workItem from="1505778199399" duration="16395000" />
       <workItem from="1505864385743" duration="20407000" />
       <workItem from="1505949677464" duration="13757000" />
+      <workItem from="1506039312806" duration="1996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244644000" />
+    <option name="totallyTimeSpent" value="246640000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1674,7 +1678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1689,7 +1692,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -3002,7 +3005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3017,7 +3019,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -4330,7 +4332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4345,7 +4346,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -5650,7 +5651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5665,7 +5665,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -6962,7 +6962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6977,7 +6976,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -8289,7 +8288,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -9601,7 +9600,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -10913,7 +10912,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
@@ -12210,7 +12209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -12230,14 +12228,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/collectUserInput.js" />
-    <entry file="file://$PROJECT_DIR$/JsFile/pdfStyle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/rep_property_assessment.php" />
     <entry file="file://$PROJECT_DIR$/node_modules/jspdf-autotable/examples/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -12251,20 +12241,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pic/222.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Pic/222.JPG" />
     <entry file="file://$PROJECT_DIR$/node_modules/jspdf-autotable/examples/simple.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -12272,15 +12256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JsFile/footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="122068" selection-start-line="4" selection-start-column="122068" selection-end-line="4" selection-end-column="122068" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -12288,14 +12263,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JsFile/uploadImages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11745">
-          <caret line="783" column="73" selection-start-line="783" selection-start-column="73" selection-end-line="783" selection-end-column="73" />
           <folding />
         </state>
       </provider>
@@ -12324,10 +12291,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JsFile/uploadImages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="783" column="73" selection-start-line="783" selection-start-column="73" selection-end-line="783" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsFile/footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="6" column="3587" selection-start-line="6" selection-start-column="3587" selection-end-line="6" selection-end-column="3587" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AssessmentReport.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="11654" column="22" selection-start-line="11654" selection-start-column="22" selection-end-line="11654" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="11658" column="12" selection-start-line="11658" selection-start-column="12" selection-end-line="11658" selection-end-column="12" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -13584,10 +13567,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JsFile/pdfStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="533">
+          <caret line="1398" column="2" selection-start-line="1398" selection-start-column="2" selection-end-line="1398" selection-end-column="2" />
           <folding>
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageOne#0" expanded="false" />
@@ -13595,7 +13586,7 @@
             <element signature="n#!!block;n#drawPageThree#0" expanded="false" />
             <element signature="n#!!block;n#drawPageFour#0" expanded="false" />
             <element signature="n#!!block;n#fillUserInputPageFour#0" expanded="false" />
-            <element signature="n#!!block;n#drawSiteGardenPic#0" expanded="false" />
+            <element signature="n#!!block;n#drawPagePropertyAssessmentNotes#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExterior#0" expanded="false" />
             <element signature="n#!!block;n#drawPagePropertyExteriorCont#0" expanded="false" />
             <element signature="n#!!block;n#drawExteriorPic#0" expanded="false" />
