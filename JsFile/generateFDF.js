@@ -38,20 +38,12 @@ function generatePDF() {
     // drawPageFour();
     // doc.addPage();
     drawPagePropertyAssessmentNotes();
-    // doc.addPage();
-    // drawSiteGardenPic()
-    // doc.addPage();
-    // drawPagePropertyExterior();
-    // doc.addPage();
-    // drawPagePropertyExteriorCont();
-    // doc.addPage();
-    // drawExteriorPic();
-    // doc.addPage();
-    // drawPageLivingArea();
-    // doc.addPage();
-    // drawLivingAreaPic();
-    // doc.addPage();
-    // drawPageBedroomArea();
+    doc.addPage();
+    drawPagePropertyExterior();
+    doc.addPage();
+    drawPageLivingArea();
+    doc.addPage();
+    drawPageBedroomArea();
     // doc.addPage();
     // drawBedroomAreaPic();
     // doc.addPage();
@@ -518,7 +510,7 @@ function drawPagePropertyAssessmentNotes() {
 
     // Draw Site & Garden first table
     doc.autoTable(getDetailCols(), getSiteGardenEntries(), {
-        addPageContent: pageContent,
+        //addPageContent: pageContent,
         startY: 100,
         margin: {bottom: 30},
         theme: 'grid',
@@ -530,10 +522,14 @@ function drawPagePropertyAssessmentNotes() {
 
     console.log('How many rows in the first table (Site & Garden Page): ' + countRows1stTableSiteGarden());
 
+    // Put the picture in the PDF
+    drawPic('AssessmentSiteImage', 3, doc.autoTable.previous.finalY + 8);
+
     // Draw Site & Garden note table
     doc.autoTable(getNoteCols(), getNoteRows('SiteGardenAccessNotes', 'MajFound', 'MainFound', 'generalNotes', 'SiteGardenAccessLimitation', 'siteGardenLbl1', 'siteGardenLbl2'), {
-        addPageContent: pageContent,
-        startY: doc.autoTable.previous.finalY + 8,
+        //addPageContent: pageContent,
+        pageBreak: 'auto',
+        startY: doc.autoTable.previous.finalY + 58,
         margin: {bottom: 30},
         theme: 'grid',
         showHeader: 'never',
@@ -547,36 +543,6 @@ function drawPagePropertyAssessmentNotes() {
             valign: 'middle'
         }
     });
-}
-
-// /**
-//  * PAGE Property Assessment Notes - 2
-//  * */
-// function drawPagePropertyAssessmentNotesCont() {
-//
-//     // Draw Site & Garden second table
-//     doc.autoTable(getNoteCols(), getNoteRows('SiteGardenAccessNotes', 'MajFound', 'MainFound', 'generalNotes', 'SiteGardenAccessLimitation', 'siteGardenLbl1', 'siteGardenLbl2'), {
-//         theme: 'grid',
-//         margin: {top: 20, bottom: 50},
-//         showHeader: 'never',
-//         columnStyles: {
-//             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
-//             rightCol: {columnWidth: 'auto'}
-//         },
-//         styles: {
-//             overflow: 'linebreak',
-//             columnWidth: 'wrap',
-//             valign: 'middle'
-//         }
-//     });
-// }
-
-/**
- * PAGE Property Assessment Notes - Site & Garden pics
- * */
-function drawSiteGardenPic() {
-
-    drawPic('AssessmentSiteImage', 3);
 }
 
 /**
@@ -606,8 +572,9 @@ function drawPagePropertyExterior() {
 
     // Draw first table
     doc.autoTable(getExterior1stTableCols(), getExterior1stTableRows(), {
+        startY: 45,
         theme: 'grid',
-        margin: {top: 45, bottom: 50},
+        margin: {bottom: 30},
         showHeader: 'never',
         columnStyles: {
             1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'},
@@ -624,17 +591,12 @@ function drawPagePropertyExterior() {
             fontSize: 7
         }
     });
-}
-
-/**
- * PAGE Property Exterior - Note Page
- * */
-function drawPagePropertyExteriorCont() {
 
     // Notes
     doc.autoTable(getNoteCols(), getNoteRows('ExteriorAN', 'ExteriorMJF', 'ExteriorMNF', 'ExteriorGN', 'ExteriorAL', 'propertyExteriorLbl1', 'propertyExteriorLbl2'), {
+        startY: doc.autoTable.previous.finalY + 8,
         theme: 'grid',
-        margin: {top: 20, bottom: 50},
+        margin: {bottom: 30},
         showHeader: 'never',
         columnStyles: {
             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
@@ -646,14 +608,17 @@ function drawPagePropertyExteriorCont() {
             valign: 'middle'
         }
     });
-}
 
-/**
- * PAGE Property Exterior - Pic Page
- * */
-function drawExteriorPic() {
+    //if (doc.autoTable.previous.finalY)
 
-    drawPic('AssessmentExteriorImage', 6);
+    var axisYArr = [doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8,
+        doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58];
+    if (doc.autoTable.previous.finalY > 222) {
+        doc.addPage();
+        drawPic2('AssessmentExteriorImage', 6, axisY);
+    } else {
+        drawPic2('AssessmentExteriorImage', 6, axisYArr);
+    }
 }
 
 /**
@@ -701,14 +666,11 @@ function drawPageLivingArea() {
             fontSize: 7
         }
     });
-}
 
-/**
- * PAGE Living Area - Pic
- * */
-function drawLivingAreaPic() {
-
-    drawPic('AssessmentInteriorLivingImage', 6);
+    // Pic - living area
+    var axisYArr = [doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8,
+        doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58];
+    drawPic2('AssessmentInteriorLivingImage', 6, axisYArr);
 }
 
 /**
@@ -756,25 +718,17 @@ function drawPageBedroomArea() {
             fontSize: 7
         }
     });
-}
 
-/**
- * PAGE Bedroom Area - Pic
- * */
-function drawBedroomAreaPic() {
+    // Pic - bedroom area
+    var axisYArr = [doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8, doc.autoTable.previous.finalY + 8,
+        doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58, doc.autoTable.previous.finalY + 58];
+    drawPic2('AssessmentInteriorBedroomImage', 6, axisYArr);
 
-    drawPic('AssessmentInteriorBedroomImage', 6);
-}
-
-/**
- * PAGE Interior Notes
- * */
-function drawInteriorNotes() {
-
-    // Notes
+    // Interior Notes
     doc.autoTable(getNoteCols(), getNoteRows('interiorAN', 'interiorMJF', 'interiorMNF', 'interiorGN', 'interiorAL', 'propertyInteriorLbl1', 'propertyInteriorLbl2'), {
+        startY: doc.autoTable.previous.finalY + 108,
         theme: 'grid',
-        margin: {top: 20, bottom: 50},
+        margin: {bottom: 30},
         showHeader: 'never',
         columnStyles: {
             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
@@ -787,6 +741,28 @@ function drawInteriorNotes() {
         }
     });
 }
+
+// /**
+//  * PAGE Interior Notes
+//  * */
+// function drawInteriorNotes() {
+//
+//     // Notes
+//     doc.autoTable(getNoteCols(), getNoteRows('interiorAN', 'interiorMJF', 'interiorMNF', 'interiorGN', 'interiorAL', 'propertyInteriorLbl1', 'propertyInteriorLbl2'), {
+//         theme: 'grid',
+//         margin: {top: 20, bottom: 50},
+//         showHeader: 'never',
+//         columnStyles: {
+//             leftCol: {fillColor: [252, 91, 93], textColor: 255, fontStyle: 'bold'},
+//             rightCol: {columnWidth: 'auto'}
+//         },
+//         styles: {
+//             overflow: 'linebreak',
+//             columnWidth: 'wrap',
+//             valign: 'middle'
+//         }
+//     });
+// }
 
 /**
  * PAGE Wet Area - Page1
@@ -1378,7 +1354,25 @@ function validateArr(arr, option) {
  * option means which part (site&garden or exterior...),
  * maxNum means the max number of that section can accept.
  * */
-function drawPic(option, maxNum) {
+function drawPic(option, maxNum, axisY) {
+
+    setTableContentStyle();
+
+    for (var i = 0; i < maxNum; i++) {
+        try {
+            doc.addImage(document.getElementById(option + i).src, 'JPG', axisX[i], axisY, 55, 40);
+            if (document.getElementById(option + 'Text' + i).value.trim() != '') {
+                doc.text(axisX[i] + 2, axisY + 45, document.getElementById(option + 'Text' + i).value.trim());
+            } else {
+                doc.text(axisX[i] + 2, axisY + 45, 'No name for this pic...')
+            }
+        } catch (err) {
+            console.log(option + ' [' + i + '] is not uploaded.');
+        }
+    }
+}
+
+function drawPic2(option, maxNum, axisY) {
 
     setTableContentStyle();
 
