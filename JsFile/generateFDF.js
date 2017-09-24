@@ -853,24 +853,36 @@ function drawPageAttachments() {
         'Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by referring to the \n' +
         'Report cover email for downloading instructions. If you have difficulty downloading the following ticked attachments, \n please contact Archicentre Australia on 1300 13 45 13 immediately.');
 
-    // Horizontal lines
-    setLinesStyle();
-    for (var i = 0; i < 5; i++) {
-        doc.line(startPointX, startPointY2, endPointX, startPointY2);
-        startPointY2 += lineGap;
-    }
-    // Vertical lines
-    startPointY2 = startPointY + 23;
-    doc.line(startPointX, startPointY2, startPointX, startPointY2 + lineGap * 4);
-    doc.line(endPointX, startPointY2, endPointX, startPointY2 + lineGap * 4);
+    // // Horizontal lines
+    // setLinesStyle();
+    // for (var i = 0; i < 5; i++) {
+    //     doc.line(startPointX, startPointY2, endPointX, startPointY2);
+    //     startPointY2 += lineGap;
+    // }
+    // // Vertical lines
+    // startPointY2 = startPointY + 23;
+    // doc.line(startPointX, startPointY2, startPointX, startPointY2 + lineGap * 4);
+    // doc.line(endPointX, startPointY2, endPointX, startPointY2 + lineGap * 4);
+    //
+    // // Titles in the table
+    // setTableTitleStyle();
+    // firstTablePointX = startPointX + 2;
+    // for (var i = 0; i < 3; i++) {
+    //     doc.text(firstTablePointX, startPointY2 + 4, 'ITEM');
+    //     firstTablePointX += 60;
+    // }
 
-    // Titles in the table
-    setTableTitleStyle();
-    firstTablePointX = startPointX + 2;
-    for (var i = 0; i < 3; i++) {
-        doc.text(firstTablePointX, startPointY2 + 4, 'ITEM');
-        firstTablePointX += 60;
-    }
+    // Table
+    doc.autoTable(getAttachmentCol(), getAttachmentRow(), {
+        startY: 43,
+        theme: 'grid',
+        margin: {bottom: 30},
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle'
+        }
+    });
 }
 
 /**
@@ -1598,3 +1610,33 @@ function getWetAreaRows() {
 /**
  * Set up the columns for attachment section
  * */
+function getAttachmentCol() {
+    return [
+        {title: "Item", dataKey: "1"},
+        {title: "", dataKey: "2"},
+        {title: "Item", dataKey: "3"},
+        {title: "", dataKey: "4"},
+        {title: "Item", dataKey: "5"},
+        {title: "", dataKey: "6"}
+    ];
+}
+
+/**
+ * Set up the rows for attachment section
+ * */
+function getAttachmentRow() {
+
+    var data = [];
+    var result = [];
+
+    // Extract data
+    for (var i = 0; i < 9; i++) {
+        result[i] = document.getElementById(i + 6000 + '').value;
+    }
+
+    data.push({1: 'Property Management Guide', 2: result[0], 3: 'Cracking in Masonry', 4: result[1], 5: 'Treatment of Dampness', 6: result[2]});
+    data.push({1: 'Health & Safety Warning', 2: result[3], 3: 'Roofing & Guttering', 4: result[4], 5: 'Home Safety Checklist', 6: result[5]});
+    data.push({1: 'Termites & Borers', 2: result[6], 3: 'Re-stumping', 4: result[7], 5: 'Cost Guide', 6: result[8]});
+
+    return data;
+}
