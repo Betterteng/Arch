@@ -31,14 +31,14 @@ function generatePDF() {
 
     console.log('Nice!');
 
-    // drawPageOne();
-    // doc.addPage();
-    // drawPageTwo();
-    // doc.addPage();
-    // drawPageThree();
-    // doc.addPage();
-    // drawPageFour();
-    // doc.addPage();
+    drawPageOne();
+    doc.addPage();
+    drawPageTwo();
+    doc.addPage();
+    drawPageThree();
+    doc.addPage();
+    drawPageFour();
+    doc.addPage();
     drawPagePropertyAssessmentNotes();
     doc.addPage();
     drawPagePropertyExterior();
@@ -50,8 +50,8 @@ function generatePDF() {
     drawPageWetArea();
     doc.addPage();
     drawPageAttachments();
-    // doc.addPage();
-    // termsAndConditions();
+    doc.addPage();
+    termsAndConditions();
 
     // Save the PDF file
     doc.save('a4.pdf');
@@ -147,7 +147,7 @@ function drawPageOne() {
      *  Fill user's input - if you want to only draw the skeletons such as table borders,
      *  comment these methods below.
      * */
-    //fillUserInputPageOne();
+    fillUserInputPageOne();
 }
 function fillUserInputPageOne() {
 
@@ -396,6 +396,41 @@ function drawPageFour() {
      *  comment these methods below.
      * */
     fillUserInputPageFour();
+
+    // Assessment Summary
+    doc.autoTable(getPASCol(), getPASRow(), {
+        startY: 170,
+        theme: 'grid',
+        margin: {bottom: 30},
+        showHeader: 'never',
+        columnStyles: {
+            1: {columnWidth: 'auto'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle'
+        }
+    });
+
+    // Set title
+    setTableTitleStyle();
+    doc.text(17, doc.autoTable.previous.finalY + 8, 'Design Potential Summary');
+
+    doc.autoTable(getPASCol(), getPASCol2(), {
+        startY: doc.autoTable.previous.finalY + 14,
+        theme: 'grid',
+        margin: {bottom: 30},
+        showHeader: 'never',
+        columnStyles: {
+            1: {columnWidth: 'auto'}
+        },
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'wrap',
+            valign: 'middle'
+        }
+    });
 }
 function fillUserInputPageFour() {
 
@@ -834,14 +869,7 @@ function drawPageWetArea() {
 function drawPageAttachments() {
 
     const startPointX = 15;
-    const endPointX = 195;
     const startPointY = 20;
-    const lineGap = 6;
-    const contentArr = ['Property Management Guide', 'Health & Safety Warning', 'Termites & Borers', 'Cracking in Masonry',
-        'Roofing & Guttering', 'Re-stumping', 'Treatment of Dampness', 'Home Safety Checklist', 'Cost Guide'];
-
-    var startPointY2 = startPointY + 23;
-    var firstTablePointX;
 
     // Title
     setHeadTitleStyle();
@@ -852,25 +880,6 @@ function drawPageAttachments() {
     doc.text(startPointX, startPointY + 5, 'The following selected attachments are an important part of this Report. These can be downloaded from the Archicentre \n' +
         'Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by referring to the \n' +
         'Report cover email for downloading instructions. If you have difficulty downloading the following ticked attachments, \n please contact Archicentre Australia on 1300 13 45 13 immediately.');
-
-    // // Horizontal lines
-    // setLinesStyle();
-    // for (var i = 0; i < 5; i++) {
-    //     doc.line(startPointX, startPointY2, endPointX, startPointY2);
-    //     startPointY2 += lineGap;
-    // }
-    // // Vertical lines
-    // startPointY2 = startPointY + 23;
-    // doc.line(startPointX, startPointY2, startPointX, startPointY2 + lineGap * 4);
-    // doc.line(endPointX, startPointY2, endPointX, startPointY2 + lineGap * 4);
-    //
-    // // Titles in the table
-    // setTableTitleStyle();
-    // firstTablePointX = startPointX + 2;
-    // for (var i = 0; i < 3; i++) {
-    //     doc.text(firstTablePointX, startPointY2 + 4, 'ITEM');
-    //     firstTablePointX += 60;
-    // }
 
     // Table
     doc.autoTable(getAttachmentCol(), getAttachmentRow(), {
@@ -1637,6 +1646,56 @@ function getAttachmentRow() {
     data.push({1: 'Property Management Guide', 2: result[0], 3: 'Cracking in Masonry', 4: result[1], 5: 'Treatment of Dampness', 6: result[2]});
     data.push({1: 'Health & Safety Warning', 2: result[3], 3: 'Roofing & Guttering', 4: result[4], 5: 'Home Safety Checklist', 6: result[5]});
     data.push({1: 'Termites & Borers', 2: result[6], 3: 'Re-stumping', 4: result[7], 5: 'Cost Guide', 6: result[8]});
+
+    return data;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions for Property Assessment Summary
+ |--------------------------------------------------------------------------
+ */
+/**
+ * Set up the col for Property Assessment Summary
+ * */
+function getPASCol() {
+    return [
+        {title: '111', dataKey: '1'}
+    ];
+}
+
+/**
+ * Set up the rows for Property Assessment Summary
+ * */
+function getPASRow() {
+
+    var data = [];
+
+    var result;
+
+    // Extract data
+    result = document.getElementById('PASAssessmentSummary').value.trim();
+
+    // Prepare data
+    data.push({1: result});
+
+    return data;
+}
+
+/**
+ * Set up the rows for Property Assessment Summary
+ * */
+function getPASCol2() {
+
+    var data = [];
+
+    var result;
+
+    // Extract data
+    result = document.getElementById('PASDesignPotSummary').value.trim();
+
+    // Prepare data
+    data.push({1: result});
 
     return data;
 }
