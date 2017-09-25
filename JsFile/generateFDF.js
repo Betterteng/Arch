@@ -1120,8 +1120,12 @@ function getExterior1stTableRows() {
     var data = [];
 
     // Extract data
-    for (var i = 0; i < 8; i++) {section1[i] = document.getElementById(i + 330 + '').value;}
-    for (var i = 0; i < 5; i++) {section2[i] = document.getElementById(i + 340 + '').value;}
+    for (var i = 0; i < 8; i++) {
+        section1[i] = document.getElementById(i + 330 + '').value;
+    }
+    for (var i = 0; i < 5; i++) {
+        section2[i] = document.getElementById(i + 340 + '').value;
+    }
     for (var i = 0; i < 6; i++) {
         section3[i] = document.getElementById(i + 350 + '').value;
         section4[i] = document.getElementById(i + 360 + '').value;
@@ -1153,88 +1157,418 @@ function getExterior1stTableRows() {
 
     // Prepare rows
     if (sectionTitle[0] != '') {
-        data.push({1: sectionTitle[0], 2: 'Covering', 3: section1[0], 4: 'Valleys', 5: section1[1], 6: 'Ridges', 7: section1[2], 8: 'Overhanging tree', 9: section1[3]});
-        data.push({1: '', 2: 'Chimney/Vents/Flues', 3: section1[4], 4: 'Flashing', 5: section1[5], 6: 'Box Gutters', 7: section1[6], 8: 'Skylights', 9: section1[7]});
+        data.push({
+            1: sectionTitle[0],
+            2: 'Covering',
+            3: section1[0],
+            4: 'Valleys',
+            5: section1[1],
+            6: 'Ridges',
+            7: section1[2],
+            8: 'Overhanging tree',
+            9: section1[3]
+        });
+        data.push({
+            1: '',
+            2: 'Chimney/Vents/Flues',
+            3: section1[4],
+            4: 'Flashing',
+            5: section1[5],
+            6: 'Box Gutters',
+            7: section1[6],
+            8: 'Skylights',
+            9: section1[7]
+        });
     }
 
     if (sectionTitle[1] != '') {
-        data.push({1: sectionTitle[1], 2: 'Frame', 3: section2[0], 4: 'Insulation', 5: section2[1], 6: 'Services', 7: section2[2], 8: 'Lining/Sarking', 9: section2[3]});
+        data.push({
+            1: sectionTitle[1],
+            2: 'Frame',
+            3: section2[0],
+            4: 'Insulation',
+            5: section2[1],
+            6: 'Services',
+            7: section2[2],
+            8: 'Lining/Sarking',
+            9: section2[3]
+        });
         data.push({1: '', 2: 'Underside of Roof', 3: section2[4], 4: '', 5: '', 6: '', 7: '', 8: '', 9: ''});
     }
 
     if (sectionTitle[2] != '') {
-        data.push({1: sectionTitle[2], 2: 'Stumps/Piers', 3: section3[0], 4: 'Walls', 5: section3[1], 6: 'Services', 7: section3[2], 8: '', 9: ''});
-        data.push({1: '', 2: 'Ventilation/Damp', 3: section3[3], 4: 'Framing', 5: section3[4], 6: 'Underside of Floor', 7: section3[5], 8: '', 9: ''});
+        data.push({
+            1: sectionTitle[2],
+            2: 'Stumps/Piers',
+            3: section3[0],
+            4: 'Walls',
+            5: section3[1],
+            6: 'Services',
+            7: section3[2],
+            8: '',
+            9: ''
+        });
+        data.push({
+            1: '',
+            2: 'Ventilation/Damp',
+            3: section3[3],
+            4: 'Framing',
+            5: section3[4],
+            6: 'Underside of Floor',
+            7: section3[5],
+            8: '',
+            9: ''
+        });
     }
 
     if (sectionTitle[3] != '') {
-        data.push({1: sectionTitle[3], 2: 'Structure/Finish', 3: section4[0], 4: 'Eaves', 5: section4[1], 6: 'Gutter Downpipe', 7: section4[2], 8: sectionOther[0], 9: sectionOther[1]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section4[3], 4: 'Doors/Windows', 5: section4[4], 6: 'Balcony/Deck', 7: section4[5], 8: sectionOther[2], 9: sectionOther[3]});
+        data.push({
+            1: sectionTitle[3],
+            2: 'Structure/Finish',
+            3: section4[0],
+            4: 'Eaves',
+            5: section4[1],
+            6: 'Gutter Downpipe',
+            7: section4[2],
+            8: sectionOther[0],
+            9: sectionOther[1]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section4[3],
+            4: 'Doors/Windows',
+            5: section4[4],
+            6: 'Balcony/Deck',
+            7: section4[5],
+            8: sectionOther[2],
+            9: sectionOther[3]
+        });
     }
 
     if (sectionTitle[4] != '') {
-        data.push({1: sectionTitle[4], 2: 'Structure/Finish', 3: section5[0], 4: 'Eaves', 5: section5[1], 6: 'Gutter Downpipe', 7: section5[2], 8: sectionOther[4], 9: sectionOther[5]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section5[3], 4: 'Doors/Windows', 5: section5[4], 6: 'Balcony/Deck', 7: section5[5], 8: sectionOther[6], 9: sectionOther[7]});
+        data.push({
+            1: sectionTitle[4],
+            2: 'Structure/Finish',
+            3: section5[0],
+            4: 'Eaves',
+            5: section5[1],
+            6: 'Gutter Downpipe',
+            7: section5[2],
+            8: sectionOther[4],
+            9: sectionOther[5]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section5[3],
+            4: 'Doors/Windows',
+            5: section5[4],
+            6: 'Balcony/Deck',
+            7: section5[5],
+            8: sectionOther[6],
+            9: sectionOther[7]
+        });
     }
 
     if (sectionTitle[5] != '') {
-        data.push({1: sectionTitle[5], 2: 'Structure/Finish', 3: section6[0], 4: 'Eaves', 5: section6[1], 6: 'Gutter Downpipe', 7: section6[2], 8: sectionOther[8], 9: sectionOther[9]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section6[3], 4: 'Doors/Windows', 5: section6[4], 6: 'Balcony/Deck', 7: section6[5], 8: sectionOther[10], 9: sectionOther[11]});
+        data.push({
+            1: sectionTitle[5],
+            2: 'Structure/Finish',
+            3: section6[0],
+            4: 'Eaves',
+            5: section6[1],
+            6: 'Gutter Downpipe',
+            7: section6[2],
+            8: sectionOther[8],
+            9: sectionOther[9]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section6[3],
+            4: 'Doors/Windows',
+            5: section6[4],
+            6: 'Balcony/Deck',
+            7: section6[5],
+            8: sectionOther[10],
+            9: sectionOther[11]
+        });
     }
 
     if (sectionTitle[6] != '') {
-        data.push({1: sectionTitle[6], 2: 'Structure/Finish', 3: section7[0], 4: 'Eaves', 5: section7[1], 6: 'Gutter Downpipe', 7: section7[2], 8: sectionOther[12], 9: sectionOther[13]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section7[3], 4: 'Doors/Windows', 5: section7[4], 6: 'Balcony/Deck', 7: section7[5], 8: sectionOther[14], 9: sectionOther[15]});
+        data.push({
+            1: sectionTitle[6],
+            2: 'Structure/Finish',
+            3: section7[0],
+            4: 'Eaves',
+            5: section7[1],
+            6: 'Gutter Downpipe',
+            7: section7[2],
+            8: sectionOther[12],
+            9: sectionOther[13]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section7[3],
+            4: 'Doors/Windows',
+            5: section7[4],
+            6: 'Balcony/Deck',
+            7: section7[5],
+            8: sectionOther[14],
+            9: sectionOther[15]
+        });
     }
 
     if (document.getElementById('ExteriorWall1').value != '') {
-        data.push({1: document.getElementById('ExteriorWall1').value, 2: 'Structure/Finish', 3: section8[0], 4: 'Eaves', 5: section8[1], 6: 'Gutter Downpipe', 7: section8[2], 8: sectionOther[16], 9: sectionOther[17]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section8[3], 4: 'Doors/Windows', 5: section8[4], 6: 'Balcony/Deck', 7: section8[5], 8: sectionOther[18], 9: sectionOther[19]});
+        data.push({
+            1: document.getElementById('ExteriorWall1').value,
+            2: 'Structure/Finish',
+            3: section8[0],
+            4: 'Eaves',
+            5: section8[1],
+            6: 'Gutter Downpipe',
+            7: section8[2],
+            8: sectionOther[16],
+            9: sectionOther[17]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section8[3],
+            4: 'Doors/Windows',
+            5: section8[4],
+            6: 'Balcony/Deck',
+            7: section8[5],
+            8: sectionOther[18],
+            9: sectionOther[19]
+        });
     }
 
     if (document.getElementById('ExteriorWall2').value != '') {
-        data.push({1: document.getElementById('ExteriorWall2').value, 2: 'Structure/Finish', 3: section9[0], 4: 'Eaves', 5: section9[1], 6: 'Gutter Downpipe', 7: section9[2], 8: sectionOther[20], 9: sectionOther[21]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section9[3], 4: 'Doors/Windows', 5: section9[4], 6: 'Balcony/Deck', 7: section9[5], 8: sectionOther[22], 9: sectionOther[23]});
+        data.push({
+            1: document.getElementById('ExteriorWall2').value,
+            2: 'Structure/Finish',
+            3: section9[0],
+            4: 'Eaves',
+            5: section9[1],
+            6: 'Gutter Downpipe',
+            7: section9[2],
+            8: sectionOther[20],
+            9: sectionOther[21]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section9[3],
+            4: 'Doors/Windows',
+            5: section9[4],
+            6: 'Balcony/Deck',
+            7: section9[5],
+            8: sectionOther[22],
+            9: sectionOther[23]
+        });
     }
 
     if (document.getElementById('ExteriorWall3').value != '') {
-        data.push({1: document.getElementById('ExteriorWall3').value, 2: 'Structure/Finish', 3: section10[0], 4: 'Eaves', 5: section10[1], 6: 'Gutter Downpipe', 7: section10[2], 8: sectionOther[24], 9: sectionOther[25]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section10[3], 4: 'Doors/Windows', 5: section10[4], 6: 'Balcony/Deck', 7: section10[5], 8: sectionOther[26], 9: sectionOther[27]});
+        data.push({
+            1: document.getElementById('ExteriorWall3').value,
+            2: 'Structure/Finish',
+            3: section10[0],
+            4: 'Eaves',
+            5: section10[1],
+            6: 'Gutter Downpipe',
+            7: section10[2],
+            8: sectionOther[24],
+            9: sectionOther[25]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section10[3],
+            4: 'Doors/Windows',
+            5: section10[4],
+            6: 'Balcony/Deck',
+            7: section10[5],
+            8: sectionOther[26],
+            9: sectionOther[27]
+        });
     }
 
     if (document.getElementById('ExteriorWall4').value != '') {
-        data.push({1: document.getElementById('ExteriorWall4').value, 2: 'Structure/Finish', 3: section11[0], 4: 'Eaves', 5: section11[1], 6: 'Gutter Downpipe', 7: section11[2], 8: sectionOther[28], 9: sectionOther[29]});
-        data.push({1: '', 2: 'Sub-Floor Vents', 3: section11[3], 4: 'Doors/Windows', 5: section11[4], 6: 'Balcony/Deck', 7: section11[5], 8: sectionOther[30], 9: sectionOther[31]});
+        data.push({
+            1: document.getElementById('ExteriorWall4').value,
+            2: 'Structure/Finish',
+            3: section11[0],
+            4: 'Eaves',
+            5: section11[1],
+            6: 'Gutter Downpipe',
+            7: section11[2],
+            8: sectionOther[28],
+            9: sectionOther[29]
+        });
+        data.push({
+            1: '',
+            2: 'Sub-Floor Vents',
+            3: section11[3],
+            4: 'Doors/Windows',
+            5: section11[4],
+            6: 'Balcony/Deck',
+            7: section11[5],
+            8: sectionOther[30],
+            9: sectionOther[31]
+        });
     }
 
     if (document.getElementById('Verandahs1').value != '') {
-        data.push({1: document.getElementById('Verandahs1').value, 2: 'Steps', 3: section12[0], 4: 'Walls', 5: section12[1], 6: 'Roof/Ceiling', 7: section12[2], 8: 'Doors/Windows', 9: section12[3]});
-        data.push({1: '', 2: 'Floor Structure', 3: section12[4], 4: 'Sub-Floor Vents', 5: section12[5], 6: 'Posts/Balustrade', 7: section12[6], 8: '', 9: ''});
+        data.push({
+            1: document.getElementById('Verandahs1').value,
+            2: 'Steps',
+            3: section12[0],
+            4: 'Walls',
+            5: section12[1],
+            6: 'Roof/Ceiling',
+            7: section12[2],
+            8: 'Doors/Windows',
+            9: section12[3]
+        });
+        data.push({
+            1: '',
+            2: 'Floor Structure',
+            3: section12[4],
+            4: 'Sub-Floor Vents',
+            5: section12[5],
+            6: 'Posts/Balustrade',
+            7: section12[6],
+            8: '',
+            9: ''
+        });
     }
 
     if (document.getElementById('Verandahs2').value != '') {
-        data.push({1: document.getElementById('Verandahs2').value, 2: 'Steps', 3: section13[0], 4: 'Walls', 5: section13[1], 6: 'Roof/Ceiling', 7: section13[2], 8: 'Doors/Windows', 9: section13[3]});
-        data.push({1: '', 2: 'Floor Structure', 3: section13[4], 4: 'Sub-Floor Vents', 5: section13[5], 6: 'Posts/Balustrade', 7: section13[6], 8: '', 9: ''});
+        data.push({
+            1: document.getElementById('Verandahs2').value,
+            2: 'Steps',
+            3: section13[0],
+            4: 'Walls',
+            5: section13[1],
+            6: 'Roof/Ceiling',
+            7: section13[2],
+            8: 'Doors/Windows',
+            9: section13[3]
+        });
+        data.push({
+            1: '',
+            2: 'Floor Structure',
+            3: section13[4],
+            4: 'Sub-Floor Vents',
+            5: section13[5],
+            6: 'Posts/Balustrade',
+            7: section13[6],
+            8: '',
+            9: ''
+        });
     }
 
     if (document.getElementById('Verandahs3').value != '') {
-        data.push({1: document.getElementById('Verandahs3').value, 2: 'Steps', 3: section14[0], 4: 'Walls', 5: section14[1], 6: 'Roof/Ceiling', 7: section14[2], 8: 'Doors/Windows', 9: section14[3]});
-        data.push({1: '', 2: 'Floor Structure', 3: section14[4], 4: 'Sub-Floor Vents', 5: section14[5], 6: 'Posts/Balustrade', 7: section14[6], 8: '', 9: ''});
+        data.push({
+            1: document.getElementById('Verandahs3').value,
+            2: 'Steps',
+            3: section14[0],
+            4: 'Walls',
+            5: section14[1],
+            6: 'Roof/Ceiling',
+            7: section14[2],
+            8: 'Doors/Windows',
+            9: section14[3]
+        });
+        data.push({
+            1: '',
+            2: 'Floor Structure',
+            3: section14[4],
+            4: 'Sub-Floor Vents',
+            5: section14[5],
+            6: 'Posts/Balustrade',
+            7: section14[6],
+            8: '',
+            9: ''
+        });
     }
 
     if (document.getElementById('Verandahs4').value != '') {
-        data.push({1: document.getElementById('Verandahs4').value, 2: 'Steps', 3: section15[0], 4: 'Walls', 5: section15[1], 6: 'Roof/Ceiling', 7: section15[2], 8: 'Doors/Windows', 9: section15[3]});
-        data.push({1: '', 2: 'Floor Structure', 3: section15[4], 4: 'Sub-Floor Vents', 5: section15[5], 6: 'Posts/Balustrade', 7: section15[6], 8: '', 9: ''});
+        data.push({
+            1: document.getElementById('Verandahs4').value,
+            2: 'Steps',
+            3: section15[0],
+            4: 'Walls',
+            5: section15[1],
+            6: 'Roof/Ceiling',
+            7: section15[2],
+            8: 'Doors/Windows',
+            9: section15[3]
+        });
+        data.push({
+            1: '',
+            2: 'Floor Structure',
+            3: section15[4],
+            4: 'Sub-Floor Vents',
+            5: section15[5],
+            6: 'Posts/Balustrade',
+            7: section15[6],
+            8: '',
+            9: ''
+        });
     }
 
     if (document.getElementById('ExteriorOther1').value != '') {
-        data.push({1: document.getElementById('ExteriorOther1').value, 2: section16[0], 3: section16[1], 4: section16[2], 5: section16[3], 6: section16[4], 7: section16[5], 8: '', 9: ''});
-        data.push({1: '', 2: section16[6], 3: section16[7], 4: section16[8], 5: section16[9], 6: section16[10], 7: section16[11], 8: '', 9: ''});
+        data.push({
+            1: document.getElementById('ExteriorOther1').value,
+            2: section16[0],
+            3: section16[1],
+            4: section16[2],
+            5: section16[3],
+            6: section16[4],
+            7: section16[5],
+            8: '',
+            9: ''
+        });
+        data.push({
+            1: '',
+            2: section16[6],
+            3: section16[7],
+            4: section16[8],
+            5: section16[9],
+            6: section16[10],
+            7: section16[11],
+            8: '',
+            9: ''
+        });
     }
 
     if (document.getElementById('ExteriorOther2').value != '') {
-        data.push({1: document.getElementById('ExteriorOther2').value, 2: section17[0], 3: section17[1], 4: section17[2], 5: section17[3], 6: section17[4], 7: section17[5], 8: '', 9: ''});
-        data.push({1: '', 2: section17[6], 3: section17[7], 4: section17[8], 5: section17[9], 6: section17[10], 7: section17[11], 8: '', 9: ''});
+        data.push({
+            1: document.getElementById('ExteriorOther2').value,
+            2: section17[0],
+            3: section17[1],
+            4: section17[2],
+            5: section17[3],
+            6: section17[4],
+            7: section17[5],
+            8: '',
+            9: ''
+        });
+        data.push({
+            1: '',
+            2: section17[6],
+            3: section17[7],
+            4: section17[8],
+            5: section17[9],
+            6: section17[10],
+            7: section17[11],
+            8: '',
+            9: ''
+        });
     }
 
     return data;
@@ -1257,14 +1591,31 @@ function getNoteRows(AN, MJF, MNF, GN, AL, LBL1, LBL2) {
     var data = [];
     var rightColContent;
     var accessNotes, accessLimitation, MajFound, Lbl1, MainFound, Lbl2, generalNotes;
+    var assembledMJF, assembledMNF, assembledGN;
 
     //var MJFArr;
 
     // Extract data from web page (left part)
-    if (document.getElementById(AN).value.trim() != '') {accessNotes = document.getElementById(AN).value.trim();} else {accessNotes = 'NA';}
-    if (document.getElementById(MJF).value.trim() != '') {MajFound = document.getElementById(MJF).value.trim();} else {MajFound = 'NA';}
-    if (document.getElementById(MNF).value.trim() != '') {MainFound = document.getElementById(MNF).value.trim();} else {MainFound = 'NA';}
-    if (document.getElementById(GN).value.trim() != '') {generalNotes = document.getElementById(GN).value.trim();} else {generalNotes = 'NA';}
+    if (document.getElementById(AN).value.trim() != '') {
+        accessNotes = document.getElementById(AN).value.trim();
+    } else {
+        accessNotes = 'NA';
+    }
+    if (document.getElementById(MJF).value.trim() != '') {
+        MajFound = document.getElementById(MJF).value.trim();
+    } else {
+        MajFound = 'NA';
+    }
+    if (document.getElementById(MNF).value.trim() != '') {
+        MainFound = document.getElementById(MNF).value.trim();
+    } else {
+        MainFound = 'NA';
+    }
+    if (document.getElementById(GN).value.trim() != '') {
+        generalNotes = document.getElementById(GN).value.trim();
+    } else {
+        generalNotes = 'NA';
+    }
 
     // Extract data from web page (right part)
     accessLimitation = document.getElementById(AL).value;
@@ -1279,24 +1630,13 @@ function getNoteRows(AN, MJF, MNF, GN, AL, LBL1, LBL2) {
         Lbl2 = 'NA';
     }
 
-    // Assign numbers to the text
-    // MJFArr = MajFound.split('\n');
-    // console.log('************************************');
-    // console.log(numberingArr);
-    // for (var i = 0; i < MJFArr.length; i++) {
-    //     console.log(numberingArr[0] + '. ' + MJFArr[i]);
-    //     numberingArr.shift();
-    // }
-    // console.log(numberingArr);
-    // console.log('************************************');
-
     // Assign numbering to the fields
-    assignNumberToText(MajFound);
-    assignNumberToText(MainFound);
-    assignNumberToText(generalNotes);
+    assembledMJF = assignNumberToText(MajFound);
+    assembledMNF = assignNumberToText(MainFound);
+    assembledGN = assignNumberToText(generalNotes);
 
     // Prepare the right columns in the PDF
-    rightColContent = [accessNotes, accessLimitation, MajFound, Lbl1, MainFound, Lbl2, generalNotes];
+    rightColContent = [accessNotes, accessLimitation, assembledMJF, Lbl1, assembledMNF, Lbl2, assembledGN];
 
     // Prepare the rows
     for (var i = 0; i < leftColTitle.length; i++) {
@@ -1374,7 +1714,7 @@ function validateArr(arr, option) {
     }
 
     if (option == 'validateWallOther') {
-        for (var i = 0; i < 32; i +=2) {
+        for (var i = 0; i < 32; i += 2) {
             if (arr[i] == '') {
                 arr[i] = 'NA';
                 arr[i + 1] = '-';
@@ -1439,21 +1779,25 @@ function setupNumbering(max) {
  * */
 function assignNumberToText(theText) {
 
-    console.log(theText);
-
     var result;
-    var assembledString;
+    var assembledString = '';
 
     // Split the text by new line
     result = theText.split('\n');
+    // Remove all the empty strings
+    result = result.filter(Boolean);
+    console.log(result);
 
-    // Assign numbering to every paragraph
+    // Assign numbering to every paragraph and assemble them into a new string
     for (var i = 0; i < result.length; i++) {
-        result[i] = numberingArr[0] + '. ' + result[i];
-        numberingArr.shift();
+        if (result[i] != 'NA') {
+            result[i] = numberingArr[0] + '. ' + result[i];
+            numberingArr.shift();
+        }
+        assembledString = assembledString.concat(result[i]) + '\n\n';
     }
 
-    console.log(result);
+    return assembledString.trim();
 }
 
 /*
@@ -1485,7 +1829,9 @@ function getLivingAreasRows() {
             roomArr[j][i] = document.getElementById(i + idStartPoint + '').value.trim();
         }
         idStartPoint += 10;
-        if (idStartPoint > idEndPoint) {break;}
+        if (idStartPoint > idEndPoint) {
+            break;
+        }
     }
     // Stairs
     for (var i = 0; i < 5; i++) {
@@ -1516,23 +1862,93 @@ function getLivingAreasRows() {
     // Room
     for (var i = 0; i < roomArr.length; i++) {
         if (roomArr[i][0] != '') {
-            data.push({1: roomArr[i][0], 2: 'Floor Structure/Finish', 3: roomArr[i][1], 4: 'Ceiling', 5: roomArr[i][2], 6: 'Wall', 7: roomArr[i][3], 8: 'Electrics', 9: roomArr[i][4]});
-            data.push({1: '', 2: 'Cupboards', 3: roomArr[i][5], 4: 'Windows/Doors', 5: roomArr[i][6], 6: 'Dampness', 7: roomArr[i][7], 8: roomArr[i][8], 9: roomArr[i][9]});
+            data.push({
+                1: roomArr[i][0],
+                2: 'Floor Structure/Finish',
+                3: roomArr[i][1],
+                4: 'Ceiling',
+                5: roomArr[i][2],
+                6: 'Wall',
+                7: roomArr[i][3],
+                8: 'Electrics',
+                9: roomArr[i][4]
+            });
+            data.push({
+                1: '',
+                2: 'Cupboards',
+                3: roomArr[i][5],
+                4: 'Windows/Doors',
+                5: roomArr[i][6],
+                6: 'Dampness',
+                7: roomArr[i][7],
+                8: roomArr[i][8],
+                9: roomArr[i][9]
+            });
         }
     }
     // Stair
     for (var i = 0; i < stairArr.length; i++) {
         if (stairArr[i][0] != '') {
-            data.push({1: stairArr[i][0], 2: 'Structure', 3: stairArr[i][1], 4: 'Floor Finish', 5: stairArr[i][2], 6: 'Balustrade', 7: stairArr[i][3], 8: 'Underside', 9: stairArr[i][4]});
+            data.push({
+                1: stairArr[i][0],
+                2: 'Structure',
+                3: stairArr[i][1],
+                4: 'Floor Finish',
+                5: stairArr[i][2],
+                6: 'Balustrade',
+                7: stairArr[i][3],
+                8: 'Underside',
+                9: stairArr[i][4]
+            });
         }
     }
     // Kitchen
     for (var i = 0; i < kitchenArr.length; i++) {
         if (kitchenArr[i][0] != '') {
-            data.push({1: kitchenArr[i][0], 2: 'Floor Structure/Finish', 3: kitchenArr[i][1], 4: 'Walls', 5: kitchenArr[i][2], 6: 'Ceiling', 7: kitchenArr[i][3], 8: 'Electrics', 9: kitchenArr[i][4]});
-            data.push({1: '', 2: 'Cupboards', 3: kitchenArr[i][5], 4: 'Windows/Doors', 5: kitchenArr[i][6], 6: 'Dampness', 7: kitchenArr[i][7], 8: 'Sink/Water Pressure', 9: kitchenArr[i][8]});
-            data.push({1: '', 2: 'Splashback', 3: kitchenArr[i][9], 4: 'Bench-top', 5: kitchenArr[i][10], 6: 'Exhaust/Rangehood', 7: kitchenArr[i][11], 8: 'Stove/Cooktop/Oven', 9: kitchenArr[i][12]});
-            data.push({1: '', 2: 'Dishwasher', 3: kitchenArr[i][13], 4: kitchenArr[i][14], 5: kitchenArr[i][15], 6: kitchenArr[i][16], 7: kitchenArr[i][17], 8: kitchenArr[i][18], 9: kitchenArr[i][19]});
+            data.push({
+                1: kitchenArr[i][0],
+                2: 'Floor Structure/Finish',
+                3: kitchenArr[i][1],
+                4: 'Walls',
+                5: kitchenArr[i][2],
+                6: 'Ceiling',
+                7: kitchenArr[i][3],
+                8: 'Electrics',
+                9: kitchenArr[i][4]
+            });
+            data.push({
+                1: '',
+                2: 'Cupboards',
+                3: kitchenArr[i][5],
+                4: 'Windows/Doors',
+                5: kitchenArr[i][6],
+                6: 'Dampness',
+                7: kitchenArr[i][7],
+                8: 'Sink/Water Pressure',
+                9: kitchenArr[i][8]
+            });
+            data.push({
+                1: '',
+                2: 'Splashback',
+                3: kitchenArr[i][9],
+                4: 'Bench-top',
+                5: kitchenArr[i][10],
+                6: 'Exhaust/Rangehood',
+                7: kitchenArr[i][11],
+                8: 'Stove/Cooktop/Oven',
+                9: kitchenArr[i][12]
+            });
+            data.push({
+                1: '',
+                2: 'Dishwasher',
+                3: kitchenArr[i][13],
+                4: kitchenArr[i][14],
+                5: kitchenArr[i][15],
+                6: kitchenArr[i][16],
+                7: kitchenArr[i][17],
+                8: kitchenArr[i][18],
+                9: kitchenArr[i][19]
+            });
         }
     }
 
@@ -1567,8 +1983,28 @@ function getBedroomAreasRows() {
     // Prepare rows
     for (var i = 0; i < bedroomArr.length; i++) {
         if (bedroomArr[i][0] != '') {
-            data.push({1: bedroomArr[i][0], 2: 'Floor Structure/Finish', 3: bedroomArr[i][1], 4: 'Windows/Doors', 5: bedroomArr[i][2], 6: 'Walls', 7: bedroomArr[i][3], 8: 'Robes', 9: bedroomArr[i][4]});
-            data.push({1: '', 2: 'Ceiling', 3: bedroomArr[i][5], 4: 'Dampness', 5: bedroomArr[i][6], 6: 'Electrics', 7: bedroomArr[i][7], 8: '', 9: ''});
+            data.push({
+                1: bedroomArr[i][0],
+                2: 'Floor Structure/Finish',
+                3: bedroomArr[i][1],
+                4: 'Windows/Doors',
+                5: bedroomArr[i][2],
+                6: 'Walls',
+                7: bedroomArr[i][3],
+                8: 'Robes',
+                9: bedroomArr[i][4]
+            });
+            data.push({
+                1: '',
+                2: 'Ceiling',
+                3: bedroomArr[i][5],
+                4: 'Dampness',
+                5: bedroomArr[i][6],
+                6: 'Electrics',
+                7: bedroomArr[i][7],
+                8: '',
+                9: ''
+            });
         }
     }
 
@@ -1637,33 +2073,163 @@ function getWetAreaRows() {
     // Bathroom
     for (var i = 0; i < bathroomArr.length; i++) {
         if (bathroomArr[i][0] != '') {
-            data.push({1: bathroomArr[i][0], 2: 'Floor Structure/Finish', 3: bathroomArr[i][1], 4: 'Windows/Doors', 5: bathroomArr[i][2], 6: 'Walls', 7: bathroomArr[i][3], 8: 'Electrics', 9: bathroomArr[i][4]});
-            data.push({1: '', 2: 'Cupboards/Vanity', 3: bathroomArr[i][5], 4: 'Ceiling', 5: bathroomArr[i][6], 6: 'Dampness', 7: bathroomArr[i][7], 8: 'Mirror', 9: bathroomArr[i][8]});
-            data.push({1: '', 2: 'Exhaust/Ventilation', 3: bathroomArr[i][9], 4: 'Water Pressure', 5: bathroomArr[i][10], 6: 'Bath', 7: bathroomArr[i][11], 8: '', 9: ''});
-            data.push({1: '', 2: 'Shower', 3: bathroomArr[i][12], 4: 'Toilet Suite', 5: bathroomArr[i][13], 6: 'Basin/Splashback', 7: bathroomArr[i][14], 8: '', 9: ''});
+            data.push({
+                1: bathroomArr[i][0],
+                2: 'Floor Structure/Finish',
+                3: bathroomArr[i][1],
+                4: 'Windows/Doors',
+                5: bathroomArr[i][2],
+                6: 'Walls',
+                7: bathroomArr[i][3],
+                8: 'Electrics',
+                9: bathroomArr[i][4]
+            });
+            data.push({
+                1: '',
+                2: 'Cupboards/Vanity',
+                3: bathroomArr[i][5],
+                4: 'Ceiling',
+                5: bathroomArr[i][6],
+                6: 'Dampness',
+                7: bathroomArr[i][7],
+                8: 'Mirror',
+                9: bathroomArr[i][8]
+            });
+            data.push({
+                1: '',
+                2: 'Exhaust/Ventilation',
+                3: bathroomArr[i][9],
+                4: 'Water Pressure',
+                5: bathroomArr[i][10],
+                6: 'Bath',
+                7: bathroomArr[i][11],
+                8: '',
+                9: ''
+            });
+            data.push({
+                1: '',
+                2: 'Shower',
+                3: bathroomArr[i][12],
+                4: 'Toilet Suite',
+                5: bathroomArr[i][13],
+                6: 'Basin/Splashback',
+                7: bathroomArr[i][14],
+                8: '',
+                9: ''
+            });
         }
     }
     // Laundry
     for (var i = 0; i < laundryArr.length; i++) {
         if (laundryArr[i][0] != '') {
-            data.push({1: laundryArr[i][0], 2: 'Floor Structure/Finish', 3: laundryArr[i][1], 4: 'Walls', 5: laundryArr[i][2], 6: 'Walls', 7: laundryArr[i][3], 8: 'Electrics', 9: laundryArr[i][4]});
-            data.push({1: '', 2: 'Tub/Sink/Splashback', 3: laundryArr[i][5], 4: 'Ceiling', 5: laundryArr[i][6], 6: 'Exhaust/Ventilation', 7: laundryArr[i][7], 8: 'Windows/Doors', 9: laundryArr[i][8]});
-            data.push({1: '', 2: 'Dampness', 3: laundryArr[i][9], 4: 'Water Pressure', 5: laundryArr[i][10], 6: '', 7: '', 8: '', 9: ''});
+            data.push({
+                1: laundryArr[i][0],
+                2: 'Floor Structure/Finish',
+                3: laundryArr[i][1],
+                4: 'Walls',
+                5: laundryArr[i][2],
+                6: 'Walls',
+                7: laundryArr[i][3],
+                8: 'Electrics',
+                9: laundryArr[i][4]
+            });
+            data.push({
+                1: '',
+                2: 'Tub/Sink/Splashback',
+                3: laundryArr[i][5],
+                4: 'Ceiling',
+                5: laundryArr[i][6],
+                6: 'Exhaust/Ventilation',
+                7: laundryArr[i][7],
+                8: 'Windows/Doors',
+                9: laundryArr[i][8]
+            });
+            data.push({
+                1: '',
+                2: 'Dampness',
+                3: laundryArr[i][9],
+                4: 'Water Pressure',
+                5: laundryArr[i][10],
+                6: '',
+                7: '',
+                8: '',
+                9: ''
+            });
         }
     }
     // Powder room
     for (var i = 0; i < powderRoomArr.length; i++) {
         if (powderRoomArr[i][0] != '') {
-            data.push({1: powderRoomArr[i][0], 2: 'Floor Structure/Finish', 3: powderRoomArr[i][1], 4: 'Windows/Doors', 5: powderRoomArr[i][2], 6: 'Walls', 7: powderRoomArr[i][3], 8: 'Electrics', 9: powderRoomArr[i][4]});
-            data.push({1: '', 2: 'Cupboards/Vanity', 3: powderRoomArr[i][5], 4: 'Ceiling', 5: powderRoomArr[i][6], 6: 'Dampness', 7: powderRoomArr[i][7], 8: 'Basin/Splashback', 9: powderRoomArr[i][8]});
-            data.push({1: '', 2: 'Exhaust/Ventilation', 3: powderRoomArr[i][9], 4: 'Water Pressure', 5: powderRoomArr[i][10], 6: 'Toilet Suite', 7: powderRoomArr[i][11], 8: 'Mirror', 9: powderRoomArr[i][12]});
+            data.push({
+                1: powderRoomArr[i][0],
+                2: 'Floor Structure/Finish',
+                3: powderRoomArr[i][1],
+                4: 'Windows/Doors',
+                5: powderRoomArr[i][2],
+                6: 'Walls',
+                7: powderRoomArr[i][3],
+                8: 'Electrics',
+                9: powderRoomArr[i][4]
+            });
+            data.push({
+                1: '',
+                2: 'Cupboards/Vanity',
+                3: powderRoomArr[i][5],
+                4: 'Ceiling',
+                5: powderRoomArr[i][6],
+                6: 'Dampness',
+                7: powderRoomArr[i][7],
+                8: 'Basin/Splashback',
+                9: powderRoomArr[i][8]
+            });
+            data.push({
+                1: '',
+                2: 'Exhaust/Ventilation',
+                3: powderRoomArr[i][9],
+                4: 'Water Pressure',
+                5: powderRoomArr[i][10],
+                6: 'Toilet Suite',
+                7: powderRoomArr[i][11],
+                8: 'Mirror',
+                9: powderRoomArr[i][12]
+            });
         }
     }
     // Services
     if (section12[0] != '') {
-        data.push({1: section12[0], 2: 'Heater/Unit', 3: section12[1], 4: 'Smoke Detector/s', 5: section12[2], 6: 'Cooler/Unit', 7: section12[3], 8: 'Hot Water Service', 9: section12[4]});
-        data.push({1: '', 2: 'Switchboard', 3: section12[5], 4: section12[6], 5: section12[7], 6: section12[8], 7: section12[9], 8: section12[10], 9: section12[11]});
-        data.push({1: '', 2: section12[12], 3: section12[13], 4: section12[14], 5: section12[15], 6: section12[16], 7: section12[17], 8: '', 9: ''});
+        data.push({
+            1: section12[0],
+            2: 'Heater/Unit',
+            3: section12[1],
+            4: 'Smoke Detector/s',
+            5: section12[2],
+            6: 'Cooler/Unit',
+            7: section12[3],
+            8: 'Hot Water Service',
+            9: section12[4]
+        });
+        data.push({
+            1: '',
+            2: 'Switchboard',
+            3: section12[5],
+            4: section12[6],
+            5: section12[7],
+            6: section12[8],
+            7: section12[9],
+            8: section12[10],
+            9: section12[11]
+        });
+        data.push({
+            1: '',
+            2: section12[12],
+            3: section12[13],
+            4: section12[14],
+            5: section12[15],
+            6: section12[16],
+            7: section12[17],
+            8: '',
+            9: ''
+        });
     }
 
     return data;
@@ -1701,8 +2267,22 @@ function getAttachmentRow() {
         result[i] = document.getElementById(i + 6000 + '').value;
     }
 
-    data.push({1: 'Property Management Guide', 2: result[0], 3: 'Cracking in Masonry', 4: result[1], 5: 'Treatment of Dampness', 6: result[2]});
-    data.push({1: 'Health & Safety Warning', 2: result[3], 3: 'Roofing & Guttering', 4: result[4], 5: 'Home Safety Checklist', 6: result[5]});
+    data.push({
+        1: 'Property Management Guide',
+        2: result[0],
+        3: 'Cracking in Masonry',
+        4: result[1],
+        5: 'Treatment of Dampness',
+        6: result[2]
+    });
+    data.push({
+        1: 'Health & Safety Warning',
+        2: result[3],
+        3: 'Roofing & Guttering',
+        4: result[4],
+        5: 'Home Safety Checklist',
+        6: result[5]
+    });
     data.push({1: 'Termites & Borers', 2: result[6], 3: 'Re-stumping', 4: result[7], 5: 'Cost Guide', 6: result[8]});
 
     return data;

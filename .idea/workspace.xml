@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f208ff00-eb39-4a31-be9a-2c45479c42fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessmentReport.html" afterPath="$PROJECT_DIR$/AssessmentReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/generateFDF.js" afterPath="$PROJECT_DIR$/JsFile/generateFDF.js" />
     </list>
     <ignored path="Arch.iws" />
@@ -1306,8 +1304,8 @@
       <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="1454" column="0" selection-start-line="1454" selection-start-column="0" selection-end-line="1454" selection-end-column="0" />
+            <state relative-caret-position="250">
+              <caret line="1779" column="37" selection-start-line="1779" selection-start-column="37" selection-end-line="1779" selection-end-column="37" />
               <folding>
                 <element signature="e#354#797#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
@@ -1336,6 +1334,7 @@
                 <element signature="n#!!block;n#drawPic#0" expanded="false" />
                 <element signature="n#!!block;n#drawPic2#0" expanded="false" />
                 <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+                <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
                 <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
                 <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
                 <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -1599,12 +1598,12 @@
       <workItem from="1505949677464" duration="13757000" />
       <workItem from="1506039312806" duration="18851000" />
       <workItem from="1506247866515" duration="6238000" />
-      <workItem from="1506296615539" duration="7083000" />
+      <workItem from="1506296615539" duration="9546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276816000" />
+    <option name="totallyTimeSpent" value="279279000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1739,6 +1738,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -3081,6 +3081,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -4423,6 +4424,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -5757,6 +5759,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -7083,6 +7086,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -8409,6 +8413,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -9735,6 +9740,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -11061,6 +11067,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
@@ -13735,8 +13742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="1454" column="0" selection-start-line="1454" selection-start-column="0" selection-end-line="1454" selection-end-column="0" />
+        <state relative-caret-position="250">
+          <caret line="1779" column="37" selection-start-line="1779" selection-start-column="37" selection-end-line="1779" selection-end-column="37" />
           <folding>
             <element signature="e#354#797#0" expanded="false" />
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
@@ -13765,6 +13772,7 @@
             <element signature="n#!!block;n#drawPic#0" expanded="false" />
             <element signature="n#!!block;n#drawPic2#0" expanded="false" />
             <element signature="n#!!block;n#setupNumbering#0" expanded="false" />
+            <element signature="n#!!block;n#assignNumberToText#0" expanded="false" />
             <element signature="n#!!block;n#getLivingAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getBedroomAreasRows#0" expanded="false" />
             <element signature="n#!!block;n#getWetAreaRows#0" expanded="false" />
