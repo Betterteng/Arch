@@ -8,6 +8,8 @@ const axisY = [20, 20, 20, 70, 70, 70];
 
 var doc = new jsPDF();
 var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
+var numbering = 1;
+var numberingArr = [];
 
 /**
  * Set the footer
@@ -30,6 +32,9 @@ var pageContent = function (data) {
 function generatePDF() {
 
     console.log('Nice!');
+
+    // The maximum numbering is 99
+    setupNumbering(99);
 
     drawPageOne();
     doc.addPage();
@@ -147,7 +152,7 @@ function drawPageOne() {
      *  Fill user's input - if you want to only draw the skeletons such as table borders,
      *  comment these methods below.
      * */
-    fillUserInputPageOne();
+    //fillUserInputPageOne();
 }
 function fillUserInputPageOne() {
 
@@ -546,6 +551,9 @@ function drawPagePropertyAssessmentNotes() {
         showHeader: 'never',
         columnStyles: {
             1: {fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold'}
+        },
+        styles: {
+            font: "arial"
         }
     });
 
@@ -1250,6 +1258,8 @@ function getNoteRows(AN, MJF, MNF, GN, AL, LBL1, LBL2) {
     var rightColContent;
     var accessNotes, accessLimitation, MajFound, Lbl1, MainFound, Lbl2, generalNotes;
 
+    //var MJFArr;
+
     // Extract data from web page (left part)
     if (document.getElementById(AN).value.trim() != '') {accessNotes = document.getElementById(AN).value.trim();} else {accessNotes = 'NA';}
     if (document.getElementById(MJF).value.trim() != '') {MajFound = document.getElementById(MJF).value.trim();} else {MajFound = 'NA';}
@@ -1268,6 +1278,22 @@ function getNoteRows(AN, MJF, MNF, GN, AL, LBL1, LBL2) {
     } else {
         Lbl2 = 'NA';
     }
+
+    // Assign numbers to the text
+    // MJFArr = MajFound.split('\n');
+    // console.log('************************************');
+    // console.log(numberingArr);
+    // for (var i = 0; i < MJFArr.length; i++) {
+    //     console.log(numberingArr[0] + '. ' + MJFArr[i]);
+    //     numberingArr.shift();
+    // }
+    // console.log(numberingArr);
+    // console.log('************************************');
+
+    // Assign numbering to the fields
+    assignNumberToText(MajFound);
+    assignNumberToText(MainFound);
+    assignNumberToText(generalNotes);
 
     // Prepare the right columns in the PDF
     rightColContent = [accessNotes, accessLimitation, MajFound, Lbl1, MainFound, Lbl2, generalNotes];
@@ -1396,6 +1422,38 @@ function drawPic2(option, maxNum, axisY) {
             console.log(option + ' [' + i + '] is not uploaded.');
         }
     }
+}
+
+/**
+ * Prepare an array to set up the numbering
+ * */
+function setupNumbering(max) {
+
+    for (var i = 1; i < max; i++) {
+        numberingArr[i - 1] = i;
+    }
+}
+
+/**
+ * Split the text and assemble the text with numbering
+ * */
+function assignNumberToText(theText) {
+
+    console.log(theText);
+
+    var result;
+    var assembledString;
+
+    // Split the text by new line
+    result = theText.split('\n');
+
+    // Assign numbering to every paragraph
+    for (var i = 0; i < result.length; i++) {
+        result[i] = numberingArr[0] + '. ' + result[i];
+        numberingArr.shift();
+    }
+
+    console.log(result);
 }
 
 /*
