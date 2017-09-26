@@ -88,6 +88,43 @@ function drawCoverPage() {
         }
     });
 
+    // Client Detail table
+    doc.autoTable(getCPCol(), getCPRow2(), {
+        startY: 170,
+        theme: 'striped',
+        margin: {bottom: 30, left: 110},
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle'
+        }
+    });
+
+    // Property Address
+    doc.autoTable(getCPCol2(), getCPRow3(), {
+        startY: doc.autoTable.previous.finalY + 5,
+        theme: 'striped',
+        margin: {bottom: 30, left: 110},
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle'
+        }
+    });
+
+    // The last table
+    doc.autoTable(getCPCol(), getCPRow4(), {
+        startY: doc.autoTable.previous.finalY + 5,
+        showHeader: 'never',
+        theme: 'striped',
+        margin: {bottom: 30, left: 110},
+        styles: {
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle'
+        }
+    });
+
     // Subtitle
     // setHeadTitleStyle();
     // doc.text(120, 180, 'Inspection Details');
@@ -105,37 +142,37 @@ function drawCoverPage() {
     //     }
     // });
 
-    doc.addFont('HMKMMAG.TTF', 'MagicR', 'normal', 'Identity-H');
-    doc.addFont('msgothic.ttf', 'MsGothic', 'normal', 'Identity-H');
-    doc.addFont('gothic.ttf', 'LiLing', 'normal', 'Identity-H');
-//doc.addFont('GADUGI.TTF', 'GADUGI', 'normal', 'WinAnsiEncoding');
-
-
-
-    doc.setFont('MagicR'); // set font
-    doc.setFontSize(30);
-    doc.setTextColor(153, 051, 102);
-    //doc.setCharSpace(3);
-
-//doc.setDefaultFonts(0, 'Times');    //English default
-//doc.setDefaultFonts(1, 'MagicR');    //Korean default
-//doc.setDefaultFonts(2, 'MsGothic'); //Japanese default
-//doc.setDefaultFonts(3, 'LiLing'); //Chinese default
-
-
-    doc.drawText(10, 20, ['안녕하세요 저는 jsPDF의 custom font 개발자 이관형입니다.', {
-        text: '你好，很高兴见到你 你叫什么名字？',
-        fontSize: 30,
-        textColor: [255, 0, 0],
-        charSpace: 3,
-        font: 'LiLing'
-    }, {
-        text: 'こんにちは。あなたの名前は何ですか？',
-        fontSize: 20,
-        textColor: [0, 150, 0],
-        charSpace: 3,
-        font: 'MsGothic'
-    }]);
+//     doc.addFont('HMKMMAG.TTF', 'MagicR', 'normal', 'Identity-H');
+//     doc.addFont('msgothic.ttf', 'MsGothic', 'normal', 'Identity-H');
+//     doc.addFont('gothic.ttf', 'LiLing', 'normal', 'Identity-H');
+// //doc.addFont('GADUGI.TTF', 'GADUGI', 'normal', 'WinAnsiEncoding');
+//
+//
+//
+//     doc.setFont('MagicR'); // set font
+//     doc.setFontSize(30);
+//     doc.setTextColor(153, 051, 102);
+//     //doc.setCharSpace(3);
+//
+// //doc.setDefaultFonts(0, 'Times');    //English default
+// //doc.setDefaultFonts(1, 'MagicR');    //Korean default
+// //doc.setDefaultFonts(2, 'MsGothic'); //Japanese default
+// //doc.setDefaultFonts(3, 'LiLing'); //Chinese default
+//
+//
+//     doc.drawText(10, 20, ['안녕하세요 저는 jsPDF의 custom font 개발자 이관형입니다.', {
+//         text: '你好，很高兴见到你 你叫什么名字？',
+//         fontSize: 30,
+//         textColor: [255, 0, 0],
+//         charSpace: 3,
+//         font: 'LiLing'
+//     }, {
+//         text: 'こんにちは。あなたの名前は何ですか？',
+//         fontSize: 20,
+//         textColor: [0, 150, 0],
+//         charSpace: 3,
+//         font: 'MsGothic'
+//     }]);
 }
 
 /**
@@ -2509,6 +2546,9 @@ function getPASCol2() {
  | Below is some helper functions for Cover Page
  |--------------------------------------------------------------------------
  */
+/**
+ * Set up the row for Cover Page
+ * */
 function getCPRow() {
 
     var data = [];
@@ -2520,4 +2560,53 @@ function getCPRow() {
     });
 
     return data;
+}
+
+function getCPRow2() {
+
+    var data = [];
+
+    data.push({1: 'Name:', 2: '1111'});
+    data.push({1: 'Phone:', 2: '2222'});
+    data.push({1: 'Booking No.:', 2: '3333'});
+
+    return data;
+}
+
+function getCPRow3() {
+
+    var data = [];
+
+    data.push({1: '161 Domain Road', 2: '', 3: ''});
+    data.push({1: 'South Yarra', 2: 'VIC', 3: '3141'});
+
+    return data;
+}
+
+function getCPRow4() {
+
+    var data = [];
+
+    data.push({1: 'Inspection Date', 2: ''});
+
+    return data;
+}
+
+
+/**
+ * Set up the row for Cover Page
+ * */
+function getCPCol() {
+    return [
+        {title: 'Client Details', dataKey: '1'},
+        {title: '', dataKey: '2'}
+    ];
+}
+
+function getCPCol2() {
+    return [
+        {title: 'Property Address', dataKey: '1'},
+        {title: '', dataKey: '2'},
+        {title: '', dataKey: '3'}
+    ];
 }
