@@ -67,8 +67,75 @@ function generatePDF() {
  * Cover Page
  * */
 function drawCoverPage() {
-    setHeadTitleStyle();
-    doc.text(15, 20, 'Property Assessment Report');
+    // Logo
+    doc.addImage(newLogo, 'PNG', 15, 20, 40, 40);
+
+    // Title
+    setBigHeadTitleStyle();
+    doc.text(65, 40, 'Property Assessment Report');
+
+    // Text table
+    doc.autoTable(getGACol(), getCPRow(), {
+        startY: 70,
+        showHeader: 'never',
+        theme: 'plain',
+        margin: {bottom: 30, right: 110},
+        styles: {
+            cellPadding: {bottom: 0},
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle'
+        }
+    });
+
+    // Subtitle
+    // setHeadTitleStyle();
+    // doc.text(120, 180, 'Inspection Details');
+
+    // doc.doc.autoTable(getGACol(), getCPRow(), {
+    //     startY: 180,
+    //     showHeader: 'never',
+    //     theme: 'plain',
+    //     margin: {bottom: 30},
+    //     styles: {
+    //         cellPadding: {bottom: 0},
+    //         overflow: 'linebreak',
+    //         columnWidth: 'auto',
+    //         valign: 'middle'
+    //     }
+    // });
+
+    doc.addFont('HMKMMAG.TTF', 'MagicR', 'normal', 'Identity-H');
+    doc.addFont('msgothic.ttf', 'MsGothic', 'normal', 'Identity-H');
+    doc.addFont('gothic.ttf', 'LiLing', 'normal', 'Identity-H');
+//doc.addFont('GADUGI.TTF', 'GADUGI', 'normal', 'WinAnsiEncoding');
+
+
+
+    doc.setFont('MagicR'); // set font
+    doc.setFontSize(30);
+    doc.setTextColor(153, 051, 102);
+    //doc.setCharSpace(3);
+
+//doc.setDefaultFonts(0, 'Times');    //English default
+//doc.setDefaultFonts(1, 'MagicR');    //Korean default
+//doc.setDefaultFonts(2, 'MsGothic'); //Japanese default
+//doc.setDefaultFonts(3, 'LiLing'); //Chinese default
+
+
+    doc.drawText(10, 20, ['안녕하세요 저는 jsPDF의 custom font 개발자 이관형입니다.', {
+        text: '你好，很高兴见到你 你叫什么名字？',
+        fontSize: 30,
+        textColor: [255, 0, 0],
+        charSpace: 3,
+        font: 'LiLing'
+    }, {
+        text: 'こんにちは。あなたの名前は何ですか？',
+        fontSize: 20,
+        textColor: [0, 150, 0],
+        charSpace: 3,
+        font: 'MsGothic'
+    }]);
 }
 
 /**
@@ -553,7 +620,7 @@ function drawPagePropertyAssessmentNotes() {
 
     // Draw Site & Garden first table
     doc.autoTable(getDetailCols(), getSiteGardenEntries(), {
-        //addPageContent: pageContent,
+        addPageContent: pageContent,
         startY: 100,
         margin: {bottom: 30},
         theme: 'grid',
@@ -900,9 +967,9 @@ function drawPageAttachments() {
         'Report cover email for downloading instructions. If you have difficulty downloading the following ticked attachments, \n please contact Archicentre Australia on 1300 13 45 13 immediately.');
 
 
-    // doc.addFont('HMKMMAG.TTF', 'MagicR', 'normal', 'Identity-H');
-    // doc.setFont('MagicR');
-    // doc.text(50,150,'fdsa');
+    // doc.addFont('gothic.ttf', 'LiLing', 'normal', 'Identity-H');
+    // doc.setFont('LiLing');
+    // doc.text(50,150,'哈哈哈');
 
     // Table
     doc.autoTable(getAttachmentCol(), getAttachmentRow(), {
@@ -2320,7 +2387,7 @@ function getAttachmentRow() {
         1: 'Property Management Guide',
         2: '\u0060' + '\u002f',
         3: 'Cracking in Masonry',
-        4: '9',
+        4: '100',
         5: 'Treatment of Dampness',
         6: '√'
     });
@@ -2433,6 +2500,24 @@ function getPASCol2() {
 
     // Prepare data
     data.push({1: result});
+
+    return data;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Below is some helper functions for Cover Page
+ |--------------------------------------------------------------------------
+ */
+function getCPRow() {
+
+    var data = [];
+    var content = 'This Property Assessment Report is a visual assessment of the conditions of the reasonably accessible ' +
+        'areas of the property at the time of the assessment, including the subject residence and associated areas where the property is a unit or apartment.';
+
+    data.push({
+        1: content
+    });
 
     return data;
 }

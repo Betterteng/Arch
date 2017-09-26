@@ -38,3 +38,9 @@ function footerTextStyle() {
     doc.setFontSize(5);
     doc.setTextColor(128, 128, 128);
 }
+
+function setBigHeadTitleStyle() {
+    doc.setFontSize(25);
+    doc.setFontType("bold");
+    doc.setTextColor(255, 0, 0);
+}
