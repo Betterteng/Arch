@@ -8,7 +8,6 @@ const axisY = [20, 20, 20, 70, 70, 70];
 
 var doc = new jsPDF();
 var entryPageOne = {firstTable: [], secondTable: [], thirdTable: []};
-var numbering = 1;
 var numberingArr = [];
 
 /**
@@ -36,6 +35,8 @@ function generatePDF() {
     // The maximum numbering is 99
     setupNumbering(99);
 
+    drawCoverPage();
+    doc.addPage();
     drawPageOne();
     doc.addPage();
     drawPageTwo();
@@ -60,6 +61,14 @@ function generatePDF() {
 
     // Save the PDF file
     doc.save('a4.pdf');
+}
+
+/**
+ * Cover Page
+ * */
+function drawCoverPage() {
+    setHeadTitleStyle();
+    doc.text(15, 20, 'Property Assessment Report');
 }
 
 /**
@@ -882,6 +891,7 @@ function drawPageAttachments() {
     // Title
     setHeadTitleStyle();
     doc.text(startPointX, startPointY, 'Attachments');
+    doc.text(startPointX, startPointY + 65, 'General Advice');
 
     // Explanation
     setExplanationStyle();
@@ -889,17 +899,50 @@ function drawPageAttachments() {
         'Australia Supplementary Documents page www.archicentreaustralia.com.au/report_downloads/ or by referring to the \n' +
         'Report cover email for downloading instructions. If you have difficulty downloading the following ticked attachments, \n please contact Archicentre Australia on 1300 13 45 13 immediately.');
 
+
+    // doc.addFont('HMKMMAG.TTF', 'MagicR', 'normal', 'Identity-H');
+    // doc.setFont('MagicR');
+    // doc.text(50,150,'fdsa');
+
     // Table
     doc.autoTable(getAttachmentCol(), getAttachmentRow(), {
         startY: 43,
         theme: 'grid',
         margin: {bottom: 30},
         styles: {
+            font: 'helvetica',
             overflow: 'linebreak',
             columnWidth: 'auto',
             valign: 'middle'
         }
     });
+
+    doc.autoTable(getGACol(), getGARow(), {
+        showHeader: 'never',
+        startY: 90,
+        theme: 'plain',
+        margin: {bottom: 30},
+        styles: {
+            cellPadding: {bottom: 0},
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle'
+        }
+    });
+
+    doc.autoTable(getGACol(), getGARow2(), {
+        startY: doc.autoTable.previous.finalY + 5,
+        theme: 'plain',
+        margin: {bottom: 30},
+        styles: {
+            cellPadding: {bottom: 0},
+            overflow: 'linebreak',
+            columnWidth: 'auto',
+            valign: 'middle'
+        }
+    });
+
+    console.log(doc.getFontList());
 }
 
 /**
@@ -2262,28 +2305,84 @@ function getAttachmentRow() {
     var data = [];
     var result = [];
 
+    var img = new Image();
+    img.src = './Pic/1111.png';
+
+    var tick = '\u221A';
+
     // Extract data
     for (var i = 0; i < 9; i++) {
         result[i] = document.getElementById(i + 6000 + '').value;
     }
 
+    // Prepare rows
     data.push({
         1: 'Property Management Guide',
-        2: result[0],
+        2: '\u0060' + '\u002f',
         3: 'Cracking in Masonry',
-        4: result[1],
+        4: '9',
         5: 'Treatment of Dampness',
-        6: result[2]
+        6: '√'
     });
     data.push({
         1: 'Health & Safety Warning',
-        2: result[3],
+        2: '✔',
         3: 'Roofing & Guttering',
-        4: result[4],
+        4: '✓',
         5: 'Home Safety Checklist',
-        6: result[5]
+        6: '√'
     });
     data.push({1: 'Termites & Borers', 2: result[6], 3: 'Re-stumping', 4: result[7], 5: 'Cost Guide', 6: result[8]});
+
+    return data;
+}
+
+/**
+ * Set up the columns for GA section
+ * */
+function getGACol() {
+    return [
+        {title: 'For Strata, Stratum and Company Title Properties', dataKey: '1'}
+    ];
+}
+
+/**
+ * Set up the rows for GA section
+ * */
+function getGARow() {
+
+    var data = [];
+
+    var row1 = '(1) This is not a pest inspection report. Archicentre Australia recommends pre-purchase and ongoing timber pest inspection in all mainland states and territories.';
+    var row2 = '(2) Smoke detectors must be installed in accordance with current regulations. Archicentre Australia suggests that you regularly check these to ensure proper operation.';
+    var row3 = '(3) Drought conditions can cause buildings to crack literally overnight.  Please note the precautions advised in the referred Property Maintenance ' +
+        'Guide and any specific recommendations made in your Report.';
+    var row4 = '(4) The condition of timber-framed or concrete decks and balconies deteriorates over time – annual assessments should be undertaken to verify their safety.';
+    var row5 = '(5) In the interests of safety, Archicentre Australia recommends all property owners should have an electrical safety assessment undertaken by a suitably qualified specialist.';
+    var row6 = '(6) If you are purchasing the property, Archicentre Australia recommends a review of all door and window locks and security systems, appliance and equipment at settlement.';
+
+    var arr1 = [row1,row2,row3,row4,row5,row6];
+
+    for (var i = 0; i < arr1.length; i++) {
+        data.push({1: arr1[i]});
+    }
+
+    return data;
+}
+
+/**
+ * Set up the rows for GA section
+ * */
+function getGARow2() {
+
+    var data = [];
+    var content = 'The Assessment is limited to the nominated individual property including associated private open space. ' +
+        'It is not the scope of this assessment to include all common or other adjacent property. Legal advice should be ' +
+        'obtained as to the liability to contribute to the cost of repairs in respect of any common property.';
+
+    data.push({
+        1: content
+    });
 
     return data;
 }
