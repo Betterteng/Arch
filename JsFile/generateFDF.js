@@ -125,54 +125,16 @@ function drawCoverPage() {
         }
     });
 
+    // doc.addFont('tick.ttf', 'tick', 'normal');
+    // doc.setFont('tick');
+    // doc.text(15, 150, 'rrrrr');
+    // doc.text(15, 170, '√');
+    // doc.text(15, 190, '\u221A');
+
+
     // Subtitle
     // setHeadTitleStyle();
     // doc.text(120, 180, 'Inspection Details');
-
-    // doc.doc.autoTable(getGACol(), getCPRow(), {
-    //     startY: 180,
-    //     showHeader: 'never',
-    //     theme: 'plain',
-    //     margin: {bottom: 30},
-    //     styles: {
-    //         cellPadding: {bottom: 0},
-    //         overflow: 'linebreak',
-    //         columnWidth: 'auto',
-    //         valign: 'middle'
-    //     }
-    // });
-
-//     doc.addFont('HMKMMAG.TTF', 'MagicR', 'normal', 'Identity-H');
-//     doc.addFont('msgothic.ttf', 'MsGothic', 'normal', 'Identity-H');
-//     doc.addFont('gothic.ttf', 'LiLing', 'normal', 'Identity-H');
-// //doc.addFont('GADUGI.TTF', 'GADUGI', 'normal', 'WinAnsiEncoding');
-//
-//
-//
-//     doc.setFont('MagicR'); // set font
-//     doc.setFontSize(30);
-//     doc.setTextColor(153, 051, 102);
-//     //doc.setCharSpace(3);
-//
-// //doc.setDefaultFonts(0, 'Times');    //English default
-// //doc.setDefaultFonts(1, 'MagicR');    //Korean default
-// //doc.setDefaultFonts(2, 'MsGothic'); //Japanese default
-// //doc.setDefaultFonts(3, 'LiLing'); //Chinese default
-//
-//
-//     doc.drawText(10, 20, ['안녕하세요 저는 jsPDF의 custom font 개발자 이관형입니다.', {
-//         text: '你好，很高兴见到你 你叫什么名字？',
-//         fontSize: 30,
-//         textColor: [255, 0, 0],
-//         charSpace: 3,
-//         font: 'LiLing'
-//     }, {
-//         text: 'こんにちは。あなたの名前は何ですか？',
-//         fontSize: 20,
-//         textColor: [0, 150, 0],
-//         charSpace: 3,
-//         font: 'MsGothic'
-//     }]);
 }
 
 /**
@@ -2409,33 +2371,14 @@ function getAttachmentRow() {
     var data = [];
     var result = [];
 
-    var img = new Image();
-    img.src = './Pic/1111.png';
-
-    var tick = '\u221A';
-
     // Extract data
     for (var i = 0; i < 9; i++) {
         result[i] = document.getElementById(i + 6000 + '').value;
     }
 
     // Prepare rows
-    data.push({
-        1: 'Property Management Guide',
-        2: '\u0060' + '\u002f',
-        3: 'Cracking in Masonry',
-        4: '100',
-        5: 'Treatment of Dampness',
-        6: '√'
-    });
-    data.push({
-        1: 'Health & Safety Warning',
-        2: '✔',
-        3: 'Roofing & Guttering',
-        4: '✓',
-        5: 'Home Safety Checklist',
-        6: '√'
-    });
+    data.push({1: 'Property Management Guide', 2: result[0], 3: 'Cracking in Masonry', 4: result[1], 5: 'Treatment of Dampness', 6: result[2]});
+    data.push({1: 'Health & Safety Warning', 2: result[3], 3: 'Roofing & Guttering', 4: result[4], 5: 'Home Safety Checklist', 6: result[5]});
     data.push({1: 'Termites & Borers', 2: result[6], 3: 'Re-stumping', 4: result[7], 5: 'Cost Guide', 6: result[8]});
 
     return data;
@@ -2465,7 +2408,7 @@ function getGARow() {
     var row5 = '(5) In the interests of safety, Archicentre Australia recommends all property owners should have an electrical safety assessment undertaken by a suitably qualified specialist.';
     var row6 = '(6) If you are purchasing the property, Archicentre Australia recommends a review of all door and window locks and security systems, appliance and equipment at settlement.';
 
-    var arr1 = [row1,row2,row3,row4,row5,row6];
+    var arr1 = [row1, row2, row3, row4, row5, row6];
 
     for (var i = 0; i < arr1.length; i++) {
         data.push({1: arr1[i]});
@@ -2588,10 +2531,13 @@ function getCPRow4() {
     var data = [];
 
     data.push({1: 'Inspection Date', 2: ''});
+    data.push({1:'Time of Assessment', 2: ''});
+    data.push({1:'Archicentre Australia Architect', 2: ''});
+    data.push({1:'Email Address', 2: ''});
+    data.push({1:'Phone', 2: ''});
 
     return data;
 }
-
 
 /**
  * Set up the row for Cover Page
