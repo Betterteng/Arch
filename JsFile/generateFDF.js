@@ -90,9 +90,9 @@ function drawCoverPage() {
 
     // Client Detail table
     doc.autoTable(getCPCol(), getCPRow2(), {
-        startY: 170,
+        startY: 150,
         theme: 'striped',
-        margin: {bottom: 30, left: 110},
+        margin: {bottom: 30, left: 95},
         styles: {
             overflow: 'linebreak',
             columnWidth: 'auto',
@@ -104,7 +104,7 @@ function drawCoverPage() {
     doc.autoTable(getCPCol2(), getCPRow3(), {
         startY: doc.autoTable.previous.finalY + 5,
         theme: 'striped',
-        margin: {bottom: 30, left: 110},
+        margin: {bottom: 30, left: 95},
         styles: {
             overflow: 'linebreak',
             columnWidth: 'auto',
@@ -117,7 +117,7 @@ function drawCoverPage() {
         startY: doc.autoTable.previous.finalY + 5,
         showHeader: 'never',
         theme: 'striped',
-        margin: {bottom: 30, left: 110},
+        margin: {bottom: 30, left: 95},
         styles: {
             overflow: 'linebreak',
             columnWidth: 'auto',
@@ -125,16 +125,22 @@ function drawCoverPage() {
         }
     });
 
-    // doc.addFont('tick.ttf', 'tick', 'normal');
-    // doc.setFont('tick');
-    // doc.text(15, 150, 'rrrrr');
-    // doc.text(15, 170, '√');
-    // doc.text(15, 190, '\u221A');
+    //doc.addFont('trial2-regular-webfont.ttf', 'rial2-regular-webfont', 'Regular');
+    doc.setFont('Times');
+    doc.text(15, 150, 'Tengshinan');
+    doc.text(15, 170, '√');
+    doc.text(15, 190, '\u221A');
+    doc.text(15, 210, '\u005E');
+    doc.setFont('Helvetica');
+    doc.text(15, 220, 'Tengshinan');
 
 
     // Subtitle
-    // setHeadTitleStyle();
-    // doc.text(120, 180, 'Inspection Details');
+    setHeadTitleStyle();
+    doc.text(133, 145, 'Inspection Details');
+
+    // Footer
+    KnockKnockLuoBoTe();
 }
 
 /**
@@ -229,6 +235,7 @@ function drawPageOne() {
      * */
     //fillUserInputPageOne();
 }
+
 function fillUserInputPageOne() {
 
     var firstTableContentY2 = 45;
@@ -512,6 +519,7 @@ function drawPageFour() {
         }
     });
 }
+
 function fillUserInputPageFour() {
 
     var eviDefSumArr = [];
@@ -1881,6 +1889,18 @@ function assignNumberToText(theText) {
     return assembledString.trim();
 }
 
+/**
+ * Draw a footer for fixed pages
+ * */
+function KnockKnockLuoBoTe() {
+
+    var copyRight = '©COPYRIGHT 2016 ARCHICENTRE AUSTRALIA, a division of ARCHIADVISORY PTY LTD ABN 51 614 712 613';
+
+    doc.addImage(footerImg, 'PNG', 15, 278, 20, 9);
+    footerTextStyle();
+    doc.text(40, 287, copyRight);
+}
+
 /*
  |--------------------------------------------------------------------------
  | Below is some helper functions for interior - living
@@ -2481,9 +2501,9 @@ function getCPRow2() {
 
     var data = [];
 
-    data.push({1: 'Name:', 2: '1111'});
-    data.push({1: 'Phone:', 2: '2222'});
-    data.push({1: 'Booking No.:', 2: '3333'});
+    data.push({1: 'Name:', 2: document.getElementById('0').value.trim()});
+    data.push({1: 'Phone:', 2: document.getElementById('1').value.trim()});
+    data.push({1: 'Booking No.:', 2: document.getElementById('8').value.trim()});
 
     return data;
 }
@@ -2492,8 +2512,8 @@ function getCPRow3() {
 
     var data = [];
 
-    data.push({1: '161 Domain Road', 2: '', 3: ''});
-    data.push({1: 'South Yarra', 2: 'VIC', 3: '3141'});
+    data.push({1: document.getElementById('2').value.trim(), 2: '', 3: ''});
+    data.push({1: document.getElementById('3').value.trim(), 2: document.getElementById('9').value.trim(), 3: document.getElementById('11').value.trim()});
 
     return data;
 }
@@ -2502,11 +2522,11 @@ function getCPRow4() {
 
     var data = [];
 
-    data.push({1: 'Inspection Date', 2: ''});
-    data.push({1:'Time of Assessment', 2: ''});
-    data.push({1:'Archicentre Australia Architect', 2: ''});
-    data.push({1:'Email Address', 2: ''});
-    data.push({1:'Phone', 2: ''});
+    data.push({1: 'Inspection Date', 2: document.getElementById('4').value.trim()});
+    data.push({1:'Time of Assessment', 2: document.getElementById('10').value.trim()});
+    data.push({1:'Archicentre Australia Architect', 2: document.getElementById('architectName').value.trim()});
+    data.push({1:'Email Address', 2: document.getElementById('architectEmail').value.trim()});
+    data.push({1:'Phone', 2: document.getElementById('architectPhone').value.trim()});
 
     return data;
 }
