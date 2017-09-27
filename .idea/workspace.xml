@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f208ff00-eb39-4a31-be9a-2c45479c42fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessmentReport.html" afterPath="$PROJECT_DIR$/AssessmentReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsFile/generateFDF.js" afterPath="$PROJECT_DIR$/JsFile/generateFDF.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vfs_fonts.js" afterPath="$PROJECT_DIR$/vfs_fonts.js" />
     </list>
     <ignored path="Arch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1304,8 +1302,8 @@
       <file leaf-file-name="generateFDF.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="1157" column="34" selection-start-line="1157" selection-start-column="9" selection-end-line="1157" selection-end-column="34" />
+            <state relative-caret-position="179">
+              <caret line="1082" column="5" selection-start-line="1082" selection-start-column="5" selection-end-line="1082" selection-end-column="5" />
               <folding>
                 <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
                 <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -1320,8 +1318,6 @@
                 <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
                 <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
                 <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-                <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-                <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
                 <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
                 <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
                 <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
@@ -1393,7 +1389,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="305">
               <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-              <folding />
+              <folding>
+                <marker date="1506492351000" expanded="true" signature="17:14004420" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1645,12 +1643,12 @@
       <workItem from="1506296615539" duration="15527000" />
       <workItem from="1506383348106" duration="4508000" />
       <workItem from="1506394918906" duration="14686000" />
-      <workItem from="1506467762065" duration="7672000" />
+      <workItem from="1506467762065" duration="7791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312126000" />
+    <option name="totallyTimeSpent" value="312245000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3050,8 +3048,6 @@
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
             <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
@@ -4390,8 +4386,6 @@
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
             <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
@@ -5722,8 +5716,6 @@
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
             <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
@@ -7055,8 +7047,6 @@
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
             <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
@@ -8388,8 +8378,6 @@
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
             <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
@@ -9721,8 +9709,6 @@
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
             <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />
@@ -12473,14 +12459,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding />
+          <folding>
+            <marker date="1506492351000" expanded="true" signature="17:14004420" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JsFile/generateFDF.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="1157" column="34" selection-start-line="1157" selection-start-column="9" selection-end-line="1157" selection-end-column="34" />
+        <state relative-caret-position="179">
+          <caret line="1082" column="5" selection-start-line="1082" selection-start-column="5" selection-end-line="1082" selection-end-column="5" />
           <folding>
             <element signature="n#!!block;n#drawPageOne#0" expanded="false" />
             <element signature="n#!!block;n#drawPageTwo#0" expanded="false" />
@@ -12495,8 +12483,6 @@
             <element signature="n#!!block;n#drawPageAttachments#0" expanded="false" />
             <element signature="n#!!block;n#termsAndConditions#0" expanded="false" />
             <element signature="n#!!block;n#getSiteGardenEntries#0" expanded="false" />
-            <element signature="n#!!block;n#countRows1stTableSiteGarden#0" expanded="false" />
-            <element signature="n#!!block;n#if1stTableExistSiteGarden#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries1#0" expanded="false" />
             <element signature="n#!!block;n#validateSiteGardenEntries2#0" expanded="false" />
             <element signature="n#!!block;n#getExterior1stTableCols#0" expanded="false" />

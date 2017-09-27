@@ -632,8 +632,6 @@ function drawPagePropertyAssessmentNotes() {
         }
     });
 
-    console.log('How many rows in the first table (Site & Garden Page): ' + countRows1stTableSiteGarden());
-
     // Put the picture in the PDF
     drawPic('AssessmentSiteImage', 3, doc.autoTable.previous.finalY + 8);
 
@@ -1135,32 +1133,6 @@ function getSiteGardenEntries() {
     }
 
     return data;
-}
-
-/**
- * Count how many rows are there in the first table in Site & Garden Page
- * */
-function countRows1stTableSiteGarden() {
-
-    var count = 0;
-    for (var i = 200; i < 311; i += 10) {
-        if (document.getElementById(i + '').value != '') {
-            count++;
-        }
-    }
-
-    return count;
-}
-
-/**
- * Check if the first table in Site & Garden page has any rows
- * */
-function if1stTableExistSiteGarden() {
-    if (countRows1stTableSiteGarden() == 0) {
-        return 0;
-    } else {
-        return 5;
-    }
 }
 
 /**
